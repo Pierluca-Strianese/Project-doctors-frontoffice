@@ -5,9 +5,9 @@ export default {
 </script>
 
 <template>
-    <div class="dummy_page">
+    <!-- <div class="dummy_page">
         Mobile responsive footer
-    </div>
+    </div> -->
     <!-- FOOTER START -->
     <div class="footer">
         <div class="contain">
@@ -75,14 +75,14 @@ export default {
 </template>
 
 <style lang="scss">
-.dummy_page {
-    height: 200px;
-    width: 100%;
-    background-color: #f0f0f0;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 60px 0px;
-}
+// .dummy_page {
+//     height: 200px;
+//     width: 100%;
+//     background-color: #f0f0f0;
+//     text-align: center;
+//     box-sizing: border-box;
+//     padding: 60px 0px;
+// }
 
 /* STYLES SPECIFIC TO FOOTER  */
 .footer {

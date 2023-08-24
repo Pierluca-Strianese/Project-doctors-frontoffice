@@ -1,10 +1,47 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+
+import AppHome from "./pages/AppHome.vue";
+import AppLogIn from "./pages/AppLogIn.vue";
+import AppRegister from "./pages/AppRegister.vue";
+
+
+// import AppAbout from "./pages/AppAbout.vue";
+// import page404 from "./pages/page404.vue";
+
+
+
+
 // Importiamo i componenti che definiscono le varie pagine
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    {
+      path: "/home",
+      name: "home",
+      component: AppHome,
+    },
+    // {
+    //   path: "/about",
+    //   name: "about",
+    //   component: AppAbout,
+    // },
+    // {
+    //   path: "/:pathMatch(.*)*",
+    //   name: "page404",
+    //   component: page404,
+    // },
+    {
+      path: "/login",
+      name: "login",
+      component: AppLogIn,
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: AppRegister,
+    },
 
   ],
 });
