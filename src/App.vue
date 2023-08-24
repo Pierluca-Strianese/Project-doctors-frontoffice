@@ -1,13 +1,20 @@
 <script>
+import navbar from './components/navbar.vue';
+import AppHome from './pages/AppHome.vue';
+export default {
+    components: {
+        navbar,
+        AppHome,
+    }
+}
+
+
 
 </script>
 
 <template>
-    <h1>
-        Hello world!
-    </h1>
+    <navbar />
+    <AppHome />
 </template>
 
-<style lang="scss">
-@use "./style/general.scss" as *;
-</style>
+<style scoped></style>
