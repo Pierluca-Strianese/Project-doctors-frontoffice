@@ -13,8 +13,13 @@ export default {
 
 <template>
     <navbar />
-    <AppHome />
+    
+    <router-view></router-view>
+    
     <AppFooter />
+
+
+    
 </template>
 
 <style scoped></style>
