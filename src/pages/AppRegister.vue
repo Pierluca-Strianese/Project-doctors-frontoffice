@@ -30,8 +30,39 @@ export default {
             <span>Password</span>
         </label>
 
+        <label>
+            <input required="" placeholder="" type="address" class="input">
+            <span>Indirizzo</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="performance" class="input">
+            <span>Performance</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="promotion-counter" class="input">
+            <span>Promotion Counter</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="promotions" class="input">
+            <span>Promotions</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="specializations" class="input">
+            <span>Specializzazione</span>
+        </label>
+
+        <label for="curriculum">Carica il Curriculum (PDF o DOCX):</label>
+        <input type="file" id="curriculum" name="curriculum" accept=".pdf, .docx" required><br><br>
+
+        <label for="immagine">Carica un'Immagine (JPEG, PNG o GIF):</label>
+        <input type="file" id="immagine" name="immagine" accept=".jpeg, .jpg, .png, .gif" required><br><br>
+
         <button class="submit">Submit</button>
-        <p class="signin">Hai già un account <a href="#">Accedi</a> </p>
+        <p class="signin">Hai già un account? <a href="#">Accedi</a> </p>
     </form>
 </template>
 

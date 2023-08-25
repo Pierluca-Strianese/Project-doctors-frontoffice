@@ -5,6 +5,7 @@ export default {
 </script>
 
 <template>
+    
     <form class="form">
         <p class="title">Accedi </p>
         <p class="message">Riempi i campi per accedere</p>
@@ -32,6 +33,7 @@ export default {
 
         <button class="submit">Submit</button>
     </form>
+    
 </template>
 
 <style lang="scss">
