@@ -9,8 +9,8 @@
             <div class="card__title">Nome Dottore</div>
             <div class="card__subtitle">Specializzazione</div>
             <div class="card__wrapper">
-                <button class="card__btn mx-1">Button</button>
-                <button class="card__btn card__btn-solid mx-1">Button</button>
+                <button class="card__btn mx-1">Info</button>
+                <button class="card__btn card__btn-solid mx-1">Contatta</button>
             </div>
         </div>
 
@@ -21,8 +21,8 @@
             <div class="card__title">Nome Dottore</div>
             <div class="card__subtitle">Specializzazione</div>
             <div class="card__wrapper">
-                <button class="card__btn mx-1">Button</button>
-                <button class="card__btn card__btn-solid mx-1">Button</button>
+                <button class="card__btn mx-1">Info</button>
+                <button class="card__btn card__btn-solid mx-1">Contatta</button>
             </div>
         </div>
 
@@ -33,8 +33,8 @@
             <div class="card__title">Nome Dottore</div>
             <div class="card__subtitle">Specializzazione</div>
             <div class="card__wrapper">
-                <button class="card__btn mx-1">Button</button>
-                <button class="card__btn card__btn-solid mx-1">Button</button>
+                <button class="card__btn mx-1">Info</button>
+                <button class="card__btn card__btn-solid mx-1">Contatta</button>
             </div>
         </div>
     </div>
