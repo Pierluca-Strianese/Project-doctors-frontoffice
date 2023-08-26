@@ -20,7 +20,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <li> <router-link :to="{ name: 'home' }" class="nav-link active" aria-current="page">Home</router-link></li> 
+                    <li> <router-link :to="{ name: 'home' }" class="nav-link active" aria-current="page">Home</router-link>
+                    </li>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
@@ -53,14 +54,15 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                           <li> <router-link :to="{ name: 'login' }" class="nav-link active" aria-current="page">Log In</router-link></li> 
+                            <li> <router-link :to="{ name: 'login' }" class="nav-link active" aria-current="page">Log
+                                    In</router-link></li>
                             <!-- <li><a class="dropdown-item" href="{{ route('admin.profile.edit') }}">Log In</a></li> -->
                             <li>
                                 <router-link :to="{ name: 'register' }" class="nav-link active"
                                     aria-current="page">Registrati</router-link>
                             </li>
                         </ul>
-                        
+
                     </li>
                 </ul>
             </div>
@@ -69,6 +71,10 @@
 </template>
 
 <style lang="scss">
+.navbar {
+    height: 4rem;
+}
+
 .icon {
     height: 2rem;
     width: 2rem

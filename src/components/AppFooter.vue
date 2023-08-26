@@ -23,48 +23,51 @@ export default {
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <img src="img/logo.png" alt="">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium aspernatur iure molestias.</p>
-                    <h3>We Accect</h3>
-                    <div class="card-area">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
+                            aspernatur iure molestias.</p>
+                        <h3>We Accect</h3>
+                        <div class="card-area">
                             <i class="fa fa-cc-visa"></i>
                             <i class="fa fa-credit-card"></i>
                             <i class="fa fa-cc-mastercard"></i>
                             <i class="fa fa-cc-paypal"></i>
-                    </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <h2>Hosting</h2>
-                    <ul>
-                        <li><a href="#">Web Hosting</a></li>
-                        <li><a href="#">Cloud Hosting</a></li>
-                        <li><a href="#">CMS Hosting</a></li>
-                        <li><a href="#">WordPress Hosting</a></li>
-                        <li><a href="#">Email Hosting</a></li>
-                        <li><a href="#">VPS Hosting</a></li>
-                    </ul>
-                    </div>                    
+                        <ul>
+                            <li><a href="#">Web Hosting</a></li>
+                            <li><a href="#">Cloud Hosting</a></li>
+                            <li><a href="#">CMS Hosting</a></li>
+                            <li><a href="#">WordPress Hosting</a></li>
+                            <li><a href="#">Email Hosting</a></li>
+                            <li><a href="#">VPS Hosting</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <h2>Domain</h2>
-                    <ul>
-                        <li><a href="#">Web Domain</a></li>
-                        <li><a href="#">Cloud Domain</a></li>
-                        <li><a href="#">CMS Domain</a></li>
-                        <li><a href="#">WordPress Domain</a></li>
-                        <li><a href="#">Email Domain</a></li>
-                        <li><a href="#">VPS Domain</a></li>
-                    </ul>
-                    </div>                    
+                        <ul>
+                            <li><a href="#">Web Domain</a></li>
+                            <li><a href="#">Cloud Domain</a></li>
+                            <li><a href="#">CMS Domain</a></li>
+                            <li><a href="#">WordPress Domain</a></li>
+                            <li><a href="#">Email Domain</a></li>
+                            <li><a href="#">VPS Domain</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <h2>Newsletter</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloremque earum similique fugiat nobis. Facere?</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloremque earum similique
+                            fugiat nobis. Facere?</p>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Enter your Email ..." aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Recipient's username"
+                                aria-label="Enter your Email ..." aria-describedby="basic-addon2">
                             <span class="input-group-text" id="basic-addon2"><i class="fa fa-long-arrow-right"></i></span>
                         </div>
                         <h2>Follow us on</h2>
@@ -86,59 +89,79 @@ export default {
 </template>
 
 <style lang="scss">
-footer {
-	background: #101010;
-	padding: 86px 0;
+/* STYLES SPECIFIC TO FOOTER  */
+
+@media (max-width: 810px) {
+    .footer {
+        display: none;
+    }
 }
+
+.footer {
+    width: 100%;
+    position: relative;
+    height: auto;
+    background-color: #070617;
+}
+
 .single-content {
-	text-align: center;
-	padding: 115px 0;
+    text-align: center;
+    padding: 115px 0;
 }
+
 .single-box p {
-	color: #fff;
-	line-height: 1.9;
+    color: #fff;
+    line-height: 1.9;
 }
+
 .single-box h3 {
-	font-size: 16px;
-	font-weight: 700;
-	color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
 }
+
 .single-box .card-area i {
-	color: #ffffff;
-	font-size: 20px;
-	margin-right: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    margin-right: 10px;
 }
+
 .single-box ul {
-	list-style: none;
-	padding: 0;
+    list-style: none;
+    padding: 0;
 }
+
 .single-box ul li a {
-	text-decoration: none;
-	color: #fff;
-	line-height: 2.5;
-	font-weight: 100;
+    text-decoration: none;
+    color: #fff;
+    line-height: 2.5;
+    font-weight: 100;
 }
+
 .single-box h2 {
-	color: #fff;
-	font-size: 20px;
-	font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
 }
+
 #basic-addon2 {
-	background: #fe1e4f;
-	color: #fff;
+    background: #fe1e4f;
+    color: #fff;
 }
+
 .socials i {
-	font-size: 18px;
-	margin-right: 15px;
+    font-size: 18px;
+    margin-right: 15px;
 }
+
 @media (max-width: 767px) {
-	.single-box {
-		margin-bottom: 50px;
-	}
+    .single-box {
+        margin-bottom: 50px;
+    }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
-	.single-box {
-		margin-bottom: 50px;
-	}
-}
-</style>
+    .single-box {
+        margin-bottom: 50px;
+    }
+}</style>
