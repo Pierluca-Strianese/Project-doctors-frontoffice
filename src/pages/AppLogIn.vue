@@ -5,21 +5,10 @@ export default {
 </script>
 
 <template>
-    <div class="container_center">
-        <form class="form">
+    <div class="container_center px-4">
+        <form class="form p-4">
             <p class="title">Accedi </p>
             <p class="message">Riempi i campi per accedere</p>
-            <div class="flex">
-                <label>
-                    <input required="" placeholder="" type="text" class="input">
-                    <span>Nome</span>
-                </label>
-
-                <label>
-                    <input required="" placeholder="" type="text" class="input">
-                    <span>Cognome</span>
-                </label>
-            </div>
 
             <label>
                 <input required="" placeholder="" type="email" class="input">
@@ -33,25 +22,28 @@ export default {
 
             <button class="submit">Submit</button>
         </form>
+
+        <p class="signin py-3">
+        <div>Hai bisogno di un account?</div>
+        <button type="button" class="my-2 px-5 col-md-auto btn btn-outline-secondary">
+            <router-link :to="{ name: 'register' }" class="nav-link active" aria-current="page">Crea un
+                account</router-link>
+        </button>
+        </p>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .container_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 4rem - 20rem);
-    min-height: 30rem;
+    width: 550px;
+    margin-inline: auto;
 }
 
 .form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 350px;
-    background-color: #fff;
-    padding: 20px;
+    background-color: #f2f2f2;
     border-radius: 20px;
     position: relative;
 }
