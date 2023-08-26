@@ -85,10 +85,17 @@ export default {
 // }
 
 /* STYLES SPECIFIC TO FOOTER  */
+
+@media (max-width: 810px) {
+    .footer {
+        display: none;
+    }
+}
+
 .footer {
     width: 100%;
     position: relative;
-    height: auto;
+    height: 20rem;
     background-color: #070617;
 }
 

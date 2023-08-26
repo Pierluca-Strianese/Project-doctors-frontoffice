@@ -5,38 +5,46 @@ export default {
 </script>
 
 <template>
-    
-    <form class="form">
-        <p class="title">Accedi </p>
-        <p class="message">Riempi i campi per accedere</p>
-        <div class="flex">
+    <div class="container_center">
+        <form class="form">
+            <p class="title">Accedi </p>
+            <p class="message">Riempi i campi per accedere</p>
+            <div class="flex">
+                <label>
+                    <input required="" placeholder="" type="text" class="input">
+                    <span>Nome</span>
+                </label>
+
+                <label>
+                    <input required="" placeholder="" type="text" class="input">
+                    <span>Cognome</span>
+                </label>
+            </div>
+
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Nome</span>
+                <input required="" placeholder="" type="email" class="input">
+                <span>Email</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Cognome</span>
+                <input required="" placeholder="" type="password" class="input">
+                <span>Password</span>
             </label>
-        </div>
 
-        <label>
-            <input required="" placeholder="" type="email" class="input">
-            <span>Email</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="password" class="input">
-            <span>Password</span>
-        </label>
-
-        <button class="submit">Submit</button>
-    </form>
-    
+            <button class="submit">Submit</button>
+        </form>
+    </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.container_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 4rem - 20rem);
+    min-height: 30rem;
+}
+
 .form {
     display: flex;
     flex-direction: column;
