@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
         <div class="container-fluid">
             <img class="icon" src="../assets/img/stethoscope.jpg" alt="">
             <span class="me-3">AppleDoctor</span>
@@ -46,17 +46,17 @@
                     <button class="btn btn-outline-primary" type="submit">Cerca</button>
                 </form>
 
-                <!-- <img class="icon ms-4" src="../assets/img/icon.png" alt=""> -->
+
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item dropstart">
-                        <a class="nav-link mx-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link mx-3 btn btn-light" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Accedi
                         </a>
 
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end me-3">
                             <li> <router-link :to="{ name: 'login' }" class="nav-link active" aria-current="page">Log
                                     In</router-link></li>
-                            <!-- <li><a class="dropdown-item" href="{{ route('admin.profile.edit') }}">Log In</a></li> -->
                             <li>
                                 <router-link :to="{ name: 'register' }" class="nav-link active"
                                     aria-current="page">Registrati</router-link>
@@ -72,7 +72,7 @@
 
 <style lang="scss">
 .navbar {
-    height: 4rem;
+    min-height: 4rem;
 }
 
 .icon {

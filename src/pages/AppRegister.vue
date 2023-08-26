@@ -5,75 +5,128 @@ export default {
 </script>
 
 <template>
-    <form class="form">
-        <p class="title">Registrati, è gratis </p>
-        <p class="message">Riempi i campi per accedere</p>
-        <div class="flex">
+    <div class="container_center px-4">
+        <form class="form p-4 mt-5 mb-3">
+            <p class="title">Registrati</p>
+            <p class="message">Riempi i campi per registrati</p>
+            <div class="flex">
+                <label>
+                    <input required="" placeholder="" type="text" class="input">
+                    <span>Nome</span>
+                </label>
+
+                <label>
+                    <input required="" placeholder="" type="text" class="input">
+                    <span>Cognome</span>
+                </label>
+            </div>
+
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Nome</span>
+                <input required="" placeholder="" type="email" class="input">
+                <span>Email</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Cognome</span>
+                <input required="" placeholder="" type="password" class="input">
+                <span>Password</span>
             </label>
-        </div>
 
-        <label>
-            <input required="" placeholder="" type="email" class="input">
-            <span>Email</span>
-        </label>
+            <label>
+                <input required="" placeholder="" type="address" class="input">
+                <span>Indirizzo</span>
+            </label>
 
-        <label>
-            <input required="" placeholder="" type="password" class="input">
-            <span>Password</span>
-        </label>
+            <label>
+                <input required="" placeholder="" type="performance" class="input">
+                <span>Performance</span>
+            </label>
 
-        <label>
-            <input required="" placeholder="" type="address" class="input">
-            <span>Indirizzo</span>
-        </label>
+            <div class="container_small">
+                <span>Seleziona le tue specializzazioni</span>
+                <label class="checkbox_input py-3">
 
-        <label>
-            <input required="" placeholder="" type="performance" class="input">
-            <span>Performance</span>
-        </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
 
-        <label>
-            <input required="" placeholder="" type="promotion-counter" class="input">
-            <span>Promotion Counter</span>
-        </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
 
-        <label>
-            <input required="" placeholder="" type="promotions" class="input">
-            <span>Promotions</span>
-        </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
 
-        <label>
-            <input required="" placeholder="" type="specializations" class="input">
-            <span>Specializzazione</span>
-        </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
 
-        <label for="curriculum">Carica il Curriculum (PDF o DOCX):</label>
-        <input type="file" id="curriculum" name="curriculum" accept=".pdf, .docx" required><br><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
 
-        <label for="immagine">Carica un'Immagine (JPEG, PNG o GIF):</label>
-        <input type="file" id="immagine" name="immagine" accept=".jpeg, .jpg, .png, .gif" required><br><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
 
-        <button class="submit">Submit</button>
-        <p class="signin">Hai già un account? <a href="#">Accedi</a> </p>
-    </form>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <label for="formcurriculumFile" class="form-label">Carica il Curriculum (PDF):</label>
+                <input class="form-control" type="file" id="curriculum" name="curriculum" accept=".pdf" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="formcurriculumFile" class="form-label">Carica un'immagine profilo (JPEG o PNG):</label>
+                <input class="form-control" type="file" id="immagine" name="immagine" accept=".jpeg, .jpg, .png" required>
+            </div>
+
+            <button class="submit">Submit</button>
+        </form>
+        <p class="signin pb-3">
+            Hai già un account?
+            <router-link :to="{ name: 'login' }" class="nav-link active" aria-current="page">Accedi</router-link>
+        </p>
+    </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.container_center {
+    width: 750px;
+    margin-inline: auto;
+
+}
+
 .form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 350px;
-    background-color: #fff;
-    padding: 20px;
+    background-color: #f2f2f2;
     border-radius: 20px;
     position: relative;
 }
@@ -134,6 +187,10 @@ export default {
     display: flex;
     width: 100%;
     gap: 6px;
+
+    label {
+        width: 50%;
+    }
 }
 
 .form label {
@@ -172,6 +229,29 @@ export default {
 
 .form label .input:valid+span {
     color: green;
+}
+
+.checkbox_input {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form-check {
+        flex: 0 0 calc(100% / 3);
+    }
+}
+
+.container_small {
+    background-color: #fff;
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+
+    span {
+        color: grey;
+        font-size: 0.9rem;
+    }
 }
 
 .submit {

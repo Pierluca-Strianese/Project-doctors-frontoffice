@@ -5,20 +5,8 @@ export default {
 </script>
 
 <template>
-    <!-- <div class="dummy_page">
-        Mobile responsive footer
-    </div> -->
-    <!-- FOOTER START -->
-    <div class="content">
-        <div class="container">
-            <div class="single-content">
-                <h1>Website Content</h1>
-            </div>
-        </div>
-    </div>
-
     <footer>
-        <div class="container">
+        <div class="container_responsive px-5">
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
@@ -63,7 +51,8 @@ export default {
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <h2>Newsletter</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloremque earum similique
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloremque earum
+                            similique
                             fugiat nobis. Facere?</p>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Recipient's username"
@@ -88,25 +77,28 @@ export default {
     <!-- END OF FOOTER -->
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /* STYLES SPECIFIC TO FOOTER  */
 
-@media (max-width: 810px) {
-    .footer {
-        display: none;
+@media (min-width: 1000px) {
+    footer .container_responsive {
+        display: flex;
     }
 }
 
-.footer {
+.container_responsive {
+    display: none;
+    align-items: center;
     width: 100%;
     position: relative;
-    height: auto;
+    height: 20rem;
     background-color: #070617;
+    font-size: .8rem;
 }
 
 .single-content {
     text-align: center;
-    padding: 115px 0;
+    padding: 1rem 0;
 }
 
 .single-box p {
@@ -164,4 +156,5 @@ export default {
     .single-box {
         margin-bottom: 50px;
     }
-}</style>
+}
+</style>
