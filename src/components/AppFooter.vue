@@ -9,195 +9,136 @@ export default {
         Mobile responsive footer
     </div> -->
     <!-- FOOTER START -->
-    <div class="footer">
-        <div class="contain">
-            <div class="col">
-                <h1>Company</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
-                </ul>
+    <div class="content">
+        <div class="container">
+            <div class="single-content">
+                <h1>Website Content</h1>
             </div>
-            <div class="col">
-                <h1>Products</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>Accounts</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>Resources</h1>
-                <ul>
-                    <li>Webmail</li>
-                    <li>Redeem code</li>
-                    <li>WHOIS lookup</li>
-                    <li>Site map</li>
-                    <li>Web templates</li>
-                    <li>Email templates</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>Support</h1>
-                <ul>
-                    <li>Contact us</li>
-                    <li>Web chat</li>
-                    <li>Open ticket</li>
-                </ul>
-            </div>
-            <div class="col social">
-                <h1>Social</h1>
-                <ul>
-                    <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
-                    <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
-                    <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <img src="img/logo.png" alt="">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium aspernatur iure molestias.</p>
+                    <h3>We Accect</h3>
+                    <div class="card-area">
+                            <i class="fa fa-cc-visa"></i>
+                            <i class="fa fa-credit-card"></i>
+                            <i class="fa fa-cc-mastercard"></i>
+                            <i class="fa fa-cc-paypal"></i>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Hosting</h2>
+                    <ul>
+                        <li><a href="#">Web Hosting</a></li>
+                        <li><a href="#">Cloud Hosting</a></li>
+                        <li><a href="#">CMS Hosting</a></li>
+                        <li><a href="#">WordPress Hosting</a></li>
+                        <li><a href="#">Email Hosting</a></li>
+                        <li><a href="#">VPS Hosting</a></li>
+                    </ul>
+                    </div>                    
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Domain</h2>
+                    <ul>
+                        <li><a href="#">Web Domain</a></li>
+                        <li><a href="#">Cloud Domain</a></li>
+                        <li><a href="#">CMS Domain</a></li>
+                        <li><a href="#">WordPress Domain</a></li>
+                        <li><a href="#">Email Domain</a></li>
+                        <li><a href="#">VPS Domain</a></li>
+                    </ul>
+                    </div>                    
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Newsletter</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloremque earum similique fugiat nobis. Facere?</p>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Enter your Email ..." aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-long-arrow-right"></i></span>
+                        </div>
+                        <h2>Follow us on</h2>
+                        <p class="socials">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-dribbble"></i>
+                            <i class="fa fa-pinterest"></i>
+                            <i class="fa fa-twitter"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js">
     <!-- END OF FOOTER -->
 </template>
 
 <style lang="scss">
-// .dummy_page {
-//     height: 200px;
-//     width: 100%;
-//     background-color: #f0f0f0;
-//     text-align: center;
-//     box-sizing: border-box;
-//     padding: 60px 0px;
-// }
-
-/* STYLES SPECIFIC TO FOOTER  */
-.footer {
-    width: 100%;
-    position: relative;
-    height: auto;
-    background-color: #070617;
+footer {
+	background: #101010;
+	padding: 86px 0;
 }
-
-.footer .col {
-    width: 190px;
-    height: auto;
-    float: left;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 0px 20px 20px 20px;
+.single-content {
+	text-align: center;
+	padding: 115px 0;
 }
-
-.footer .col h1 {
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
-    font-size: 12px;
-    line-height: 17px;
-    padding: 20px 0px 5px 0px;
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.250em;
+.single-box p {
+	color: #fff;
+	line-height: 1.9;
 }
-
-.footer .col ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.single-box h3 {
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
 }
-
-.footer .col ul li {
-    color: #999999;
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: bold;
-    padding: 5px 0px 5px 0px;
-    cursor: pointer;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
+.single-box .card-area i {
+	color: #ffffff;
+	font-size: 20px;
+	margin-right: 10px;
 }
-
-.social ul li {
-    display: inline-block;
-    padding-right: 5px !important;
+.single-box ul {
+	list-style: none;
+	padding: 0;
 }
-
-.footer .col ul li:hover {
-    color: #ffffff;
-    transition: .1s;
-    -webkit-transition: .1s;
-    -moz-transition: .1s;
+.single-box ul li a {
+	text-decoration: none;
+	color: #fff;
+	line-height: 2.5;
+	font-weight: 100;
 }
-
-.clearfix {
-    clear: both;
+.single-box h2 {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
 }
-
-@media only screen and (min-width: 1280px) {
-    .contain {
-        width: 1200px;
-        margin: 0 auto;
-    }
+#basic-addon2 {
+	background: #fe1e4f;
+	color: #fff;
 }
-
-@media only screen and (max-width: 1139px) {
-    .contain .social {
-        width: 1000px;
-        display: block;
-    }
-
-    .social h1 {
-        margin: 0px;
-    }
+.socials i {
+	font-size: 18px;
+	margin-right: 15px;
 }
-
-@media only screen and (max-width: 950px) {
-    .footer .col {
-        width: 33%;
-    }
-
-    .footer .col h1 {
-        font-size: 14px;
-    }
-
-    .footer .col ul li {
-        font-size: 13px;
-    }
+@media (max-width: 767px) {
+	.single-box {
+		margin-bottom: 50px;
+	}
 }
-
-@media only screen and (max-width: 500px) {
-    .footer .col {
-        width: 50%;
-    }
-
-    .footer .col h1 {
-        font-size: 14px;
-    }
-
-    .footer .col ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-    .footer .col {
-        width: 100%;
-    }
+@media (min-width: 768px) and (max-width: 991px) {
+	.single-box {
+		margin-bottom: 50px;
+	}
 }
 </style>
