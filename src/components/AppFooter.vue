@@ -11,8 +11,7 @@ export default {
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <img src="img/logo.png" alt="">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
-                            aspernatur iure molestias.</p>
+                        <p>Benvenuti su BDoctors - Trova il Dottore Giusto per Te! La soluzione semplice e affidabile per individuare il medico specialista perfetto per la tua patologia. Attraverso una vasta rete di professionisti medici altamente qualificati, BDoctors ti mette in contatto con esperti in vari campi medici, garantendo cure mirate e personalizzate.</p>
                         <h3>We Accect</h3>
                         <div class="card-area">
                             <i class="fa fa-cc-visa"></i>
@@ -24,41 +23,39 @@ export default {
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
-                        <h2>Hosting</h2>
+                        <h2>Informazioni su BDoctors</h2>
                         <ul>
-                            <li><a href="#">Web Hosting</a></li>
-                            <li><a href="#">Cloud Hosting</a></li>
-                            <li><a href="#">CMS Hosting</a></li>
-                            <li><a href="#">WordPress Hosting</a></li>
-                            <li><a href="#">Email Hosting</a></li>
-                            <li><a href="#">VPS Hosting</a></li>
+                            <li><a href="#">Chi siamo</a></li>
+                            <li><a href="#">Lavora con noi </a></li>
+                            <li><a href="#">Hai bisogno di aiuto?</a></li>
+                            <li><a href="#">Contatti</a></li>
+                            <li><a href="#">Condizioni di Servizio</a></li>
+                            <li><a href="#">Privacy e cookies</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
-                        <h2>Domain</h2>
+                        <h2>Per i pazienti</h2>
                         <ul>
-                            <li><a href="#">Web Domain</a></li>
-                            <li><a href="#">Cloud Domain</a></li>
-                            <li><a href="#">CMS Domain</a></li>
-                            <li><a href="#">WordPress Domain</a></li>
-                            <li><a href="#">Email Domain</a></li>
-                            <li><a href="#">VPS Domain</a></li>
+                            <li><a href="#">Dottori</a></li>
+                            <li><a href="#">Medici di base</a></li>
+                            <li><a href="#">Strutture</a></li>
+                            <li><a href="#">Chiedi al dottore</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">App mobile</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <h2>Newsletter</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloremque earum
-                            similique
-                            fugiat nobis. Facere?</p>
-                        <div class="input-group mb-3">
+                        <p>Iscriviti alla nostra Newsletter BDoctors per rimanere sempre aggiornato sulle ultime novità nel mondo della medicina e delle cure specialistiche.</p>
+                        <!-- <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Recipient's username"
                                 aria-label="Enter your Email ..." aria-describedby="basic-addon2">
                             <span class="input-group-text" id="basic-addon2"><i class="fa fa-long-arrow-right"></i></span>
-                        </div>
+                        </div> -->
                         <h2>Follow us on</h2>
                         <p class="socials">
                             <i class="fa fa-facebook"></i>
