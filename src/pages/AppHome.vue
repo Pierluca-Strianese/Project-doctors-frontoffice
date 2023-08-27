@@ -1,10 +1,10 @@
 <script>
-import card from "../components/card.vue"
+import Appcard from "../components/Appcard.vue"
+import UsersList from "../components/UsersList.vue";
 export default {
     components: {
-        card,
-        // navbar,
-        // footer,
+        Appcard,
+        UsersList,
     }
 }
 </script>
@@ -32,9 +32,7 @@ export default {
         </div>
     </div>
 
-    <div>
-        <card />
-    </div>
+    <UsersList />
 </template>
 
 <style lang="scss" scoped>
@@ -46,6 +44,5 @@ export default {
     // Da sistemare height bg perché NON responsive
     background-size: cover;
     background-position: center;
-
 }
 </style>

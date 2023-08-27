@@ -10,7 +10,7 @@ export default {
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
-                        <img src="img/logo.png" alt="">
+                        <!-- <img src="img/logo.png" alt=""> -->
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
                             aspernatur iure molestias.</p>
                         <h3>We Accect</h3>
@@ -71,9 +71,6 @@ export default {
             </div>
         </div>
     </footer>
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js">
     <!-- END OF FOOTER -->
 </template>
 

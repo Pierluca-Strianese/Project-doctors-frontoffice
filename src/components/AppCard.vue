@@ -1,38 +1,19 @@
-<script></script>
+<script>
+
+export default {
+    props: ['objDoctor'],
+}
+
+</script>
 
 <template>
     <div class="container d-flex justify-content-center">
-        <div class="card mx-3 my-5 p-4">
+        <div class="card p-3">
             <div class="card__avatar">
-                <img class="img-fluid" src="src/assets/img/dottoresample1.jpg" alt="">
+                <img class="img-fluid" :src=objDoctor.image alt="">
             </div>
-            <div class="card__title">Nome Dottore</div>
+            <div class="card__title">{{ objDoctor.name }} {{ objDoctor.lastname }}</div>
             <button type="button" class="btn btn-outline-info m-1">Specializzazione</button>
-            <button type="button" class="btn btn-outline-info m-1">Specializzazione</button>
-            <div class="card__wrapper">
-                <button class="card__btn mx-1">Info</button>
-                <button class="card__btn card__btn-solid mx-1">Contatta</button>
-            </div>
-        </div>
-
-        <div class="card mx-3 mt-5 mb-5">
-            <div class="card__avatar mt-5">
-                <img class="img-fluid" src="../assets/img/DocVincenzo.jpg" alt="">
-            </div>
-            <div class="card__title">Nome Dottore</div>
-            <div class="card__subtitle">Specializzazione</div>
-            <div class="card__wrapper">
-                <button class="card__btn mx-1">Info</button>
-                <button class="card__btn card__btn-solid mx-1">Contatta</button>
-            </div>
-        </div>
-
-        <div class="card mx-3 mt-5 mb-5">
-            <div class="card__avatar mt-5">
-                <img class="img-fluid" src="../assets/img/DocVincenzo.jpg" alt="">
-            </div>
-            <div class="card__title">Nome Dottore</div>
-            <div class="card__subtitle">Specializzazione</div>
             <div class="card__wrapper">
                 <button class="card__btn mx-1">Info</button>
                 <button class="card__btn card__btn-solid mx-1">Contatta</button>
@@ -48,11 +29,10 @@
     --bg-color: #fff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
-    width: 340px;
-    min-height: 384px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-radius: 20px;
     background: var(--bg-color);
 
