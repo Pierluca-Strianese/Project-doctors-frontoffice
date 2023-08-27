@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <img class="icon" src="../assets/img/stethoscope.jpg" alt="">
             <span class="me-3">AppleDoctor</span>
@@ -41,11 +41,6 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Scrivi qui" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Cerca</button>
-                </form>
-
 
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -72,7 +67,7 @@
 
 <style lang="scss">
 .navbar {
-    min-height: 4rem;
+    min-height: 6vh;
 }
 
 .icon {
