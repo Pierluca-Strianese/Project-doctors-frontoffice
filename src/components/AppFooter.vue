@@ -10,14 +10,12 @@ export default {
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
-<<<<<<< HEAD
-                        <!-- <img src="img/logo.png" alt=""> -->
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
-                            aspernatur iure molestias.</p>
-=======
+
                         <img src="img/logo.png" alt="">
-                        <p>Benvenuti su BDoctors - Trova il Dottore Giusto per Te! La soluzione semplice e affidabile per individuare il medico specialista perfetto per la tua patologia. Attraverso una vasta rete di professionisti medici altamente qualificati, BDoctors ti mette in contatto con esperti in vari campi medici, garantendo cure mirate e personalizzate.</p>
->>>>>>> 0cd98128942c35a027f64333b6564c8a7d0b02a9
+                        <p>Benvenuti su BDoctors - Trova il Dottore Giusto per Te! La soluzione semplice e affidabile per
+                            individuare il medico specialista perfetto per la tua patologia. Attraverso una vasta rete di
+                            professionisti medici altamente qualificati, BDoctors ti mette in contatto con esperti in vari
+                            campi medici, garantendo cure mirate e personalizzate.</p>
                         <h3>We Accect</h3>
                         <div class="card-area">
                             <i class="fa fa-cc-visa"></i>
@@ -56,7 +54,8 @@ export default {
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
                         <h2>Newsletter</h2>
-                        <p>Iscriviti alla nostra Newsletter BDoctors per rimanere sempre aggiornato sulle ultime novità nel mondo della medicina e delle cure specialistiche.</p>
+                        <p>Iscriviti alla nostra Newsletter BDoctors per rimanere sempre aggiornato sulle ultime novità nel
+                            mondo della medicina e delle cure specialistiche.</p>
                         <!-- <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Recipient's username"
                                 aria-label="Enter your Email ..." aria-describedby="basic-addon2">
@@ -156,5 +155,4 @@ export default {
     .single-box {
         margin-bottom: 50px;
     }
-}
-</style>
+}</style>
