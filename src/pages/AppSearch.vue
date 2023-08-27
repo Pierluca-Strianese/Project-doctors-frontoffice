@@ -1,8 +1,8 @@
 <script>
-import card from "../components/card.vue"
+import Appcard from '../components/Appcard.vue';
 export default {
     components: {
-        card,
+        Appcard,
     }
 }
 </script>
@@ -58,7 +58,7 @@ export default {
             </div>
         </div>
         <div>
-            <card />
+            <Appcard />
         </div>
     </div>
 </template>
