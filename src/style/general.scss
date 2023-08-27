@@ -2,4 +2,30 @@
 @import "bootstrap/scss/bootstrap";
 
 // Import FontGoogle
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;800;900&display=swap');
+
+
+// COLOR
+
+$main-color: #01bdcc;
+$submain-color: #7ce2e0;
+$bg-color: #ffffff;
+$bg-color-2: rgb(238, 238, 238);
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container_one {
+    width: 900px;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.section_two {
+    background-color: $bg-color-2;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

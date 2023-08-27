@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div class="container_center px-4">
-        <form class="form p-4">
+        <form class="form p-4 my-5">
             <p class="title">Accedi </p>
             <p class="message">Riempi i campi per accedere</p>
 

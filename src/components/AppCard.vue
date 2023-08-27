@@ -2,39 +2,48 @@
 
 export default {
     props: ['objDoctor'],
+
+    data() {
+        return {
+        }
+    }
 }
 
 </script>
 
 <template>
-    <div class="container d-flex justify-content-center">
-        <div class="card p-3">
-            <div class="card__avatar">
-                <img class="img-fluid" :src=objDoctor.image alt="">
+    <div class="container d-flex justify-content-center ">
+        <div class="card p-3 shadow">
+            <div class="card__avatar px-3 pb-3 pt-2">
+                <img class="img-fluid shadow" :src=objDoctor.image alt="">
             </div>
-            <div class="card__title">{{ objDoctor.name }} {{ objDoctor.lastname }}</div>
-            <button type="button" class="btn btn-outline-info m-1">Specializzazione</button>
+            <div>
+                <span class="card__title fw-lighter"> {{ objDoctor.name }} </span>
+                <span class="card__title"> {{ ' ' + objDoctor.lastname }} </span>
+            </div>
+            <div>
+                <button v-for="specialization in specializations" :key="specialization.id" type="button"
+                    class="btn_specialization m-1 shadow-sm">{{ specialization.name }}</button>
+            </div>
             <div class="card__wrapper">
-                <button class="card__btn mx-1">Info</button>
-                <button class="card__btn card__btn-solid mx-1">Contatta</button>
+                <button class="card__btn mx-1 fw-semibold">Info</button>
+                <button class="card__btn card__btn-solid mx-1 fw-semibold">Contatta</button>
             </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+@use "../style/general.scss" as *;
+
 .card {
-    --main-color: #01bdcc;
-    --submain-color: #7ce2e0;
-    --bg-color: #fff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background: var(--bg-color);
+    background: $bg-color;
 
     .card__title {
         margin-top: 1rem;
@@ -49,25 +58,42 @@ export default {
     }
 
     .card__wrapper {
-        .card__btn-solid {
-            background: var(--main-color);
-            color: var(--bg-color);
+        .card__btn {
+            margin-top: 1rem;
+            width: 5rem;
+            height: 2rem;
+            border: 2px solid $main-color;
+            border-radius: .6rem;
+            font-size: .6rem;
+            color: $main-color;
+            background: $bg-color;
+            text-transform: uppercase;
+            transition: all 1s ease;
 
             &:hover {
-                background: var(--bg-color);
-                color: var(--main-color);
+                box-shadow: 5vw 0 0 $main-color inset;
+                background: $main-color;
+                color: $bg-color;
             }
         }
 
-        .card__btn:hover {
-            background: var(--main-color);
-            color: var(--bg-color);
-        }
+        .card__btn-solid {
+            background: $main-color;
+            color: $bg-color;
 
-        // .card__btn-solid:hover {
-        //     background: var(--bg-color);
-        //     color: var(--main-color);
-        // }
+            &:hover {
+                box-shadow: 5vw 0 0 $bg-color inset;
+                color: $main-color;
+            }
+        }
+    }
+
+    .btn_specialization {
+        background-color: $bg-color;
+        border-radius: 30rem;
+        border: 1px outset #dadada;
+        color: #969595;
+        font-size: .9rem;
     }
 }
 
@@ -78,24 +104,10 @@ export default {
 
     .img-fluid {
         border-radius: 100%;
-        width: 160px;
-        height: 160px;
+        width: 120px;
+        height: 120px;
         object-fit: cover;
         object-position: center;
     }
-}
-
-.card__btn {
-    margin-top: 1rem;
-    width: 5rem;
-    height: 2rem;
-    border: 2px solid var(--main-color);
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 11px;
-    color: var(--main-color);
-    background: var(--bg-color);
-    text-transform: uppercase;
-    transition: all 0.3s;
 }
 </style>

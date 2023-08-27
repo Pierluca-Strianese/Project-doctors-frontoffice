@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
-import Appcard from './Appcard.vue';
+import Appcard from './AppCard.vue';
+import { store } from '../store';
 
 export default {
 
@@ -13,6 +14,7 @@ export default {
             arrDoctors: [],
             currentPage: 1,
             nPages: 0,
+            store,
         }
     },
 
@@ -24,7 +26,7 @@ export default {
 
         getUsers() {
             axios
-                .get('http://localhost:8000/api/users', {
+                .get(this.store.baseUrl + 'api/users', {
                     params: {
                         page: this.currentPage,
                     },
@@ -37,16 +39,7 @@ export default {
     },
 
     created() {
-        axios
-            .get('http://localhost:8000/api/users', {
-                params: {
-                    page: this.currentPage,
-                },
-            })
-            .then(response => {
-                this.arrDoctors = response.data.results.data
-                this.nPages = response.data.results.last_page
-            });
+        this.getUsers();
 
     },
 };
@@ -70,6 +63,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../style/general.scss" as *;
+
 .list {
     display: flex;
 }
