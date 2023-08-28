@@ -13,7 +13,7 @@ export default {
                         <img src="img/logo.png" alt="">
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
                             aspernatur iure molestias.</p>
-                        <h3>We Accect</h3>
+                        <h3>We Accept</h3>
                         <div class="card-area">
                             <i class="fa fa-cc-visa"></i>
                             <i class="fa fa-credit-card"></i>

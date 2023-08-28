@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <img class="icon" src="../assets/img/stethoscope.jpg" alt="">
             <span class="me-3">AppleDoctor</span>
