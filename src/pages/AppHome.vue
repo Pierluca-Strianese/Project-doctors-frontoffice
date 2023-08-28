@@ -1,5 +1,5 @@
 <script>
-import UsersList from "../components/UsersList.vue";
+import UsersList from '../components/UsersList.vue';
 export default {
     components: {
         UsersList,
@@ -12,25 +12,26 @@ export default {
     <div class="jumbo_1 d-flex align-items-center">
         <div class="container text-center">
             <div class="row align-items-center">
-                <div class="col">
-                    <h1>Titolo di Benvenuto</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore recusandae nisi excepturi fuga culpa
-                        ex. Mollitia praesentium fugit ex ipsam itaque soluta debitis aperiam. Ex fuga nam sint nostrum.
-                        Harum.</p>
+                <div class="col-6">
+                    <h1>Benvenuto su BDoctors</h1>
+                    <h4>Trova il Dottore Giusto per Te!</h4>
                     <div class="bts">
-                        <button class="btn btn-outline-primary m-3">Button 1</button>
-                        <button class="btn btn-outline-primary m-3">Button 2</button>
+                        <a href="#home_docts">
+                            <button class="btn btn-outline-primary m-3">Trova Dottori</button>
+                        </a>
+                        <!-- <button class="btn btn-outline-primary m-3">Button 2</button> -->
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3">
                 </div>
-                <div class="col">
+                <div class="col-3">
                 </div>
             </div>
         </div>
     </div>
     <div class="container_one">
-        <h2 class="mt-4 text-center"> Cerca lo specialista più adatto a te <i class="fa-solid fa-magnifying-glass"></i></h2>
+        <h2 id="home_docts" class="mt-4 text-center"> Cerca lo specialista più adatto a te <i
+                class="fa-solid fa-magnifying-glass"></i></h2>
         <div class="input-group rounded">
             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                 aria-describedby="search-addon" />
