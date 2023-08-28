@@ -12,21 +12,20 @@ export default {
                     <div class="single-box">
 
                         <img src="img/logo.png" alt="">
-                        <<<<<<< HEAD <p>Benvenuti su BDoctors - Trova il Dottore Giusto per Te! La soluzione semplice e
+                        <p>Benvenuti su BDoctors - Trova il Dottore Giusto per Te! La soluzione semplice e
                             affidabile per
                             individuare il medico specialista perfetto per la tua patologia. Attraverso una vasta rete di
                             professionisti medici altamente qualificati, BDoctors ti mette in contatto con esperti in vari
                             campi medici, garantendo cure mirate e personalizzate.</p>
-                            =======
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
-                                aspernatur iure molestias.</p>
-                            <h3>We Accect</h3>
-                            <div class="card-area">
-                                <i class="fa fa-cc-visa"></i>
-                                <i class="fa fa-credit-card"></i>
-                                <i class="fa fa-cc-mastercard"></i>
-                                <i class="fa fa-cc-paypal"></i>
-                            </div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
+                            aspernatur iure molestias.</p>
+                        <h3>We Accect</h3>
+                        <div class="card-area">
+                            <i class="fa fa-cc-visa"></i>
+                            <i class="fa fa-credit-card"></i>
+                            <i class="fa fa-cc-mastercard"></i>
+                            <i class="fa fa-cc-paypal"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
