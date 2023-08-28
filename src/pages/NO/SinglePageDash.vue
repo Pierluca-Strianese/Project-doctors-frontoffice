@@ -1,5 +1,5 @@
 <script>
-import SendReview from '../../components/SendReview.vue';
+import SendReview from '../components/SendReview.vue';
 
 export default {
   name: 'SinglePageDash',
@@ -51,18 +51,18 @@ export default {
           <div class="d-flex justify-content-between mb-3">
             <div>
               <h5 class="secondary-text-color">Indirizzo</h5>
-              <p>{{ doctor.address }}</p>
+              <!-- <p>{{ doctor.address }}</p> -->
             </div>
 
             <div>
               <h5 class="secondary-text-color">Telefono</h5>
-              <p>{{ doctor.phone }}</p>
+              <!-- <p>{{ doctor.phone }}</p> -->
             </div>
           </div>
 
           <div class="">
             <h5 class="text-center mb-3 secondary-text-color">Biografia</h5>
-            <p>{{ doctor.bio }}</p>
+            <!-- <p>{{ doctor.bio }}</p> -->
           </div>
         </div>
 
@@ -70,7 +70,7 @@ export default {
           <h5 class="text-center secondary-text-color">Curriculum</h5>
 
           <div class="curriculum-image-container shadow-lg mb-3">
-            <img class="image-cv img-fluid" src="/imgs/Curriculum_2.png" :alt="doctor.user.name">
+            <img class="image-cv img-fluid" src="/imgs/Curriculum_2.png">
           </div>
 
           <a href="/imgs/Curriculum_1.png" download class="my-btn mt-3 mb-3"><i class="fa-solid fa-download"></i>
@@ -112,13 +112,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../../styles/general.scss' as *;
-@use '../../styles/partials/variables' as *;
+@use "../style/general.scss" as *;
 
 .my-card {
   border-radius: 25px !important;
   border-width: 0 !important;
-  background-color: $background-color !important;
+  background-color: $bg-color !important;
   padding: 0;
   backdrop-filter: blur(50px);
   overflow: hidden;
@@ -126,8 +125,8 @@ export default {
 
 .info-title {
   padding: 1rem;
-  background-color: $primary-color;
-  color: $secondary-text-color;
+  background-color: $main-color;
+  color: $submain-color;
 }
 
 .curriculum-image-container {

@@ -114,14 +114,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../../styles/general.scss' as *;
-@use '../../styles/partials/variables' as *;
-
+@use "../style/general.scss" as *;
 
 .info-title {
   padding: 1rem;
-  background-color: $primary-color;
-  color: $secondary-text-color;
+  background-color: $main-color;
+  color: $submain-color;
 }
 
 input {

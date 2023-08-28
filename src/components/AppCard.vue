@@ -26,7 +26,9 @@ export default {
                     class="btn_specialization m-1 shadow-sm">{{ specialization.name }}</button>
             </div>
             <div class="card__wrapper">
-                <button class="card__btn mx-1 fw-semibold">Info</button>
+                <router-link :to="{ name: 'doctor.show', params: { id: objDoctor.id } }"
+                    class="card__btn mx-1 fw-semibold p-2">
+                    Info </router-link>
                 <button class="card__btn card__btn-solid mx-1 fw-semibold">Contatta</button>
             </div>
         </div>
