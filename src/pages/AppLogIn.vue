@@ -5,43 +5,45 @@ export default {
 </script>
 
 <template>
-    <form class="form">
-        <p class="title">Accedi </p>
-        <p class="message">Riempi i campi per accedere</p>
-        <div class="flex">
+    <div class="container_center px-4">
+        <form class="form p-4 my-5">
+            <p class="title">Accedi </p>
+            <p class="message">Riempi i campi per accedere</p>
+
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Nome</span>
+                <input required="" placeholder="" type="email" class="input">
+                <span>Email</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Cognome</span>
+                <input required="" placeholder="" type="password" class="input">
+                <span>Password</span>
             </label>
-        </div>
 
-        <label>
-            <input required="" placeholder="" type="email" class="input">
-            <span>Email</span>
-        </label>
+            <button class="submit">Submit</button>
+        </form>
 
-        <label>
-            <input required="" placeholder="" type="password" class="input">
-            <span>Password</span>
-        </label>
-
-        <button class="submit">Submit</button>
-    </form>
+        <p class="signin py-3">
+        <div>Hai bisogno di un account?</div>
+        <button type="button" class="my-2 px-5 col-md-auto btn btn-outline-secondary">
+            <router-link :to="{ name: 'register' }" class="nav-link active" aria-current="page">Crea un
+                account</router-link>
+        </button>
+        </p>
+    </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.container_center {
+    width: 550px;
+    margin-inline: auto;
+}
+
 .form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 350px;
-    background-color: #fff;
-    padding: 20px;
+    background-color: #f2f2f2;
     border-radius: 20px;
     position: relative;
 }

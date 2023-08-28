@@ -1,10 +1,10 @@
 <script>
-import navbar from './components/navbar.vue';
+import AppNavbar from './components/AppNavbar.vue';
 import AppHome from './pages/AppHome.vue';
 import AppFooter from './components/AppFooter.vue'
 export default {
     components: {
-        navbar,
+        AppNavbar,
         AppHome,
         AppFooter,
     }
@@ -12,8 +12,10 @@ export default {
 </script>
 
 <template>
-    <navbar />
-    <AppHome />
+    <AppNavbar />
+
+    <router-view></router-view>
+
     <AppFooter />
 </template>
 

@@ -5,199 +5,158 @@ export default {
 </script>
 
 <template>
-    <!-- <div class="dummy_page">
-        Mobile responsive footer
-    </div> -->
-    <!-- FOOTER START -->
-    <div class="footer">
-        <div class="contain">
-            <div class="col">
-                <h1>Company</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
-                </ul>
+    <footer>
+        <div class="container_responsive px-5">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+
+                        <img src="img/logo.png" alt="">
+                        <p>Benvenuti su BDoctors - Trova il Dottore Giusto per Te! La soluzione semplice e
+                            affidabile per
+                            individuare il medico specialista perfetto per la tua patologia. Attraverso una vasta rete di
+                            professionisti medici altamente qualificati, BDoctors ti mette in contatto con esperti in vari
+                            campi medici, garantendo cure mirate e personalizzate.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
+                            aspernatur iure molestias.</p>
+                        <h3>We Accect</h3>
+                        <div class="card-area">
+                            <i class="fa fa-cc-visa"></i>
+                            <i class="fa fa-credit-card"></i>
+                            <i class="fa fa-cc-mastercard"></i>
+                            <i class="fa fa-cc-paypal"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Informazioni su BDoctors</h2>
+                        <ul>
+                            <li><a href="#">Chi siamo</a></li>
+                            <li><a href="#">Lavora con noi </a></li>
+                            <li><a href="#">Hai bisogno di aiuto?</a></li>
+                            <li><a href="#">Contatti</a></li>
+                            <li><a href="#">Condizioni di Servizio</a></li>
+                            <li><a href="#">Privacy e cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Per i pazienti</h2>
+                        <ul>
+                            <li><a href="#">Dottori</a></li>
+                            <li><a href="#">Medici di base</a></li>
+                            <li><a href="#">Strutture</a></li>
+                            <li><a href="#">Chiedi al dottore</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">App mobile</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Newsletter</h2>
+                        <p>Iscriviti alla nostra Newsletter BDoctors per rimanere sempre aggiornato sulle ultime novità nel
+                            mondo della medicina e delle cure specialistiche.</p>
+                        <!-- <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Recipient's username"
+                                aria-label="Enter your Email ..." aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-long-arrow-right"></i></span>
+                        </div> -->
+                        <h2>Follow us on</h2>
+                        <p class="socials">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-dribbble"></i>
+                            <i class="fa fa-pinterest"></i>
+                            <i class="fa fa-twitter"></i>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <h1>Products</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>Accounts</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>Resources</h1>
-                <ul>
-                    <li>Webmail</li>
-                    <li>Redeem code</li>
-                    <li>WHOIS lookup</li>
-                    <li>Site map</li>
-                    <li>Web templates</li>
-                    <li>Email templates</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>Support</h1>
-                <ul>
-                    <li>Contact us</li>
-                    <li>Web chat</li>
-                    <li>Open ticket</li>
-                </ul>
-            </div>
-            <div class="col social">
-                <h1>Social</h1>
-                <ul>
-                    <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
-                    <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
-                    <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
         </div>
-    </div>
+    </footer>
     <!-- END OF FOOTER -->
 </template>
 
-<style lang="scss">
-// .dummy_page {
-//     height: 200px;
-//     width: 100%;
-//     background-color: #f0f0f0;
-//     text-align: center;
-//     box-sizing: border-box;
-//     padding: 60px 0px;
-// }
-
+<style lang="scss" scoped>
 /* STYLES SPECIFIC TO FOOTER  */
-.footer {
+
+@media (min-width: 1000px) {
+    footer .container_responsive {
+        display: flex;
+    }
+}
+
+.container_responsive {
+    display: none;
+    align-items: center;
     width: 100%;
     position: relative;
-    height: auto;
+    height: 20rem;
     background-color: #070617;
+    font-size: .8rem;
 }
 
-.footer .col {
-    width: 190px;
-    height: auto;
-    float: left;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 0px 20px 20px 20px;
+.single-content {
+    text-align: center;
+    padding: 1rem 0;
 }
 
-.footer .col h1 {
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
-    font-size: 12px;
-    line-height: 17px;
-    padding: 20px 0px 5px 0px;
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.250em;
+.single-box p {
+    color: #fff;
+    line-height: 1.9;
 }
 
-.footer .col ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.single-box h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
 }
 
-.footer .col ul li {
-    color: #999999;
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: bold;
-    padding: 5px 0px 5px 0px;
-    cursor: pointer;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-}
-
-.social ul li {
-    display: inline-block;
-    padding-right: 5px !important;
-}
-
-.footer .col ul li:hover {
+.single-box .card-area i {
     color: #ffffff;
-    transition: .1s;
-    -webkit-transition: .1s;
-    -moz-transition: .1s;
+    font-size: 20px;
+    margin-right: 10px;
 }
 
-.clearfix {
-    clear: both;
+.single-box ul {
+    list-style: none;
+    padding: 0;
 }
 
-@media only screen and (min-width: 1280px) {
-    .contain {
-        width: 1200px;
-        margin: 0 auto;
-    }
+.single-box ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 2.5;
+    font-weight: 100;
 }
 
-@media only screen and (max-width: 1139px) {
-    .contain .social {
-        width: 1000px;
-        display: block;
-    }
-
-    .social h1 {
-        margin: 0px;
-    }
+.single-box h2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
 }
 
-@media only screen and (max-width: 950px) {
-    .footer .col {
-        width: 33%;
-    }
+#basic-addon2 {
+    background: #fe1e4f;
+    color: #fff;
+}
 
-    .footer .col h1 {
-        font-size: 14px;
-    }
+.socials i {
+    font-size: 18px;
+    margin-right: 15px;
+}
 
-    .footer .col ul li {
-        font-size: 13px;
+@media (max-width: 767px) {
+    .single-box {
+        margin-bottom: 50px;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .footer .col {
-        width: 50%;
-    }
-
-    .footer .col h1 {
-        font-size: 14px;
-    }
-
-    .footer .col ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-    .footer .col {
-        width: 100%;
+@media (min-width: 768px) and (max-width: 991px) {
+    .single-box {
+        margin-bottom: 50px;
     }
 }
 </style>

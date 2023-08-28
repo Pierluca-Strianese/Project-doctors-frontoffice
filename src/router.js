@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AppHome from "./pages/AppHome.vue";
 import AppLogIn from "./pages/AppLogIn.vue";
 import AppRegister from "./pages/AppRegister.vue";
-
+import AppSearch from "./pages/AppSearch.vue";
 
 // import AppAbout from "./pages/AppAbout.vue";
 // import page404 from "./pages/page404.vue";
@@ -18,7 +18,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/home",
+      path: "/",
       name: "home",
       component: AppHome,
     },
@@ -41,6 +41,11 @@ const router = createRouter({
       path: "/register",
       name: "register",
       component: AppRegister,
+    },
+    {
+      path: "/search",
+      name: "search",
+      component: AppSearch,
     },
 
   ],
