@@ -5,6 +5,7 @@ import AppHome from "./pages/AppHome.vue";
 import AppLogIn from "./pages/AppLogIn.vue";
 import AppRegister from "./pages/AppRegister.vue";
 import AppSearch from "./pages/AppSearch.vue";
+import AppDoctorShow from "./pages/AppDoctorShow.vue"
 
 // import AppAbout from "./pages/AppAbout.vue";
 // import page404 from "./pages/page404.vue";
@@ -46,6 +47,11 @@ const router = createRouter({
       path: "/search",
       name: "search",
       component: AppSearch,
+    },
+    {
+      path: "/doctor/:id",
+      name: "doctor.show",
+      component: AppDoctorShow,
     },
 
   ],

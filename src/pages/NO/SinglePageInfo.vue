@@ -2,6 +2,7 @@
 
 export default {
     name: 'SinglePageInfo',
+    props: ['objDoctor'],
     data() {
         return {
             fullStars: [],
@@ -9,17 +10,7 @@ export default {
             averageVote: null,
         }
     },
-    props: {
-        'doctor': {
-            type: Object,
-            required: true,
-        },
-        'review': {
-            type: Object,
-            required: true,
-        },
-        reviewsCount: Number,
-    },
+
     methods: {
         averageByKey(array, key) {
             if (!array || array.length === 0 || !key) {
@@ -61,36 +52,35 @@ export default {
         <div class="row justify-content-around">
 
             <div class="doctor-image-container d-flex justify-content-center col-10 col-lg-6 shadow-lg">
-                <img class="doctor-photo img-fluid" :src="`http://127.0.0.1:8000/storage/${doctor.photo}`"
-                    :alt="doctor.user.name">
+                <img class="doctor-photo img-fluid" :src=objDoctor.image>
             </div>
 
             <div class="col-12 col-lg-6 p-3">
                 <div class="mb-5">
 
                     <h1 class="d-flex justify-content-center justify-content-lg-start">
-                        {{ doctor.user.name }} {{ doctor.user.surname }}
+                        {{ objDoctor.name }} {{ objDoctor.lastname }}
                     </h1>
 
                     <h5 class=" secondary-text-color">
                         Specializzazione
                     </h5>
-                    <span class="" v-for="(specialization, index) in doctor.specializations" :key="index">
-                        {{ specialization.title }} |
-                    </span>
+                    <!-- <span class="" v-for="(specialization, index) in doctor.specializations" :key="index">
+                         {{ specialization.title }} | 
+                    </span> -->
 
                     <h6 class=" secondary-text-color mt-3">
                         Prestazione
                     </h6>
                     <span>
-                        {{ doctor.performance }}
+                        <!-- {{ doctor.performance }} -->
                     </span>
 
                     <div class="vote-stars mt-4">
                         <h6 class="secondary-text-color">Voto </h6>
                         <i v-for="starEL in fullStars" class="fa-solid fa-star"></i>
                         <i v-for="star in emptyStars" class="fa-regular fa-star"></i>
-                        <span class="ms-2">{{ reviewsCount }} recensioni</span>
+                        <span class="ms-2"> recensioni</span>
                     </div>
 
                 </div>
@@ -105,12 +95,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../../styles/general.scss' as *;
-@use '../../styles/partials/variables' as *;
-
+@use "../style/general.scss" as *;
 
 h1 {
-    color: $primary-color;
+    color: $main-color;
 }
 
 .doctor-image-container {
