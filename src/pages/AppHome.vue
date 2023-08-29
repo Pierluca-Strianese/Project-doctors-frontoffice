@@ -22,9 +22,8 @@ export default {
                         <!-- <button class="btn btn-outline-primary m-3">Button 2</button> -->
                     </div>
                 </div>
-                <div class="col-3">
-                </div>
-                <div class="col-3">
+                <div class="col-6">
+                    <img src="src/assets/img/doc3jumbo.png" alt="">
                 </div>
             </div>
         </div>
@@ -51,11 +50,15 @@ export default {
 
 .jumbo_1 {
     /* The image used */
-    background-image: url("../assets/img/doc3jumbo.jpeg");
+    background: linear-gradient(180deg, $bg-color-2 20%, $bg-color 100%);
     max-width: 100%;
     height: 94vh;
     // Da sistemare height bg perché NON responsive
     background-size: cover;
     background-position: center;
+}
+
+img {
+    height: 94vh;
 }
 </style>
