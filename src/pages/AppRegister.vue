@@ -32,13 +32,13 @@ export default {
             </label>
 
             <label>
-                <input required="" placeholder="" type="address" class="input">
-                <span>Indirizzo</span>
+                <input required="" placeholder="" type="password" class="input">
+                <span>Conferma password</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="performance" class="input">
-                <span>Performance</span>
+                <input required="" placeholder="" type="address" class="input">
+                <span>Indirizzo</span>
             </label>
 
             <div class="container_small">
@@ -96,7 +96,7 @@ export default {
                 </label>
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="formcurriculumFile" class="form-label">Carica il Curriculum (PDF):</label>
                 <input class="form-control" type="file" id="curriculum" name="curriculum" accept=".pdf" required>
             </div>
@@ -104,7 +104,7 @@ export default {
             <div class="mb-3">
                 <label for="formcurriculumFile" class="form-label">Carica un'immagine profilo (JPEG o PNG):</label>
                 <input class="form-control" type="file" id="immagine" name="immagine" accept=".jpeg, .jpg, .png" required>
-            </div>
+            </div> -->
 
             <button class="submit">Submit</button>
         </form>
