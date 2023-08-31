@@ -32,8 +32,8 @@ export default {
                     },
                 })
                 .then(response => {
-                    this.arrDoctors = response.data.results.data
-                    this.nPages = response.data.results.last_page
+                    this.arrDoctors = response.data.data
+                    this.nPages = response.data.last_page
                 });
         },
     },

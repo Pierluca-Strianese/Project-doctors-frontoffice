@@ -11,22 +11,21 @@
 $main-color: #01bdcc;
 $submain-color: #7ce2e0;
 $bg-color: #ffffff;
-$bg-color-2: #bdbebe;
+$bg-color-2: rgb(238, 238, 238);
 
 * {
     font-family: 'Montserrat', sans-serif;
 }
 
 .container_one {
-    max-width: 900px;
+    width: 900px;
     margin-inline: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .section_two {
-    background: linear-gradient(0deg, $bg-color-2 20%, $bg-color 100%);
+    background-color: $bg-color-2;
     padding-top: 3rem;
     padding-bottom: 3rem;
 }

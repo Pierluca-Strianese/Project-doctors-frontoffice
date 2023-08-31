@@ -17,12 +17,14 @@ export default {
                             individuare il medico specialista perfetto per la tua patologia. Attraverso una vasta rete di
                             professionisti medici altamente qualificati, BDoctors ti mette in contatto con esperti in vari
                             campi medici, garantendo cure mirate e personalizzate.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium
+                            aspernatur iure molestias.</p>
                         <h3>We Accect</h3>
                         <div class="card-area">
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'cc-visa']" />
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'cc-mastercard']" />
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'cc-paypal']" />
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'cc-apple-pay']" />
+                            <i class="fa fa-cc-visa"></i>
+                            <i class="fa fa-credit-card"></i>
+                            <i class="fa fa-cc-mastercard"></i>
+                            <i class="fa fa-cc-paypal"></i>
                         </div>
                     </div>
                 </div>
@@ -64,10 +66,10 @@ export default {
                         </div> -->
                         <h2>Follow us on</h2>
                         <p class="socials">
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'square-facebook']" />
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'square-twitter']" />
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'square-instagram']" />
-                            <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'square-whatsapp']" />
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-dribbble"></i>
+                            <i class="fa fa-pinterest"></i>
+                            <i class="fa fa-twitter"></i>
                         </p>
                     </div>
                 </div>
@@ -78,7 +80,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../style/general.scss" as *;
+/* STYLES SPECIFIC TO FOOTER  */
 
 @media (min-width: 1000px) {
     footer .container_responsive {
@@ -91,9 +93,9 @@ export default {
     align-items: center;
     width: 100%;
     position: relative;
+    height: 20rem;
     background-color: #070617;
     font-size: .8rem;
-    padding: 2rem;
 }
 
 .single-content {
@@ -144,5 +146,17 @@ export default {
 .socials i {
     font-size: 18px;
     margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+    .single-box {
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .single-box {
+        margin-bottom: 50px;
+    }
 }
 </style>
