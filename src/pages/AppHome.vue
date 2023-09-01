@@ -22,8 +22,21 @@ export default {
             <!-- <button class="btn btn-outline-primary m-3">Button 2</button> -->
           </div>
         </div>
+<<<<<<< HEAD
         <div class="col-6">
           <img src="src/assets/img/doc3jumbo.png" alt="">
+=======
+    </div>
+    <div class="container_one">
+        <h2 id="home_docts" class="mt-4 text-center"> Cerca lo specialista più adatto a te <i
+                class="fa-solid fa-magnifying-glass"></i></h2>
+        <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Cerca" aria-label="Cerca"
+                aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+            </span>
+>>>>>>> 8a2b7fa77581891c895c8139179cd4996cc364dd
         </div>
       </div>
     </div>
