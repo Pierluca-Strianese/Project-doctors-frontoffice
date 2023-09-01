@@ -34,8 +34,8 @@
               <li><a class="dropdown-item" href="#">Inserire specializzazioni varie</a></li>
               <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
               <!-- <li>
-                                <hr class="dropdown-divider">
-                            </li> -->
+                    <hr class="dropdown-divider">
+                  </li> -->
               <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
             </ul>
           </li>
@@ -49,11 +49,10 @@
 
             <ul class="dropdown-menu dropdown-menu-end me-3">
               <li>
-                <router-link :to="{ name: 'login' }" class="nav-link active" aria-current="page">Log In</router-link>
+                <a href="http://localhost:8000/login" class="link px-3 py-1">Login</a>
               </li>
               <li>
-                <router-link :to="{ name: 'register' }" class="nav-link active"
-                  aria-current="page">Registrati</router-link>
+                <a href="http://localhost:8000/register" class="link px-3 py-1">Register</a>
               </li>
             </ul>
           </li>
@@ -64,6 +63,8 @@
 </template>
 
 <style lang="scss">
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 .navbar {
   min-height: 6vh;
 }
@@ -73,5 +74,11 @@
   width: 2rem;
 }
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+.link{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+
 </style>
