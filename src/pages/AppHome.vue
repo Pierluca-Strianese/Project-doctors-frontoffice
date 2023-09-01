@@ -1,6 +1,13 @@
 <script>
 import UsersList from "../components/UsersList.vue";
 export default {
+
+  data() {
+    return {
+      searchString: '',
+    };
+  },
+
   components: {
     UsersList,
   },
@@ -28,17 +35,34 @@ export default {
       </div>
     </div>
   </div>
-  <div class="container_one">
+
+  <!-- SEARCH BAR -->
+  <!-- <div class="container_one">
     <h2 id="home_docts" class="mt-4 text-center"> Cerca lo specialista più adatto a te <i
         class="fa-solid fa-magnifying-glass"></i></h2>
     <div class="input-group rounded">
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+      <input type="search" name="q" class="form-control rounded" placeholder="Search" aria-label="Search"
         aria-describedby="search-addon" />
-      <span class="input-group-text border-0" id="search-addon">
+      <span class="input-group-text border-0" id="search-addon" >
         <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
       </span>
     </div>
+  </div> -->
+
+  <div class="container-fluid">
+    <h2 id="home_docts" class="mt-4 text-center"> Cerca lo specialista più adatto a te
+    </h2>
+
+    <form class="d-flex my-5 col-6 offset-3" role="search"
+      @submit.prevent="$router.push({ name: 'doctors.index', query: { q: searchString } })">
+      <input class="form-control me-2" type="search" placeholder="Cerca qui..." aria-label="Search" name="q"
+        v-model="searchString">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
   </div>
+  <!-- END SEARCH BAR -->
+
   <div class="section_two">
     <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
     <UsersList />
