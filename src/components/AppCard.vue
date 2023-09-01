@@ -1,7 +1,7 @@
 <script>
 
 export default {
-    props: ['objDoctor'],
+    props: ['objUser'],
 
     data() {
         return {
@@ -15,18 +15,18 @@ export default {
     <div class="container d-flex justify-content-center ">
         <div class="card p-3 shadow">
             <div class="card__avatar px-3 pb-3 pt-2">
-                <img class="img-fluid shadow" :src=objDoctor.image alt="">
+                <img class="img-fluid shadow" :src=objUser.image alt="">
             </div>
             <div>
-                <span class="card__title fw-lighter"> {{ objDoctor.name }} </span>
-                <span class="card__title"> {{ ' ' + objDoctor.lastname }} </span>
+                <span class="card__title fw-lighter"> {{ objUser.name }} </span>
+                <span class="card__title"> {{ ' ' + objUser.lastname }} </span>
             </div>
             <div>
                 <button v-for="specialization in specializations" :key="specialization.id" type="button"
                     class="btn_specialization m-1 shadow-sm">{{ specialization.name }}</button>
             </div>
             <div class="card__wrapper">
-                <router-link :to="{ name: 'doctor.show', params: { id: objDoctor.id } }"
+                <router-link :to="{ name: 'doctor.show', params: { id: objUser.id } }"
                     class="card__btn mx-1 fw-semibold p-2">
                     Info </router-link>
                 <button class="card__btn card__btn-solid mx-1 fw-semibold">Contatta</button>

@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import Appcard from './Appcard.vue';
+import Appcard from './AppCard.vue';
 import { store } from '../store';
 
 export default {
@@ -12,6 +12,7 @@ export default {
     data() {
         return {
             arrDoctors: [],
+            arrUsers: [],
             currentPage: 1,
             nPages: 0,
             store,
@@ -32,7 +33,7 @@ export default {
                     },
                 })
                 .then(response => {
-                    this.arrDoctors = response.data.results.data
+                    this.arrUsers = response.data.results.data
                     this.nPages = response.data.results.last_page
                 });
         },
@@ -47,7 +48,7 @@ export default {
 
 <template>
     <div class="d-flex m-5">
-        <Appcard v-for="doctor in arrDoctors" :key="doctor.id" :objDoctor="doctor" />
+        <Appcard v-for="user in arrUsers" :key="user.id" :objUser="user" />
     </div>
 
     <div class="nav_bar mt-5">
