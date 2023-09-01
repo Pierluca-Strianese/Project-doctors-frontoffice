@@ -1,88 +1,127 @@
 <script>
-import UsersList from "../components/UsersList.vue";
-export default {
+import { store } from '../store.js';
+import UsersList from "../components/UsersList.vue"
 
+import axios from 'axios';
+
+export default {
+  name: 'AppHome',
   data() {
     return {
-      searchString: '',
-    };
+      store,
+      doctor: null,
+    }
   },
-
   components: {
     UsersList,
   },
+  methods: {
+    getInputSpec(specialization) {
+      this.store.inputSpecialization = specialization;
+    },
+    getSponsoredDoc() {
+      let url = `${this.store.baseUrl}/doctors?specializations=&min_stars=0&min_reviews=0&only_sponsored=1`;
+      axios.get(url)
+        .then(response => {
+          this.store.sponsoredDoctors = response.data.results.data;
+        }
+        )
+    },
+  },
+
+ 
+
+  mounted() {
+    this.getSponsoredDoc();
+
+  },
+
 };
+
 </script>
 
 <template>
-  <!-- Image Header -->
-  <div class="jumbo_1 d-flex align-items-center">
-    <div class="container text-center">
-      <div class="row align-items-center">
-        <div class="col-6">
-          <h1>Benvenuto su BDoctors</h1>
-          <h4>Trova il Dottore Giusto per Te!</h4>
-          <div class="bts">
-            <a href="#home_docts">
-              <button class="btn btn-outline-primary m-3">Trova Dottori</button>
-            </a>
-            <!-- <button class="btn btn-outline-primary m-3">Button 2</button> -->
+  <div id="jumbotron">
+
+    <div class="mb-4 rounded-3">
+      <div class="container position-relative">
+        <h1 id="titolo-jumbo" class="display-5 fw-bold text-light">Cerca il tuo dottore</h1>
+        <span class="fs-4 d-block mb-5">Cerca tra 200 000 Specialisti e Medici di Medicina Generale.</span>
+        <div class="d-flex">
+          <div class="input-group input-group-lg" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg" placeholder="es. Cardiologo"
+              v-model="this.store.inputSpecialization">
+            <div class="dropdown w-100">
+              <ul class="dropdown-menu w-100">
+                <li v-for="( specialization, i ) in  this.store.specializations "><a class="dropdown-item" href="#"
+                    @click="this.getInputSpec(specialization.name)">{{
+                      specialization.name }}</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="col-6">
-          <img src="src/assets/img/doc3jumbo.png" alt="">
+          <router-link :to="{ name: 'doctor_list' }" id="search-btn" class="btn btn-lg z-3"
+            type="button">Cerca</router-link>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SEARCH BAR -->
-  <!-- <div class="container_one">
-    <h2 id="home_docts" class="mt-4 text-center"> Cerca lo specialista più adatto a te <i
-        class="fa-solid fa-magnifying-glass"></i></h2>
-    <div class="input-group rounded">
-      <input type="search" name="q" class="form-control rounded" placeholder="Search" aria-label="Search"
-        aria-describedby="search-addon" />
-      <span class="input-group-text border-0" id="search-addon" >
-        <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
-      </span>
-    </div>
-  </div> -->
-
-  <div class="container-fluid">
-    <h2 id="home_docts" class="mt-4 text-center"> Cerca lo specialista più adatto a te
-    </h2>
-
-    <form class="d-flex my-5 col-6 offset-3" role="search"
-      @submit.prevent="$router.push({ name: 'doctors.index', query: { q: searchString } })">
-      <input class="form-control me-2" type="search" placeholder="Cerca qui..." aria-label="Search" name="q"
-        v-model="searchString">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-
-  </div>
-  <!-- END SEARCH BAR -->
-
   <div class="section_two">
     <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
     <UsersList />
   </div>
+  
 </template>
 
 <style lang="scss" scoped>
-@use "../style/general.scss" as *;
+@import '../style/partials/_variables.scss';
 
-.jumbo_1 {
-  /* The image used */
-  background: linear-gradient(180deg, $bg-color-2 20%, $bg-color 100%);
-  max-width: 100%;
-  height: 94vh;
-  // Da sistemare height bg perché NON responsive
-  background-size: cover;
-  background-position: center;
+#jumbotron {
+  background-color: $primary-color;
+  padding: 275px 0 70px;
 }
 
-img {
-  height: 94vh;
+#search-btn {
+  background-color: $secondary-color;
+  color: white;
+  border-radius: 0 12px 12px 0;
+}
+
+.jumbo-img {
+  height: 500px;
+  bottom: 0;
+  right: 0;
+}
+
+@media all and (max-width: 1200px) {
+  .jumbo-img {
+    height: 400px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .jumbo-img {
+    display: none;
+  }
+
+  #jumbotron {
+    padding: 150px 0 70px;
+  }
+
+  #titolo-jumbo {
+    font-size: 60px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  #titolo-jumbo {
+    font-size: 60px;
+  }
+
+  #jumbotron {
+    padding: 150px 0 70px;
+  }
 }
 </style>
