@@ -18,11 +18,11 @@ export default {
                 <img class="img-fluid shadow" :src=objUser.image alt="">
             </div>
             <div>
-                <span class="card__title fw-lighter"> {{ objUser.name }} </span>
+                <!-- <span class="card__title fw-lighter"> {{ objUser.name }} </span> -->
                 <span class="card__title"> {{ ' ' + objUser.lastname }} </span>
             </div>
             <div>
-                <button v-for="specialization in specializations" :key="specialization.id" type="button"
+                <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
                     class="btn_specialization m-1 shadow-sm">{{ specialization.name }}</button>
             </div>
             <div class="card__wrapper">

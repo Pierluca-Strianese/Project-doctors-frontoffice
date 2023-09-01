@@ -12,19 +12,23 @@ export default {
         };
     },
 
-    methods: {
-        getUsers() {
-            axios
-                .get(this.store.baseUrl + 'api/users/?i=', {
-                    params: {
-                        i: this.id,
-                    },
-                })
-                .then(response => {
-                    this.arrDoctors = response.data.data
-                    this.nPages = response.data.last_page
-                });
-        },
+    mounted() {
+        const id = this.$route.params.id;
+
+        axios
+            .get(`${this.store.baseUrl}api/doctosrs/${id}`)
+            .then(response => {
+                if (response.data.success == true) {
+                    this.doctor = response.data.doctor;
+                    this.stats = response.data;
+                    console.log(this.stats.average_stars);
+
+
+                } else {
+                    this.$router.push({ name: 'not-found' });
+                }
+            })
+
     },
     watch: {
         currentPage() {
@@ -39,7 +43,7 @@ export default {
 </script>
 
 <template>
-    <h1> SONO LO SHOW </h1>
+    <h1> {{ arrDoctors.name }} </h1>
 </template>
 
 <style lang="scss" scoped>
