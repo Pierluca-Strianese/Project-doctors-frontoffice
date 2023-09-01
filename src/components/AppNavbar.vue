@@ -13,7 +13,7 @@
     <div class="container-fluid">
       <router-link :to="{ name: 'home' }" class="nav-link active" aria-current="page">
         <img class="icon" src="../assets/img/stethoscope.jpg" alt="">
-        <span class="me-3">AppleDoctor</span>
+        <span class="me-3">BDoctor</span>
       </router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
