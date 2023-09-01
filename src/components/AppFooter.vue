@@ -17,7 +17,7 @@ export default {
                             individuare il medico specialista perfetto per la tua patologia. Attraverso una vasta rete di
                             professionisti medici altamente qualificati, BDoctors ti mette in contatto con esperti in vari
                             campi medici, garantendo cure mirate e personalizzate.</p>
-                        <h3>We Accect</h3>
+                        <h3>We Accept</h3>
                         <div class="card-area">
                             <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'cc-visa']" />
                             <font-awesome-icon class="fs-5 p-1" :icon="['fab', 'cc-mastercard']" />
