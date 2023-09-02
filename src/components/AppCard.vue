@@ -26,10 +26,13 @@ export default {
                     class="btn_specialization m-1 shadow-sm">{{ specialization.name }}</button>
             </div>
             <div class="card__wrapper">
-                <router-link :to="{ name: 'doctor.show', params: { id: objUser.id } }"
+                <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
                     class="card__btn mx-1 fw-semibold p-2">
-                    Info </router-link>
+                    Info 
+                   
+                </router-link>
                 <button class="card__btn card__btn-solid mx-1 fw-semibold">Contatta</button>
+                
             </div>
         </div>
     </div>

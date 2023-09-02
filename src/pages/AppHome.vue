@@ -1,8 +1,10 @@
 <script>
 import { store } from '../store.js';
-import UsersList from "../components/UsersList.vue"
+import UsersList from "../components/UsersList.vue";
+
 
 import axios from 'axios';
+
 
 export default {
   name: 'AppHome',
@@ -14,27 +16,30 @@ export default {
   },
   components: {
     UsersList,
+   
   },
   methods: {
-    getInputSpec(specialization) {
-      this.store.inputSpecialization = specialization;
-    },
-    getSponsoredDoc() {
-      let url = `${this.store.baseUrl}/doctors?specializations=&min_stars=0&min_reviews=0&only_sponsored=1`;
-      axios.get(url)
-        .then(response => {
-          this.store.sponsoredDoctors = response.data.results.data;
-        }
-        )
-    },
+    // getInputSpec(specialization) {
+    //   this.store.inputSpecialization = specialization;
+    // },
+    // getSponsoredDoc() {
+    //   let url = `${this.store.baseUrl}/doctors?specializations=&min_stars=0&min_reviews=0&only_sponsored=1`;
+    //   axios.get(url)
+    //     .then(response => {
+    //       this.store.sponsoredDoctors = response.data.results.data;
+    //     }
+    //     )
+    // },
+
+
   },
 
  
 
-  mounted() {
-    this.getSponsoredDoc();
+  // mounted() {
+  //   this.getSponsoredDoc();
 
-  },
+  // },
 
 };
 
@@ -55,14 +60,15 @@ export default {
               v-model="this.store.inputSpecialization">
             <div class="dropdown w-100">
               <ul class="dropdown-menu w-100">
-                <li v-for="( specialization, i ) in  this.store.specializations "><a class="dropdown-item" href="#"
-                    @click="this.getInputSpec(specialization.name)">{{
-                      specialization.name }}</a></li>
+                <!-- <li v-for="( specialization, i ) in  this.store.specializations "><a class="dropdown-item" href="#"
+                        @click="this.getInputSpec(specialization.name)">{{specialization.name }}</a>
+                     </li> -->
               </ul>
             </div>
           </div>
-          <router-link :to="{ name: 'doctor_list' }" id="search-btn" class="btn btn-lg z-3"
-            type="button">Cerca</router-link>
+          <router-link :to="{ name: 'doctor_list' }" id="search-btn" class="btn btn-lg z-4"
+            type="button">Cerca
+          </router-link>
         </div>
       </div>
     </div>
@@ -72,7 +78,8 @@ export default {
     <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
     <UsersList />
   </div>
-  
+
+
 </template>
 
 <style lang="scss" scoped>
