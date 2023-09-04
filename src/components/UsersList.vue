@@ -11,7 +11,6 @@ export default {
 
     data() {
         return {
-            arrDoctors: [],
             arrUsers: [],
             currentPage: 1,
             nPages: 0,
@@ -42,15 +41,15 @@ export default {
         },
     },
 
-    
+
     watch: {
         currentPage() {
             this.getUsers();
         },
 
         "store.search"() {
-			this.getProjects();
-		},
+            this.getProjects();
+        },
     },
 
     created() {
@@ -62,11 +61,13 @@ export default {
 </script>
 
 <template>
-    <div class="d-flex m-5">
-        <Appcard v-for="user in arrUsers" :key="user.id" :objUser="user" />
+    <div class="d-flex justify-content-center m-5">
+        <div v-for="user in arrUsers" :key="user.id">
+            <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" />
+        </div>
     </div>
 
-    <div class="nav_bar mt-5">
+    <!-- <div class="nav_bar mt-5">
         <nav>
             <ul class="pagination pagination-sm">
                 <li v-for="page in nPages" :key="page" class="page-item" :class="{ active: page == currentPage }">
@@ -75,7 +76,7 @@ export default {
 
             </ul>
         </nav>
-    </div>
+    </div> -->
 </template>
 
 <style lang="scss" scoped>
