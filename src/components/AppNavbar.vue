@@ -41,6 +41,11 @@
           </li>
         </ul>
 
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link mx-3 btn btn-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,11 +79,9 @@
   width: 2rem;
 }
 
-.link{
+.link {
   text-decoration: none;
   color: black;
   font-weight: 600;
 }
-
-
 </style>
