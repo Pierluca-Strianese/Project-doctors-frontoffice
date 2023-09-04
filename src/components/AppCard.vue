@@ -27,20 +27,20 @@ export default {
                 <img class="img-fluid shadow" :src="getImageUrl(user.doctor.image)" alt="">
             </div>
             <div class="mb-2">
-                <span class="card__title fw-lighter"> {{ objUser.name }} </span>
-                <span class="card__title"> {{ ' ' + objUser.lastname }} </span>
+                <span class="card__title fw-lighter"> {{ user.name }} </span>
+                <span class="card__title"> {{ ' ' + user.lastname }} </span>
             </div>
             <div class="specialization_list">
-                <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
+                <button v-for="specialization in user.specializations" :key="specialization.id" type="button"
                     class="btn_specialization shadow-sm">{{ specialization.name }}</button>
             </div>
             <div class="card__wrapper border-top">
-                <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
+                <router-link :to="{ name: 'doctor.show', params: { slug: user.slug } }"
                     class="card__btn fw-semibold shadow-sm">
                     Info
 
                 </router-link>
-                <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
+                <router-link :to="{ name: 'doctor.show', params: { slug: user.slug } }"
                     class="card__btn card_2 fw-semibold shadow-sm">
                     Contatta
 
