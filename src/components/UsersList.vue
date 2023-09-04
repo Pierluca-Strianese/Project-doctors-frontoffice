@@ -11,7 +11,6 @@ export default {
 
     data() {
         return {
-            arrDoctors: [],
             arrUsers: [],
             currentPage: 1,
             nPages: 0,
@@ -26,18 +25,18 @@ export default {
         },
 
         getUsers() {
-            this.loader = true
+          
             axios
                 .get(this.store.baseUrl + 'api/users', {
                     params: {
                         page: this.currentPage,
                         q: this.store.search,
+                        // specialization: this.specializationId,
                     },
                 })
                 .then(response => {
-                    this.arrUsers = response.data.results.data
-                    this.nPages = response.data.results.last_page
-                    this.loader = false;
+                    this.arrUsers = response.data.results.data;
+                    this.nPages = response.data.results.last_page;
                 });
         },
     },
@@ -47,15 +46,14 @@ export default {
         currentPage() {
             this.getUsers();
         },
-
         "store.search"() {
-			this.getProjects();
+			this.getUsers();
 		},
+
     },
 
     created() {
         this.getUsers();
-
     },
 
 };
@@ -63,7 +61,10 @@ export default {
 
 <template>
     <div class="d-flex m-5">
-        <Appcard v-for="user in arrUsers" :key="user.id" :objUser="user" />
+       
+        <Appcard  v-for="user in arrUsers" :key="user.id" :user="user" />
+        
+       
     </div>
 
     <div class="nav_bar mt-5">

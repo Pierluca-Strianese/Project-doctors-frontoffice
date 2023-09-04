@@ -2,7 +2,7 @@
 import { store } from '../store';
 
 export default {
-    props: ['objUser'],
+    props: ['user'],
 
     data() {
         return {
@@ -24,18 +24,18 @@ export default {
     <div class="container d-flex justify-content-center ">
         <div class="card p-3 shadow">
             <div class="card__avatar px-3 pb-3 pt-2">
-                <img class="img-fluid shadow" :src="getImageUrl(objUser.doctor.image)" alt="">
+                <img class="img-fluid shadow" :src="getImageUrl(user.doctor.image)" alt="">
             </div>
             <div>
-                <!-- <span class="card__title fw-lighter"> {{ objUser.name }} </span> -->
-                <span class="card__title"> {{ ' ' + objUser.lastname }} </span>
+                <span class="card__title fw-lighter"> {{ user.name }} </span>
+                <span class="card__title"> {{ ' ' + user.lastname }} </span>
             </div>
             <div>
-                <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
+                <button v-for="specialization in user.specializations" :key="specialization.id" type="button"
                     class="btn_specialization m-1 shadow-sm">{{ specialization.name }}</button>
             </div>
             <div class="card__wrapper">
-                <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
+                <router-link :to="{ name: 'doctor.show', params: { slug: user.slug } }"
                     class="card__btn mx-1 fw-semibold p-2">
                     Info 
                    
