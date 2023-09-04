@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from "./pages/AppHome.vue";
-import AppDoctorList from "./pages/AppDoctorList.vue";
+import AppDoctorList from './pages/AppDoctorList.vue';
 import AppLogIn from "./pages/AppLogIn.vue";
 import AppRegister from "./pages/AppRegister.vue";
 import AppSearch from "./pages/AppSearch.vue";
@@ -36,22 +36,12 @@ const router = createRouter({
     //   component: page404,
     // },
     {
-      path: "/login",
-      name: "login",
-      component: AppLogIn,
-    },
-    {
-      path: "/register",
-      name: "register",
-      component: AppRegister,
-    },
-    {
       path: "/search",
       name: "search",
       component: AppSearch,
     },
     {
-      path: "/doctor/:id",
+      path: "/doctor/:slug",
       name: "doctor.show",
       component: AppDoctorShow,
     },

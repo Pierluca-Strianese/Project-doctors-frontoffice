@@ -1,8 +1,10 @@
 <script>
 import { store } from '../store.js';
-import UsersList from "../components/UsersList.vue"
+import UsersList from "../components/UsersList.vue";
+
 
 import axios from 'axios';
+
 
 export default {
   name: 'AppHome',
@@ -10,31 +12,35 @@ export default {
     return {
       store,
       doctor: null,
+
     }
   },
   components: {
     UsersList,
+
   },
   methods: {
-    getInputSpec(specialization) {
-      this.store.inputSpecialization = specialization;
-    },
-    getSponsoredDoc() {
-      let url = `${this.store.baseUrl}/doctors?specializations=&min_stars=0&min_reviews=0&only_sponsored=1`;
-      axios.get(url)
-        .then(response => {
-          this.store.sponsoredDoctors = response.data.results.data;
-        }
-        )
-    },
+    // getInputSpec(specialization) {
+    //   this.store.inputSpecialization = specialization;
+    // },
+    // getSponsoredDoc() {
+    //   let url = `${this.store.baseUrl}/doctors?specializations=&min_stars=0&min_reviews=0&only_sponsored=1`;
+    //   axios.get(url)
+    //     .then(response => {
+    //       this.store.sponsoredDoctors = response.data.results.data;
+    //     }
+    //     )
+    // },
+
+
   },
 
 
 
-  mounted() {
-    this.getSponsoredDoc();
+  // mounted() {
+  //   this.getSponsoredDoc();
 
-  },
+  // },
 
 };
 
@@ -43,20 +49,36 @@ export default {
 <template>
   <div class="jumbotron">
 
-    <div class="container text-center">
-      <div class="row align-items-center">
-        <div class="col-6">
-          <h3>Cerca il tuo dottore</h3>
-          <h6>Tra 200.000 Specialisti e Medici di Medicina Generale</h6>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+    <div class="mb-4 rounded-3">
+      <div class="container position-relative">
+        <h1 id="titolo-jumbo" class="display-5 fw-bold text-light">Cerca il tuo dottore</h1>
+        <span class="fs-4 d-block mb-5">Cerca tra 200 000 Specialisti e Medici di Medicina Generale.</span>
+        <div class="d-flex">
+
+
+          <!-- <div class="input-group input-group-lg" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="input-group-text" id="inputGroup-sizing-lg">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg" placeholder="es. Cardiologo"
+              v-model="this.store.inputSpecialization">
+            <div class="dropdown w-100">
+              <ul class="dropdown-menu w-100">
+                <li v-for="( specialization, i ) in  this.store.specializations "><a class="dropdown-item" href="#"
+                        @click="this.getInputSpec(specialization.name)">{{specialization.name }}</a>
+                     </li>
+              </ul>
+            </div>
+          </div> -->
+          <!-- <div>
+            <router-link :to="{ name: 'doctor_list' }" id="search-btn" class="btn btn-lg z-4"
+              type="button">Cerca
+            </router-link>
+          </div> -->
+
         </div>
-        <div class="col-3">
-        </div>
-        <div class="col-3">
-        </div>
+
       </div>
     </div>
 
