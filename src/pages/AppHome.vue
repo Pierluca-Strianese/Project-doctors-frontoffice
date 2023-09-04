@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import { store } from '../store.js';
 import UsersList from "../components/UsersList.vue";
 
@@ -7,15 +8,16 @@ export default {
   data() {
     return {
       store,
-      doctor: null,
-
     }
   },
   components: {
     UsersList,
 
   },
-
+  methods: {
+    
+  },
+  
 };
 
 </script>
@@ -28,10 +30,10 @@ export default {
         <div class="col-6">
           <h3>Cerca il tuo dottore</h3>
           <h6>Tra 200.000 Specialisti e Medici di Medicina Generale</h6>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          
+           
+
+
         </div>
         <div class="col-3">
         </div>
@@ -44,7 +46,7 @@ export default {
 
   <div class="section_two">
     <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
-    <UsersList />
+     <UsersList />
   </div>
 </template>
 

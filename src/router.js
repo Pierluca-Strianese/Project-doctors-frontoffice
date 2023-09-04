@@ -27,6 +27,7 @@ const router = createRouter({
       name: "doctor.show",
       component: AppDoctorShow,
     },
+ 
   ],
 });
 
