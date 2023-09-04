@@ -11,6 +11,7 @@ export default {
 
     data() {
         return {
+            arrDoctors: [],
             arrUsers: [],
             currentPage: 1,
             nPages: 0,
@@ -30,7 +31,7 @@ export default {
                 .get(this.store.baseUrl + 'api/users', {
                     params: {
                         page: this.currentPage,
-                        q: this.searchQuery,
+                        q: this.store.search,
                     },
                 })
                 .then(response => {
@@ -46,10 +47,15 @@ export default {
         currentPage() {
             this.getUsers();
         },
+
+        "store.search"() {
+			this.getProjects();
+		},
     },
 
     created() {
         this.getUsers();
+
     },
 
 };
