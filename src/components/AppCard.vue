@@ -1,12 +1,21 @@
 <script>
+import { store } from '../store';
 
 export default {
     props: ['objUser'],
 
     data() {
         return {
+            store,
         }
-    }
+    },
+
+    methods: {
+      getImageUrl(image) {
+        return image
+            ? this.store.baseUrl + 'storage/' + image : this.store.baseUrl + 'storage/default.jpg'
+      }  
+    },
 }
 
 </script>
@@ -15,7 +24,7 @@ export default {
     <div class="container d-flex justify-content-center ">
         <div class="card p-3 shadow">
             <div class="card__avatar px-3 pb-3 pt-2">
-                <img class="img-fluid shadow" :src=objUser.image alt="">
+                <img class="img-fluid shadow" :src="getImageUrl(objUser.doctor.image)" alt="">
             </div>
             <div>
                 <!-- <span class="card__title fw-lighter"> {{ objUser.name }} </span> -->

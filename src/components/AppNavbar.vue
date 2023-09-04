@@ -1,11 +1,14 @@
 <script>
-// export default {
-//     data() {
-//         return {
-//             searchString: "",
-//         };
-//     },
-// };
+import { store } from "../store";
+export default {
+  data() {
+      return {
+        // searchString: "",
+        store,
+      };
+  },
+
+};
 </script>
 
 <template>
@@ -40,6 +43,21 @@
             </ul>
           </li>
         </ul>
+
+      <!-- <div class="container-fluid d-flex justify-content-end">
+        <form class="d-flex" role="search" @submit.prevent="executeSearch">
+            <input 
+                  class="form-control me-2" 
+                  type="search" 
+                  placeholder="Search" 
+                  aria-label="Search" 
+                  name="q"
+                  v-model="searchString" />
+            <button class="btn btn-outline-success" type="submit">
+                Search
+            </button>
+        </form>
+      </div> -->
 
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">

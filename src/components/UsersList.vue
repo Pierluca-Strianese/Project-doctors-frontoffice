@@ -26,23 +26,38 @@ export default {
         },
 
         getUsers() {
+            this.loader = true
             axios
                 .get(this.store.baseUrl + 'api/users', {
                     params: {
                         page: this.currentPage,
+                        q: this.store.search,
                     },
                 })
                 .then(response => {
                     this.arrUsers = response.data.results.data
                     this.nPages = response.data.results.last_page
+                    this.loader = false;
                 });
         },
+    },
+
+    
+    watch: {
+        currentPage() {
+            this.getUsers();
+        },
+
+        "store.search"() {
+			this.getProjects();
+		},
     },
 
     created() {
         this.getUsers();
 
     },
+
 };
 </script>
 
