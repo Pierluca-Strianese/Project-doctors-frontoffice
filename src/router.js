@@ -1,9 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from "./pages/AppHome.vue";
-import AppDoctorList from './pages/AppDoctorList.vue';
-import AppLogIn from "./pages/AppLogIn.vue";
-import AppRegister from "./pages/AppRegister.vue";
+import AppDoctorList from "./pages/AppDoctorList.vue";
 import AppSearch from "./pages/AppSearch.vue";
 import AppDoctorShow from "./pages/AppDoctorShow.vue";
 
