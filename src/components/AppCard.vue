@@ -2,7 +2,7 @@
 import { store } from '../store';
 
 export default {
-    props: ['objUser'],
+    props: ['user'],
 
     data() {
         return {
@@ -24,7 +24,7 @@ export default {
     <div class="container d-flex justify-content-center ">
         <div class="card p-3 shadow">
             <div class="card__avatar px-3 pb-3 pt-2">
-                <img class="img-fluid shadow" :src="getImageUrl(objUser.doctor.image)" alt="">
+                <img class="img-fluid shadow" :src="getImageUrl(user.doctor.image)" alt="">
             </div>
             <div class="mb-2">
                 <span class="card__title fw-lighter"> {{ objUser.name }} </span>

@@ -25,17 +25,18 @@ export default {
         },
 
         getUsers() {
-            this.loader = true
+
             axios
                 .get(this.store.baseUrl + 'api/users', {
                     params: {
                         page: this.currentPage,
                         q: this.store.search,
+                        // specialization: this.specializationId,
                     },
                 })
                 .then(response => {
-                    this.arrUsers = response.data.results.data
-                    this.nPages = response.data.results.last_page
+                    this.arrUsers = response.data.results.data;
+                    this.nPages = response.data.results.last_page;
                 });
         },
     },
@@ -45,10 +46,10 @@ export default {
         currentPage() {
             this.getUsers();
         },
-
         "store.search"() {
-            this.getProjects();
+            this.getUsers();
         },
+
     },
 
     created() {
