@@ -59,9 +59,9 @@ export default {
 </script>
 
 <template>
-    <div class="d-flex justify-content-center m-5">
+    <div class="d-flex justify-content-center m-5 flex-wrap">
         <div v-for="user in arrUsers" :key="user.id">
-            <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" />
+            <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" class="mb-4" />
         </div>
     </div>
 
