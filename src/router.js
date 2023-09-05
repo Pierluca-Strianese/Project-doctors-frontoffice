@@ -5,6 +5,8 @@ import AppSearch from "./pages/AppSearch.vue";
 import AppDoctorShow from "./pages/AppDoctorShow.vue";
 import AppDoctorIndex from "./pages/AppDoctorIndex.vue";
 
+
+
 // Importiamo i componenti che definiscono le varie pagine
 
 const router = createRouter({
@@ -30,6 +32,20 @@ const router = createRouter({
       name: "doctor.show",
       component: AppDoctorShow,
     },
+
+    {
+      path: "/about",
+      name: "about",
+      component: AppDoctorIndex,
+    },
+
+    {
+      path: "/contact",
+      name: "contact",
+      component: AppDoctorShow,
+    },
+
+    
   ],
 });
 
