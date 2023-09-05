@@ -43,7 +43,7 @@ export default {
 
   <div class="section_two">
     <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
-    <UsersList />
+    <!-- <UsersList /> -->
   </div>
 </template>
 
