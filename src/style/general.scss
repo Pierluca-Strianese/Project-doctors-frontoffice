@@ -29,3 +29,24 @@ $bg-color-2: rgb(238, 238, 238);
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+
+.specialization_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    margin-bottom: 1rem;
+
+    .btn_specialization {
+        width: fit-content;
+        height: fit-content;
+        margin: .2rem;
+        padding: .1rem .6rem;
+        background-color: $bg-color;
+        border-radius: 30rem;
+        border: 1px outset #dadada;
+        color: #969595;
+        font-size: .8rem;
+    }
+}

@@ -2,7 +2,7 @@
 import { store } from '../store';
 
 export default {
-    props: ['objUser'],
+    props: ['user'],
 
     data() {
         return {
@@ -11,10 +11,10 @@ export default {
     },
 
     methods: {
-      getImageUrl(image) {
-        return image
-            ? this.store.baseUrl + 'storage/' + image : this.store.baseUrl + 'storage/default.jpg'
-      }  
+        getImageUrl(image) {
+            return image
+                ? this.store.baseUrl + 'storage/' + image : this.store.baseUrl + 'storage/default.jpg'
+        }
     },
 }
 
@@ -24,24 +24,28 @@ export default {
     <div class="container d-flex justify-content-center ">
         <div class="card p-3 shadow">
             <div class="card__avatar px-3 pb-3 pt-2">
-                <img class="img-fluid shadow" :src="getImageUrl(objUser.doctor.image)" alt="">
+                <img class="img-fluid shadow" :src="getImageUrl(user.doctor.image)" alt="">
             </div>
-            <div>
-                <!-- <span class="card__title fw-lighter"> {{ objUser.name }} </span> -->
-                <span class="card__title"> {{ ' ' + objUser.lastname }} </span>
+            <div class="mb-2">
+                <span class="card__title fw-lighter"> {{ user.name }} </span>
+                <span class="card__title"> {{ ' ' + user.lastname }} </span>
             </div>
-            <div>
-                <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
-                    class="btn_specialization m-1 shadow-sm">{{ specialization.name }}</button>
+            <div class="specialization_list">
+                <button v-for="specialization in user.specializations" :key="specialization.id" type="button"
+                    class="btn_specialization shadow-sm">{{ specialization.name }}</button>
             </div>
-            <div class="card__wrapper">
-                <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
-                    class="card__btn mx-1 fw-semibold p-2">
-                    Info 
-                   
+            <div class="card__wrapper border-top">
+                <router-link :to="{ name: 'doctor.show', params: { slug: user.slug } }"
+                    class="card__btn fw-semibold shadow-sm">
+                    Info
+
                 </router-link>
-                <button class="card__btn card__btn-solid mx-1 fw-semibold">Contatta</button>
-                
+                <router-link :to="{ name: 'doctor.show', params: { slug: user.slug } }"
+                    class="card__btn card_2 fw-semibold shadow-sm">
+                    Contatta
+
+                </router-link>
+
             </div>
         </div>
     </div>
@@ -56,6 +60,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 22rem;
+    width: 15rem;
     border-radius: 20px;
     background: $bg-color;
 
@@ -72,42 +78,44 @@ export default {
     }
 
     .card__wrapper {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 1rem;
+
         .card__btn {
-            margin-top: 1rem;
-            width: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6rem;
             height: 2rem;
+            margin: 0 .5rem;
             border: 2px solid $main-color;
+            text-decoration: none;
             border-radius: .6rem;
             font-size: .6rem;
             color: $main-color;
             background: $bg-color;
             text-transform: uppercase;
-            transition: all 1s ease;
+            transition: all .5s ease;
 
             &:hover {
-                box-shadow: 5vw 0 0 $main-color inset;
                 background: $main-color;
                 color: $bg-color;
             }
         }
 
-        .card__btn-solid {
+        .card_2 {
             background: $main-color;
             color: $bg-color;
 
             &:hover {
-                box-shadow: 5vw 0 0 $bg-color inset;
+                background: $bg-color;
                 color: $main-color;
             }
         }
-    }
-
-    .btn_specialization {
-        background-color: $bg-color;
-        border-radius: 30rem;
-        border: 1px outset #dadada;
-        color: #969595;
-        font-size: .9rem;
     }
 }
 
