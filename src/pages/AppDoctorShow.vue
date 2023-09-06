@@ -12,7 +12,7 @@ export default {
             doctor: [],
             // name: '', //Da inserire in un secondo momento nel form se si vuole
             email: '',
-            message: '',
+            text: '',
         };
     },
 
@@ -36,9 +36,9 @@ export default {
         },
 
         sendLead() {
-            axios.post(this.store.baseUrl + 'api/leads', {
+            axios.post(this.store.baseUrl + 'api/messages', {
                 email: this.email,
-                message: this.message,
+                text: this.text,
             })
                 .then(response => console.log('Server Contattato')); // MESSAGGIO DI TEST
         },
@@ -111,7 +111,7 @@ export default {
                     <div class="py-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Inserisci il tuo messaggio</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                            placeholder="Il tuo messaggio" v-model="message"></textarea>
+                            placeholder="Il tuo messaggio" v-model="text"></textarea>
                     </div>
                     <button type="submit" class="btn btn-outline-success">Invia</button>
                 </div>
