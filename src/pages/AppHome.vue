@@ -1,6 +1,7 @@
 <script>
 import { store } from '../store.js';
-import UsersList from "../components/UsersList.vue";
+// import UsersList from "../components/UsersList.vue";
+import DoctorsList from "../components/DoctorsList.vue"
 
 export default {
   name: 'AppHome',
@@ -12,7 +13,8 @@ export default {
     }
   },
   components: {
-    UsersList,
+    // UsersList,
+    DoctorsList,
   },
 
 };
@@ -43,7 +45,9 @@ export default {
 
   <div class="section_two">
     <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
-    <UsersList />
+    <!-- <UsersList /> -->
+    <DoctorsList />
+    
   </div>
 </template>
 

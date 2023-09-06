@@ -1,17 +1,20 @@
 <script>
 import axios from 'axios';
 import Appcard from './AppCard.vue';
+import AppFilter from "./AppFilter.vue";
 import { store } from '../store';
 
 export default {
 
     components: {
         Appcard,
+        AppFilter,
     },
 
     data() {
         return {
             arrUsers: [],
+            arrSpecializations: [],
             currentPage: 1,
             nPages: 0,
             store,
@@ -31,7 +34,7 @@ export default {
                     params: {
                         page: this.currentPage,
                         q: this.store.search,
-                        // specialization: this.specializationId,
+                        specialization: this.specializationId,
                     },
                 })
                 .then(response => {
@@ -39,6 +42,17 @@ export default {
                     this.nPages = response.data.results.last_page;
                 });
         },
+
+        getSpecializations() {
+			axios.get(this.store.baseUrl + "api/specializations").then((response) => {
+				this.arrSpecializations = response.data.results;
+			});
+		},
+
+        manageChangeSpecialization(specializationId) {
+			this.specializationId = specializationId;
+			this.getUsers();
+		},
     },
 
 
@@ -54,11 +68,18 @@ export default {
 
     created() {
         this.getUsers();
+        this.getSpecializations();
     },
 };
 </script>
 
 <template>
+
+    <AppFilter
+		:arrSpecializations="arrSpecializations"
+		@changeSpecialization="manageChangeSpecialization($event)" 
+    />
+
     <div class="d-flex justify-content-center m-5 flex-wrap">
         <div v-for="user in arrUsers" :key="user.id">
             <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" class="mb-4" />
