@@ -55,19 +55,21 @@ export default {
 
 <template>
 
-<form class="d-flex w-100" role="search" @submit.prevent="executeSearch">
-        <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              name="q"
-              v-model="searchString" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-
-
 <h2 class="text-center fst-italic fw-bold">Lista Dottori</h2>
+
+<form class="d-flex w-100" role="search" @submit.prevent="executeSearch">
+  <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        name="q"
+        v-model="searchString" />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+
+
 <div class="d-flex justify-content-center flex-column">
 	<UsersList />
 </div>

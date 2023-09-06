@@ -78,6 +78,7 @@ export default {
     <AppFilter
 		:arrSpecializations="arrSpecializations"
 		@changeSpecialization="manageChangeSpecialization($event)" 
+        class="mt-4"
     />
 
     <div class="d-flex justify-content-center m-5 flex-wrap">
