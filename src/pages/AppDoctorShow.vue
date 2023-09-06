@@ -85,7 +85,7 @@ export default {
                     </div>
 
                     <div class="valutations">
-                        <h5>Valutazione: </h5>
+                        <h5>Valutazione: {{ doctor.averageRating }} </h5>
                     </div>
                 </div>
                 <!-- <h2 class="text-center mt-4">Specializations:</h2>
