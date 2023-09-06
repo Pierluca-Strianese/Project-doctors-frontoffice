@@ -10,6 +10,8 @@ export default {
             is404: false,
             user: [],
             doctor: [],
+            email: '',
+            message: '',
         };
     },
 
@@ -33,7 +35,10 @@ export default {
         },
 
         sendLead() {
-            axios.post(this.store.baseUrl + '/api/leads')
+            axios.post(this.store.baseUrl + 'api/leads', {
+                email: this.email,
+                message: this.message,
+            })
         }
 
 
@@ -101,14 +106,14 @@ export default {
                     <div class="py-3">
                         <label for="exampleFormControlInput1" class="form-label">Inidirizzo Email</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1"
-                            placeholder="Inserisci il tuo indirizzo email">
+                            placeholder="Inserisci il tuo indirizzo email" v-model="email">
                     </div>
                     <div class="py-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Inserisci il tuo messaggio</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                            placeholder="Il tuo messaggio"></textarea>
+                            placeholder="Il tuo messaggio" v-model="message"></textarea>
                     </div>
-                    <button type="button" class="btn btn-outline-success">Invia</button>
+                    <button type="submit" class="btn btn-outline-success">Invia</button>
                 </div>
 
                 <!-- <ul class="list-group">
