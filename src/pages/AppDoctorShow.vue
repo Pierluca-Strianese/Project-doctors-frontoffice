@@ -10,6 +10,7 @@ export default {
             is404: false,
             user: [],
             doctor: [],
+            // name: '', //Da inserire in un secondo momento nel form se si vuole
             email: '',
             message: '',
         };
@@ -39,9 +40,8 @@ export default {
                 email: this.email,
                 message: this.message,
             })
-        }
-
-
+                .then(response => console.log('Server Contattato')); // MESSAGGIO DI TEST
+        },
     },
 
     created() {
