@@ -15,11 +15,7 @@ export default {
           <span class="me-3">BDoctor</span>
         </router-link>
       </div>
-      <div>
-        <router-link :to="{ name: 'user.index' }" class="nav-link active">
-          <span class="me-3">Dottori</span>
-        </router-link>
-      </div>
+      
 
       <!-- DIV CONTATTA DI PROVA PER MAIL TRAP -->
       <div>

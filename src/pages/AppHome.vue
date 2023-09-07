@@ -28,11 +28,12 @@ export default {
       <div class="row align-items-center">
         <div class="col-6">
           <h3>Cerca il tuo dottore</h3>
-          <h6>Tra 200.000 Specialisti e Medici di Medicina Generale</h6>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          <h6> Cerca il dottore che fa per te tra 200.000 Specialisti e Medici di Medicina Generale</h6>
+          <button class="text-center" style="background-color: $bg-color; color: black; padding: 10px 20px; border-radius: 5px; border: 2px solid black;">
+            <router-link :to="{ name: 'user.index' }" class="nav-link active">
+              <span class="">Cerca dottore</span>
+            </router-link>
+          </button>
         </div>
         <div class="col-3">
         </div>
