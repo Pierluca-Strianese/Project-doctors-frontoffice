@@ -41,7 +41,6 @@ export default {
             <button class="text-center show-doc">
               <router-link :to="{ name: 'user.index' }" class="nav-link active">
                 <span class="">Mostra tutti i Dottori</span>
-
               </router-link>
             </button>
           </div>

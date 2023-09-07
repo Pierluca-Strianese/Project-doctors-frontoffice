@@ -38,15 +38,9 @@ export default {
             <!-- SPECIALIZZAZIONI DOC -->
             <div class="specialization_list">
 
-                <div class="container text-center">
-                    <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
-                        class="btn_specialization show-spec col" id="deletemetoactivate-truncateLongTexts">{{
-                            specialization.name
-                        }}</button>
-                </div>
-
-
-
+                <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
+                    class="btn_specialization show-spec" id="truncateLongTexts">{{ specialization.name
+                    }}</button>
             </div>
 
 
@@ -68,7 +62,7 @@ export default {
 @use "../style/general.scss" as *;
 
 #truncateLongTexts {
-    width: 150px;
+    width: 100px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -82,7 +76,7 @@ export default {
     align-items: center;
     justify-content: center;
     height: 28rem;
-    width: 20rem;
+    width: 22rem;
     background: $bg-color;
 }
 
@@ -127,14 +121,11 @@ export default {
             background: $bg-color;
             text-transform: uppercase;
             transition: all .5s ease;
-            background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
 
             &:hover {
                 background: $main-color;
                 color: $bg-color;
             }
-
-
         }
 
         .card_2 {
@@ -172,7 +163,8 @@ export default {
     justify-content: center;
     outline: none;
     cursor: pointer;
-
+    width: 150px;
+    height: 50px;
     background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
     border-radius: 30px;
     border: 1px solid #8F9092;
