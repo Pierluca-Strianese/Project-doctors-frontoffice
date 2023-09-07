@@ -25,21 +25,28 @@ export default {
         <div class="card effect p-3 ">
             <div class="card__avatar px-3 pb-3 pt-2">
                 <!-- FOTO DOC -->
-                <img class="img-fluid mb-3" :src="getImageUrl(objUser.doctor.image)" alt="">
+                <img class="img-fluid" :src="getImageUrl(objUser.doctor.image)" alt="">
             </div>
 
             <!-- NOME DOC -->
-            <div class="mb-3">
+            <div class="mb-2">
 
                 <span class="card__title lastname fw-semibold"> {{ 'Dott. ' + objUser.lastname }} </span>
                 <span class="card__title name fw-light"> {{ ' ' + objUser.name }} </span>
             </div>
 
             <!-- SPECIALIZZAZIONI DOC -->
-            <div class="specialization_list d-flex flex-column">
-                <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
-                    class="btn_specialization show-spec" id="deletemetoactivate-truncateLongTexts">{{ specialization.name
-                    }}</button>
+            <div class="specialization_list">
+
+                <div class="container text-center">
+                    <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
+                        class="btn_specialization show-spec col" id="deletemetoactivate-truncateLongTexts">{{
+                            specialization.name
+                        }}</button>
+                </div>
+
+
+
             </div>
 
 
@@ -61,10 +68,11 @@ export default {
 @use "../style/general.scss" as *;
 
 #truncateLongTexts {
-    width: 100px;
+    width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* This is where the magic happens. */
 }
 
 .card {
@@ -73,9 +81,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 26rem;
-    width: 18rem;
-    // border-radius: 20px;
+    height: 28rem;
+    width: 20rem;
     background: $bg-color;
 }
 
@@ -110,22 +117,24 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 6rem;
-            height: 2rem;
-            margin: 0 .5rem;
+            width: 8rem;
+            height: 2.5rem;
             border: 2px solid $main-color;
             text-decoration: none;
-            border-radius: .6rem;
-            font-size: .6rem;
+            border-radius: 1rem;
+            font-size: .7rem;
             color: $main-color;
             background: $bg-color;
             text-transform: uppercase;
             transition: all .5s ease;
+            background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
 
             &:hover {
                 background: $main-color;
                 color: $bg-color;
             }
+
+
         }
 
         .card_2 {
@@ -147,8 +156,8 @@ export default {
 
     .img-fluid {
         border-radius: 100%;
-        width: 120px;
-        height: 120px;
+        width: 160px;
+        height: 160px;
         object-fit: cover;
         object-position: center;
     }
@@ -163,8 +172,7 @@ export default {
     justify-content: center;
     outline: none;
     cursor: pointer;
-    width: 150px;
-    height: 50px;
+
     background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
     border-radius: 30px;
     border: 1px solid #8F9092;
@@ -175,11 +183,11 @@ export default {
     text-shadow: 0 1px #fff;
 }
 
-button:hover {
+.show-spec:hover {
     box-shadow: 0 1px 1px 1px #FCFCFC, 0 1px 1px #00bdcd, 0 -1px 1px #CECFD1, 0 -1px 1px #00bdcd, inset 0 0 1px 1px #CECFD1;
 }
 
-button:active {
+.show-spec:active {
     box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
 }
 </style>

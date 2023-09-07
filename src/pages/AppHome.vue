@@ -57,7 +57,7 @@ export default {
   </div>
 
   <div class="section_two">
-    <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
+    <h2 class="mt-4 text-center "> I nostri migliori medici </h2>
     <!-- <UsersList /> -->
     <DoctorsList />
 
@@ -82,7 +82,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 95vh;
 }
 
 .container {
