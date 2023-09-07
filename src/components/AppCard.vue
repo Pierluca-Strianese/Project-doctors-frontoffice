@@ -43,7 +43,6 @@ export default {
                 <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
                     class="card__btn card_2 fw-semibold shadow-sm">
                     Contatta
-
                 </router-link>
 
             </div>
