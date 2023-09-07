@@ -7,47 +7,40 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <div>
-        <router-link :to="{ name: 'home' }" class="nav-link active" aria-current="page">
-          <img class="icon" src="../assets/img/stethoscope.jpg" alt="">
-          <span class="me-3">BDoctor</span>
-        </router-link>
-      </div>
-      
+ <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
+    <div class="container">
 
-      <!-- DIV CONTATTA DI PROVA PER MAIL TRAP -->
-      <div>
-        <router-link :to="{ name: 'contact' }" class="nav-link active">
-          <span class="me-3">Contatta</span>
-        </router-link>
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand">
+          <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
+        </a>
+        <h2 class="text-logo mb-0">Bdoctors</h2>
       </div>
 
-      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link mx-3 btn btn-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Accedi
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls=" navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto align-middle">
+          
+          <li class="nav-link flex-column text-center me-3">
+            <a class="my-btn" href="http://localhost:8000/register">
+              Sei un dottore? Registrati!
             </a>
-
-            <ul class="dropdown-menu dropdown-menu-end me-3">
-              <li>
-                <a href="http://localhost:8000/login" class="link px-3 py-1">Login</a>
-              </li>
-              <li>
-                <a href="http://localhost:8000/register" class="link px-3 py-1">Register</a>
-              </li>
-            </ul>
           </li>
+
         </ul>
       </div>
+
     </div>
   </nav>
 </template>
 
 <style lang="scss">
 @import "../node_modules/bootstrap/scss/bootstrap";
+
 
 .navbar {
   min-height: 6vh;
