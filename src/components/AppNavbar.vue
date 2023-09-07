@@ -31,6 +31,14 @@ export default {
             </a>
           </li>
 
+          <li class="nav-link flex-column text-center me-3">
+            <a class="my-btn" href="http://localhost:8000/login">
+              Accedi
+            </a>
+          </li>
+
+
+
         </ul>
       </div>
 
@@ -41,6 +49,51 @@ export default {
 <style lang="scss">
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+a.my-btn {
+  text-decoration: none;
+  border-radius: 25px;
+  color: white;
+  background-color: #00C3A5;
+  padding: .5rem 1rem;
+  transition: .25s;
+  border: 0px;
+
+  &:hover {
+    background-color: #037066;
+    color: whitesmoke;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+}
+
+li {
+  list-style-type: none;
+
+  a {
+    text-decoration: none;
+    color: white;
+    transition: border-bottom-color 1s ease-in-out;
+  }
+}
+
+
+
+select {
+  width: 300px;
+}
+
+.bg-nav {
+  background-color: #070617;
+  backdrop-filter: blur(50px);
+
+}
+
+.navbar {
+  min-height: 10vh;
+}
+
+.text-logo {
+  color: white;
+}
 
 .navbar {
   min-height: 6vh;
