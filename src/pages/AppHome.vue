@@ -29,12 +29,13 @@ export default {
         <div class="col-1"></div>
         <div class="col-5 d-flex flex-column justify-content-evenly first-col">
           <div>
-            <h1>Benvenuto in B-Doctor</h1>
+            <h1 class="border-bottom border-dark">Benvenuto in B-Doctor</h1>
           </div>
 
           <div class="">
             <!-- <h3 class="mb-4">Cerca il tuo dottore</h3> -->
-            <h6 class="mb-4"> Cerca qui il Dottore che fa per te tra 200.000 Specialisti e Medici di Medicina Generale
+            <h6 class="mb-4 "> Cerca qui il Dottore che fa per te tra 200.000 Specialisti e
+              Medici di Medicina Generale
             </h6>
 
             <button class="text-center show-doc">

@@ -24,20 +24,32 @@ export default {
     <div class="container d-flex justify-content-center ">
         <div class="card effect p-3 ">
             <div class="card__avatar px-3 pb-3 pt-2">
-                <img class="img-fluid " :src="getImageUrl(objUser.doctor.image)" alt="">
+                <!-- FOTO DOC -->
+                <img class="img-fluid mb-3" :src="getImageUrl(objUser.doctor.image)" alt="">
             </div>
-            <div class="mb-2">
-                <span class="card__title lastname"> {{ 'Dott. ' + objUser.lastname }} </span>
-                <span class="card__title name fw-lighter"> {{ ' ' + objUser.name }} </span>
+
+            <!-- NOME DOC -->
+            <div class="mb-3">
+
+                <span class="card__title lastname fw-semibold"> {{ 'Dott. ' + objUser.lastname }} </span>
+                <span class="card__title name fw-light"> {{ ' ' + objUser.name }} </span>
             </div>
-            <div class="specialization_list">
+
+            <!-- SPECIALIZZAZIONI DOC -->
+            <div class="specialization_list d-flex flex-column">
                 <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
-                    class="btn_specialization effect">{{ specialization.name }}</button>
+                    class="btn_specialization show-spec" id="deletemetoactivate-truncateLongTexts">{{ specialization.name
+                    }}</button>
             </div>
+
+
+            <!-- BARRA SPAZIO -->
             <div class="card__wrapper border-top border-dark">
 
+
+                <!-- BOTTONE MOSTRA + -->
                 <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
-                    class="card__btn card_2 fw-semibold effect">
+                    class="card__btn card_2 fw-semibold effect mt-4">
                     Mostra di più
                 </router-link>
             </div>
@@ -48,13 +60,20 @@ export default {
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
 
+#truncateLongTexts {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .card {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 25rem;
+    height: 26rem;
     width: 18rem;
     // border-radius: 20px;
     background: $bg-color;
@@ -133,5 +152,34 @@ export default {
         object-fit: cover;
         object-position: center;
     }
+}
+
+
+
+
+
+.show-spec {
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    transition: all 0.1s ease;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 0 1px #fff;
+}
+
+button:hover {
+    box-shadow: 0 1px 1px 1px #FCFCFC, 0 1px 1px #00bdcd, 0 -1px 1px #CECFD1, 0 -1px 1px #00bdcd, inset 0 0 1px 1px #CECFD1;
+}
+
+button:active {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
 }
 </style>
