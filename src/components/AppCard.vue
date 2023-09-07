@@ -22,30 +22,24 @@ export default {
 
 <template>
     <div class="container d-flex justify-content-center ">
-        <div class="card p-3 shadow">
+        <div class="card effect p-3 ">
             <div class="card__avatar px-3 pb-3 pt-2">
-                <img class="img-fluid shadow" :src="getImageUrl(objUser.doctor.image)" alt="">
+                <img class="img-fluid " :src="getImageUrl(objUser.doctor.image)" alt="">
             </div>
             <div class="mb-2">
-                <span class="card__title fw-lighter"> {{ objUser.name }} </span>
-                <span class="card__title"> {{ ' ' + objUser.lastname }} </span>
+                <span class="card__title lastname"> {{ 'Dott. ' + objUser.lastname }} </span>
+                <span class="card__title name fw-lighter"> {{ ' ' + objUser.name }} </span>
             </div>
             <div class="specialization_list">
                 <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
-                    class="btn_specialization shadow-sm">{{ specialization.name }}</button>
+                    class="btn_specialization effect">{{ specialization.name }}</button>
             </div>
-            <div class="card__wrapper border-top">
+            <div class="card__wrapper border-top border-dark">
+
                 <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
-                    class="card__btn fw-semibold shadow-sm">
-                    Info
-
+                    class="card__btn card_2 fw-semibold effect">
+                    Mostra di più
                 </router-link>
-                <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
-                    class="card__btn card_2 fw-semibold shadow-sm">
-                    Contatta
-
-                </router-link>
-
             </div>
         </div>
     </div>
@@ -60,10 +54,18 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 22rem;
-    width: 15rem;
-    border-radius: 20px;
+    height: 25rem;
+    width: 18rem;
+    // border-radius: 20px;
     background: $bg-color;
+}
+
+.effect {
+    border-radius: 30px;
+    background: linear-gradient(145deg, #ffffff, #ffffff);
+    box-shadow: 33px 33px 66px #ffffff,
+        -33px -33px 66px #d0d0d0;
+
 
     .card__title {
         margin-top: 1rem;
