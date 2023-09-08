@@ -10,9 +10,14 @@ export default {
             is404: false,
             user: [],
             doctor: [],
-            // name: '', //Da inserire in un secondo momento nel form se si vuole
             email: '',
             text: '',
+            doctor_id: "", 
+            showSuccess: false,
+            isSending: false,
+            hasError: false,
+            isLoading: false,
+
         };
     },
 
@@ -35,15 +40,80 @@ export default {
                 });
         },
 
-        sendLead() {
-            axios.post(this.store.baseUrl + 'api/messages', {
-                email: this.email,
-                text: this.text,
-            })
-                .then(response => console.log('Server Contattato')); // MESSAGGIO DI TEST
+        
+
+    sendLead() {
+        this.isLoading = true;
+        this.isSending = true;
+
+        // Rimuovi la parte relativa all'ID del dottore e utilizza il parametro dello slug dalla URL
+        const doctorSlug = this.$route.params.slug;
+
+        // Verifica se l'utente ha selezionato un dottore
+        if (doctorSlug) {
+            const doctorIdPromise = axios.get(this.store.baseUrl + `api/doctors/${doctorSlug}`)
+                .then((response) => {
+                    const doctor = response.data.results;
+
+                    // Verifica se il dottore è stato trovato
+                    if (doctor) {
+                        return doctor.id;
+                    } else {
+                        // Gestisci il caso in cui il dottore non è stato trovato
+                        console.error("Dottore non trovato");
+                        throw new Error("Dottore non trovato");
+                    }
+                });
+
+            doctorIdPromise
+                .then((doctorId) => {
+                    // Ora puoi utilizzare doctorId come doctor_id nella tua richiesta POST
+                    axios
+                        .post(this.store.baseUrl + 'api/messages/' + doctorSlug, {
+                            email: this.email,
+                            text: this.text,
+                            doctor_id: doctorId,
+                        })
+                        .then((response) => {
+                            this.isSending = false;
+
+                            if (response.data.success) {
+                                this.showSuccess = true;
+                                this.resetForm(); // Ripulisci il form in caso di successo
+                            } else {
+                                this.hasError = true;
+                                this.resetForm(); // Ripulisci il form anche in caso di errore
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Errore durante la richiesta Axios:", error.response.data);
+                            this.isSending = false;
+                            this.hasError = true;
+                            this.errorMessage = "Si è verificato un errore durante l'invio del messaggio.";
+                            this.resetForm(); // Ripulisci il form in caso di errore
+                        });
+                })
+                .catch((error) => {
+                    // Gestisci eventuali errori durante il recupero del doctorId
+                    console.error("Errore durante la richiesta Axios:", error.message);
+                    this.isSending = false;
+                    this.hasError = true;
+                    this.errorMessage = "Si è verificato un errore durante il recupero delle informazioni del dottore.";
+                    this.resetForm(); // Ripulisci il form in caso di errore
+                });
+        } else {
+            console.error("Nessun dottore selezionato");
+            this.isSending = false;
+            this.hasError = true;
+            this.resetForm(); // Ripulisci il form in caso di errore
+        }
+    },
+        resetForm() {
+        this.email = "";
+        this.text = "";
         },
     },
-
+   
     created() {
         this.getUsers();
         this.getDoctors();
@@ -101,21 +171,59 @@ export default {
                         {{ promotion.name }}
                     </li>
                 </ul> -->
-                <div class="send_message my-5">
-                    <h2 class="text-center">Invia messaggio:</h2>
-                    <div class="py-3">
-                        <label for="exampleFormControlInput1" class="form-label">Inidirizzo Email</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
-                            placeholder="Inserisci il tuo indirizzo email" v-model="email">
-                    </div>
-                    <div class="py-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Inserisci il tuo messaggio</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                            placeholder="Il tuo messaggio" v-model="text"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-outline-success">Invia</button>
+
+
+                <!-- ************************** Contatto ****************************** -->
+
+                <div>
+                    <h1 class="text-3xl my-3.5 text-center">Contact Us</h1>
+
+                    <section>
+                        <div class="border-solid border-2 border-dark-600 my-6 m-auto block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700" v-if="!isSending">
+                            <form @submit.prevent="sendLead" v-if="!isSending">
+                                <div class="mb-6">
+                                    <label for="email" class="block font-bold text-gray-800 mb-1">Email</label>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="Email"
+                                        v-model="email"
+                                        required
+                                    />
+                                </div>
+
+                                <div class="mb-6">
+                                    <label for="text" class="block font-bold text-gray-800 mb-1">Message</label>
+                                    <textarea
+                                        class="form-control"
+                                        id="text"
+                                        rows="3"
+                                        placeholder="Message"
+                                        v-model="text"
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <!-- Aggiunto campo nascosto per doctor_id -->
+                                <input type="hidden" v-model="doctor_id" name="doctor_id" />
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    data-te-ripple-init
+                                    data-te-ripple-color="light"
+                                >
+                                    Send
+                                </button>
+                            </form>
+                        </div>
+                    </section>
                 </div>
 
+                <!-- ************************** Contatto ****************************** -->
+
+                
                 <!-- <ul class="list-group">
                         <li v-for="message in doctor.messages" :key="message.id" class="list-group-item">
                             <p>Email: {{ message.email }}</p>
