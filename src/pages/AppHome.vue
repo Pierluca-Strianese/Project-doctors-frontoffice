@@ -1,3 +1,4 @@
+
 <script>
 import { store } from '../store.js';
 // import UsersList from "../components/UsersList.vue";
@@ -22,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid bg-jumbo mt-5">
 
     <div class="container-fluid text-center">
       <div class="row align-items-center">
@@ -62,11 +63,12 @@ export default {
 
   </div>
 
-  <div class="main-home">
-    <section class="functions py-5">
-      <div class="container p-3 justify-content-around">
+  <div class="main-home border-top">
+    <section class="functions py-5 ">
+      <div class="container p-3">
         <div class="row justify-content-center">
-          <div class="col-11 mx-4 mb-3 col-md-8 col-lg-3 card-tool border rounded-4 p-3 text-center bg-white shadow">
+          <div
+            class="info-card col-11 mx-4 mb-3 col-md-8 col-lg-3 card-tool border rounded-4 p-3 text-center bg-white shadow">
             <div class="info-title d-flex flex-column justify-content-center">
               <i class=""></i> <!--AGGIUNGERE ICONA SE SI VUOLE -->
               <h5 class="mb-4">
@@ -111,14 +113,13 @@ export default {
 <style lang="scss" scoped>
 @import '../style/partials/_variables.scss';
 
-.container-fluid {
-  background-color: rgb(255, 255, 255);
+.bg-jumbo {
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(0, 189, 205, 1) 100%);
 }
 
 
 .first-col {
-  height: 70vh;
+  height: 40vh;
 }
 
 .jumbotron {
@@ -169,6 +170,8 @@ button:active {
 
 .functions {
   background-color: #E5E5E5;
+  background: linear-gradient(0deg, rgba(0, 189, 205, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
 
   .info-title {
     font-weight: bolder;

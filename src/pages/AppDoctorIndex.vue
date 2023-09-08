@@ -6,32 +6,32 @@ import { store } from '../store';
 
 export default {
 	data() {
-    return {
-      searchString: "",
-      store,
-    };
-  },
+		return {
+			searchString: "",
+			store,
+		};
+	},
 
-  methods: {
-    
-    async executeSearch() {
-      this.store.search = this.searchString;
-      await new Promise(() => {});
-      this.$router.push({
-        name: "user.index",
-        query: { q: this.searchString },
-      });
-    },
- 
+	methods: {
+
+		async executeSearch() {
+			this.store.search = this.searchString;
+			await new Promise(() => { });
+			this.$router.push({
+				name: "user.index",
+				query: { q: this.searchString },
+			});
+		},
+
 
 		clearSearch() {
 			this.store.search = null;
-			this.$router.push({query: {...this.$route.query, q: null}});
+			this.$router.push({ query: { ...this.$route.query, q: null } });
 		},
 
 		resetUserView() {
 			this.store.search = null;
-			this.$router.push({name: "users", query: {}});
+			this.$router.push({ name: "users", query: {} });
 		},
 	},
 
@@ -45,7 +45,7 @@ export default {
 			this.store.search = null;
 		},
 	},
-	
+
 	components: {
 		UsersList,
 	},
@@ -54,26 +54,30 @@ export default {
 </script>
 
 <template>
+	<h2 class="text-center list fst-italic fw-bold">Qui trovi tutti i nostri medici</h2>
+	<div class="container">
 
-<h2 class="text-center fst-italic fw-bold">Lista Dottori</h2>
+		<form class="d-flex w-100" role="search" @submit.prevent="executeSearch">
 
-<form class="d-flex w-100" role="search" @submit.prevent="executeSearch">
-  <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-        name="q"
-        v-model="searchString" />
-  <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
+			<div class="row"></div>
+			<input class="form-control col-6" type="search" placeholder="Scrivi qui" aria-label="Cerca qui" name="q"
+				v-model="searchString" />
+			<button class="btn btn-outline-success" type="submit">Cerca</button>
 
+			<div class="col-6"></div>
+		</form>
 
 
-<div class="d-flex justify-content-center flex-column">
-	<UsersList />
-</div>
-	
+
+		<div class="d-flex justify-content-center flex-column">
+			<UsersList />
+		</div>
+	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.list {
+	margin-top: 8rem;
+	margin-bottom: 2rem;
+}
+</style>
