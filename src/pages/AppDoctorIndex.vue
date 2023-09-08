@@ -62,7 +62,9 @@ export default {
 			<div class="row"></div>
 			<input class="form-control col-6" type="search" placeholder="Inserisci nome del Dottore che cerchi"
 				aria-label="Cerca qui" name="q" v-model="searchString" />
-			<button class="btn btn-outline-success mx-5 card__btn card_2" type="submit">Cerca</button>
+			<button class="btn btn-outline-success mx-5 card__btn card_2" type="submit">
+				Cerca
+			</button>
 
 		</form>
 		<div class="d-flex justify-content-center flex-column">
