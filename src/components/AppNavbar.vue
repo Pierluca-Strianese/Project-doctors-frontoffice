@@ -11,31 +11,13 @@ export default {
     <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
       <div class="container-fluid">
 
-        <div class="d-flex align-items-center">
-
-          <div class="d-flex align-items-center px-2">
-            <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
-              <a class="navbar-brand">
-                <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="30">
-              </a>
-              <span class="d-flex align-items-center">
-                <h4 class="text-logo mb-0">Bdoctors</h4>
-              </span>
-            </router-link>
-          </div>
-
-
-          <div class="ps-4">
-            <router-link class="home" :to="{ name: 'home' }">
-              <span class="text-white"> Home </span></router-link>
-
-            <router-link class="home" :to="{ name: 'user.index' }">
-              <span class="text-white"> Cerca tra i nostri medici </span></router-link>
-          </div>
-
-
-
-        </div>
+      <div class="d-flex align-items-center">
+        <router-link :to="{ name: 'home'}"
+            class="navbar-brand">
+          <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
+        </router-link>
+        <h2 class="text-logo mb-0">Bdoctors</h2>
+      </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls=" navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
