@@ -18,7 +18,7 @@ export default {
               <a class="navbar-brand">
                 <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
               </a>
-              <h2 class="text-logo mb-0">Bdoctors</h2>
+              <h2 class="text-logo mt-1">Bdoctors</h2>
             </router-link>
           </div>
 

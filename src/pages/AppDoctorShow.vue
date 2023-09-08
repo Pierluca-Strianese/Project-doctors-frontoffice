@@ -237,8 +237,8 @@ export default {
 @use "../style/general.scss" as *;
 
 .margin {
-    height: 100vh;
-    margin-top: 7rem;
+    margin-top: 6rem;
+    margin-bottom: 12rem;
 }
 
 .list {
@@ -251,9 +251,9 @@ export default {
 
     .bronze {
         position: absolute;
-        top: 15px;
-        left: 25px;
-        height: 20%;
+        top: 10px;
+        left: 20px;
+        height: 17%;
     }
 
     .img_doc {

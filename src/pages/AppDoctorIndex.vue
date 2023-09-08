@@ -62,12 +62,9 @@ export default {
 			<div class="row"></div>
 			<input class="form-control col-6" type="search" placeholder="Inserisci nome del Dottore che cerchi"
 				aria-label="Cerca qui" name="q" v-model="searchString" />
-			<button class="btn btn-outline-success" type="submit">Cerca</button>
+			<button class="btn btn-outline-success mx-5 card__btn card_2" type="submit">Cerca</button>
 
 		</form>
-
-
-
 		<div class="d-flex justify-content-center flex-column">
 			<UsersList />
 		</div>
@@ -78,5 +75,37 @@ export default {
 .list {
 	margin-top: 8rem;
 	margin-bottom: 2rem;
+}
+
+
+.card__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 8rem;
+	height: 2.5rem;
+	border: 2px solid #00bdcd;
+	text-decoration: none;
+	border-radius: 1rem;
+	font-size: .7rem;
+	color: #00bdcd;
+	background: #ffffff;
+	text-transform: uppercase;
+	transition: all .5s ease;
+
+	&:hover {
+		background: #00bdcd;
+		color: #ffffff;
+	}
+}
+
+.card_2 {
+	background: #00bdcd;
+	color: #ffffff;
+
+	&:hover {
+		background: #ffffff;
+		color: #00bdcd;
+	}
 }
 </style>
