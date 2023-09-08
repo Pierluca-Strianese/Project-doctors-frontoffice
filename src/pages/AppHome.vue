@@ -30,12 +30,11 @@ export default {
         <div class="col-1"></div>
         <div class="col-5 d-flex flex-column justify-content-evenly first-col">
           <div>
-            <h1 class="border-bottom border-dark">Benvenuto in B-Doctor</h1>
+            <h1>Benvenuto in B-Doctor</h1>
           </div>
 
           <div class="">
-            <!-- <h3 class="mb-4">Cerca il tuo dottore</h3> -->
-            <h6 class="mb-4 "> Cerca qui il Dottore che fa per te tra 200.000 Specialisti e
+            <h6 class="mb-4 "> Cerca qui il medico che fa per te tra 200.000 Specialisti e
               Medici di Medicina Generale
             </h6>
 
@@ -114,7 +113,7 @@ export default {
 @import '../style/partials/_variables.scss';
 
 .bg-jumbo {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(0, 189, 205, 1) 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, #01BDD0 100%);
 }
 
 

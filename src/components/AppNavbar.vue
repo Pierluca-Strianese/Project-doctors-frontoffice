@@ -8,23 +8,28 @@ export default {
 
 <template>
   <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
-    <div class="container-fluid">
+    <div class="container-fluid px-5">
 
       <div class="d-flex align-items-center">
 
-        <div>
+        <div class="d-flex align-items-center px-2">
           <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
             <a class="navbar-brand">
-              <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
+              <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="30">
             </a>
-            <h2 class="text-logo mb-0">Bdoctors</h2>
+            <span class="d-flex align-items-center">
+              <h4 class="text-logo mb-0">Bdoctors</h4>
+            </span>
           </router-link>
         </div>
 
 
-        <div>
-          <router-link class="mx-5 home" :to="{ name: 'home' }">
-            <span class="text-white">Home</span></router-link>
+        <div class="ps-4">
+          <router-link class="home" :to="{ name: 'home' }">
+            <span class="text-white"> Home </span></router-link>
+
+          <router-link class="home" :to="{ name: 'user.index' }">
+            <span class="text-white"> Cerca tra i nostri medici </span></router-link>
         </div>
 
 
@@ -41,7 +46,7 @@ export default {
 
           <li class="nav-link flex-column text-center me-3">
             <a class="my-btn" href="http://localhost:8000/register">
-              Sei un dottore? Registrati!
+              Sei un medico? Registrati!
             </a>
           </li>
 
@@ -70,6 +75,8 @@ export default {
 .home {
   text-decoration: none;
   cursor: pointer;
+  border-right: 2px solid white;
+  padding: .2rem 1rem;
 
   .home:hover {
     text-decoration-line: underline;
