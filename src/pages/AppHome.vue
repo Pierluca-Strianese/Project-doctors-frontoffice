@@ -87,7 +87,7 @@ export default {
 
   <div class="main-home border-top">
     <section class="functions py-5 ">
-      <div class="container p-3">
+      <div class="container p-3 mx-auto">
         <div class="row justify-content-center">
           <div
             class="info-card col-11 mx-4 mb-3 col-md-8 col-lg-3 card-tool border rounded-4 p-3 text-center bg-white shadow">
