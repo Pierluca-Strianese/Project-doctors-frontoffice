@@ -84,30 +84,32 @@ export default {
                                     this.resetForm(); // Ripulisci il form in caso di successo
                                 } else {
                                     this.hasError = true;
+                                    this.showSuccess = true;
                                     this.resetForm(); // Ripulisci il form anche in caso di errore
                                 }
                             })
-                            .catch((error) => {
-                                console.error("Errore durante la richiesta Axios:", error.response.data);
+                            .catch(() => {
                                 this.isSending = false;
                                 this.hasError = true;
                                 this.errorMessage = "Si è verificato un errore durante l'invio del messaggio.";
                                 this.resetForm(); // Ripulisci il form in caso di errore
+                                this.showSuccess = true;
                             });
                     })
-                    .catch((error) => {
+                    .catch(() => {
                         // Gestisci eventuali errori durante il recupero del doctorId
-                        console.error("Errore durante la richiesta Axios:", error.message);
                         this.isSending = false;
                         this.hasError = true;
                         this.errorMessage = "Si è verificato un errore durante il recupero delle informazioni del dottore.";
                         this.resetForm(); // Ripulisci il form in caso di errore
+                        this.showSuccess = true;
                     });
             } else {
                 console.error("Nessun dottore selezionato");
                 this.isSending = false;
                 this.hasError = true;
                 this.resetForm(); // Ripulisci il form in caso di errore
+                this.showSuccess = true;
             }
         },
         resetForm() {
@@ -213,12 +215,39 @@ export default {
 
                 <!-- ************************** Contatto ****************************** -->
 
-                <div class="col-md-9 pt-5">
+                
+
+
                     <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
 
+                      <div class="col-md-9 pt-5">
+                    <div
+                    v-if="showSuccess"
+                    class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4"
+                    >
+                    Message sent successfully!
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close"
+                        @click="showSuccess = false"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+
+
                     <section>
+                        <div class="w-100 d-flex justify-content-center">
+                            <div class="loader" v-if="isSending"></div>
+                        </div>
+                       
+
                         <div class="border-solid border-2 border-dark-600 my-6 m-auto block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
                             v-if="!isSending">
+
+                            
                             <form @submit.prevent="sendLead" v-if="!isSending">
                                 <div class="mb-6">
                                     <label for="email" class="block font-bold text-gray-800 mb-2">Email</label>
@@ -242,6 +271,9 @@ export default {
                                     </button>
                                 </div>
                             </form>
+                          
+
+                            
                         </div>
                     </section>
                 </div>
@@ -339,5 +371,22 @@ export default {
     .name_review {
         font-size: .8rem;
     }
+}
+
+
+
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>
