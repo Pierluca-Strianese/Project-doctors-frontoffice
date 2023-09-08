@@ -44,15 +44,15 @@ export default {
         },
 
         getSpecializations() {
-			axios.get(this.store.baseUrl + "api/specializations").then((response) => {
-				this.arrSpecializations = response.data.results;
-			});
-		},
+            axios.get(this.store.baseUrl + "api/specializations").then((response) => {
+                this.arrSpecializations = response.data.results;
+            });
+        },
 
         manageChangeSpecialization(specializationId) {
-			this.specializationId = specializationId;
-			this.getUsers();
-		},
+            this.specializationId = specializationId;
+            this.getUsers();
+        },
     },
 
 
@@ -74,18 +74,29 @@ export default {
 </script>
 
 <template>
+    <div class="container-fluid">
+        <AppFilter :arrSpecializations="arrSpecializations" @changeSpecialization="manageChangeSpecialization($event)"
+            class="mt-4" />
 
-    <AppFilter
-		:arrSpecializations="arrSpecializations"
-		@changeSpecialization="manageChangeSpecialization($event)" 
-        class="mt-4"
-    />
+        
 
-    <div class="d-flex justify-content-center m-5 flex-wrap">
-        <div v-for="user in arrUsers" :key="user.id">
-            <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" class="mb-4" />
+        <div class="d-flex justify-content-center m-5 flex-wrap">
+            <div v-for="user in arrUsers" :key="user.id">
+                <!-- Verifica se l'utente ha un dottore associato -->
+                <Appcard v-if="user.doctor && user.doctor.promotions.length >= 1" :user="user" :objUser="user" class="mb-4" />
+            </div>
+        </div>
+
+        <h2 class="text-center fst-italic fw-bold">Altri Dottori</h2>
+
+        <div class="d-flex justify-content-center m-5 flex-wrap">
+            <div v-for="user in arrUsers" :key="user.id">
+                <!-- Verifica se l'utente ha un dottore associato e se non ci sono promozioni -->
+                <Appcard v-if="user.doctor && (!user.doctor.promotions || user.doctor.promotions.length === 0)" :user="user" :objUser="user" class="mb-4" />
+            </div>
         </div>
     </div>
+
 
     <!-- <div class="d-flex justify-content-center m-5">
         <div class="scrollable-container" style="overflow-x: scroll;">

@@ -11,9 +11,10 @@ export default {
     <div class="container">
 
       <div class="d-flex align-items-center">
-        <a class="navbar-brand">
+        <router-link :to="{ name: 'home'}"
+            class="navbar-brand">
           <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
-        </a>
+        </router-link>
         <h2 class="text-logo mb-0">Bdoctors</h2>
       </div>
 
