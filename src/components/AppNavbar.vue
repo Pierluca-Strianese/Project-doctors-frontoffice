@@ -7,57 +7,59 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
-    <div class="container-fluid">
+  <div class="container">
+    <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
+      <div class="container-fluid">
 
-      <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center">
 
-        <div>
-          <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
-            <a class="navbar-brand">
-              <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
-            </a>
-            <h2 class="text-logo mb-0">Bdoctors</h2>
-          </router-link>
+          <div>
+            <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
+              <a class="navbar-brand">
+                <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
+              </a>
+              <h2 class="text-logo mb-0">Bdoctors</h2>
+            </router-link>
+          </div>
+
+
+          <div>
+            <router-link class="mx-5 home" :to="{ name: 'home' }">
+              <span class="text-white">Home</span></router-link>
+          </div>
+
+
+
         </div>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls=" navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div>
-          <router-link class="mx-5 home" :to="{ name: 'home' }">
-            <span class="text-white">Home</span></router-link>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto align-middle">
+
+            <li class="nav-link flex-column text-center me-3">
+              <a class="my-btn" href="http://localhost:8000/register">
+                Sei un dottore? Registrati!
+              </a>
+            </li>
+
+            <li class="nav-link flex-column text-center me-3">
+              <a class="my-btn" href="http://localhost:8000/login">
+                Accedi
+              </a>
+            </li>
+
+
+
+          </ul>
         </div>
 
-
-
       </div>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls=" navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto align-middle">
-
-          <li class="nav-link flex-column text-center me-3">
-            <a class="my-btn" href="http://localhost:8000/register">
-              Sei un dottore? Registrati!
-            </a>
-          </li>
-
-          <li class="nav-link flex-column text-center me-3">
-            <a class="my-btn" href="http://localhost:8000/login">
-              Accedi
-            </a>
-          </li>
-
-
-
-        </ul>
-      </div>
-
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <style lang="scss">
@@ -130,3 +132,4 @@ li {
   font-weight: 600;
 }
 </style>
+

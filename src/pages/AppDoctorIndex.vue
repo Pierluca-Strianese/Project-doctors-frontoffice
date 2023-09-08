@@ -60,11 +60,10 @@ export default {
 		<form class="d-flex w-100" role="search" @submit.prevent="executeSearch">
 
 			<div class="row"></div>
-			<input class="form-control col-6" type="search" placeholder="Scrivi qui" aria-label="Cerca qui" name="q"
-				v-model="searchString" />
+			<input class="form-control col-6" type="search" placeholder="Inserisci nome del Dottore che cerchi"
+				aria-label="Cerca qui" name="q" v-model="searchString" />
 			<button class="btn btn-outline-success" type="submit">Cerca</button>
 
-			<div class="col-6"></div>
 		</form>
 
 
