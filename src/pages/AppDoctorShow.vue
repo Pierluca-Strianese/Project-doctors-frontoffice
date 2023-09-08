@@ -138,7 +138,8 @@ export default {
                     </div>
                 </div>
                 <div class="col-md-6 px-4">
-                    <h1 class="text-center mt-3 mb-5 fw-bold">{{ user.name }} {{ user.lastname }}</h1>
+                    <h1 class="text-center mt-3 mb-5 fw-light">{{ user.name }} <span class="fw-bold">{{ user.lastname
+                    }}</span></h1>
                     <div class="mb-2">
                         <font-awesome-icon :icon="['fas', 'envelope-circle-check']" class="me-2" />
                         <span class="fw-bold"> Email: </span> {{ user.email }}
@@ -156,29 +157,64 @@ export default {
                             class="btn_specialization shadow-sm">{{ specialization.name }}</button>
                     </div>
 
-                    <div class="valutations">
-                        <h5>Valutazione: {{ doctor.averageRating }} </h5>
+                    <div class="valutations mb-4">
+                        <h5 class="fw-semibold">Valutazione: </h5>
+                        <span class="stars">
+                            <template v-for="i in doctor.averageRating">
+                                ★
+                            </template>
+                        </span>
+                    </div>
+                    <h5 class="fw-semibold">Recenzioni: </h5>
+                    <div class="reviews_container">
+                        <div v-for="review in doctor.reviews" :key="review.id" class="review border-bottom p-2 m-1">
+                            <div class="name_review fw-lighter p-1"> <span class="fw-normal">{{ review.name }}</span> |
+                                <span class="stars">
+                                    <template v-for="i in review.valutation">
+                                        ★
+                                    </template>
+                                </span>
+                                <div class="date_review ps-2">Recensito il: {{ review.created_at }}</div>
+                            </div>
+                            <div class="text_review p-3">{{ review.review }}</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="mt-5 fw-semibold pb-1"> Dai la tua recensione: </h5>
+                        <div class="d-flex align-items-center my-4">
+                            <div class=" pe-4">
+                                <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                                <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1"
+                                    placeholder="Inserisci il tuo nome">
+                            </div>
+                            <div>
+                                <label for="exampleFormControlInput1" class="form-label">Voto</label>
+                                <select class="form-select form-select-sm" aria-label="Small select example">
+                                    <option selected>Inserisci il tuo voto</option>
+                                    <option value="1">1 - Pessimo </option>
+                                    <option value="2">2 - Scarso </option>
+                                    <option value="3">3 - Buono </option>
+                                    <option value="3">4 - Ottimo </option>
+                                    <option value="3">5 - Eccellente </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Inserisci la tua recensione </label>
+                            <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Recensione (non obligatoria)"></textarea>
+                        </div>
+                        <div class="d-flex flex-row-reverse">
+                            <button type="button" class="btn btn-outline-dark">Invia</button>
+                        </div>
                     </div>
                 </div>
-                <!-- <h2 class="text-center mt-4">Specializations:</h2>
-                <ul class="list-group">
-                    <li v-for="specialization in user.specializations" :key="specialization.name" class="list-group-item">
-                        {{ specialization.name }}
-                    </li>
-                </ul> -->
-
-                <!-- <h2 class="text-center mt-4">Promotions:</h2>
-                <ul class="list-group">
-                    <li v-for="promotion in doctor.promotions" :key="promotion.name" class="list-group-item">
-                        {{ promotion.name }}
-                    </li>
-                </ul> -->
 
 
                 <!-- ************************** Contatto ****************************** -->
 
-                <div>
-                    <h1 class="text-3xl my-3.5 text-center mt-5">Contact Us</h1>
+                <div class="col-md-9 pt-5">
+                    <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
 
                     <section>
                         <div class="border-solid border-2 border-dark-600 my-6 m-auto block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
@@ -200,7 +236,7 @@ export default {
                                 <input type="hidden" v-model="doctor_id" name="doctor_id" />
 
                                 <div class="d-flex flex-row-reverse">
-                                    <button type="submit" class="button mt-2 text-white font-monospace" data-te-ripple-init
+                                    <button type="submit" class="button mt-3 text-white font-monospace" data-te-ripple-init
                                         data-te-ripple-color="light">
                                         Invia
                                     </button>
@@ -237,8 +273,7 @@ export default {
 @use "../style/general.scss" as *;
 
 .margin {
-    height: 100vh;
-    margin-top: 7rem;
+    margin: 9rem 0rem;
 }
 
 .list {
@@ -251,9 +286,9 @@ export default {
 
     .bronze {
         position: absolute;
-        top: 15px;
-        left: 25px;
-        height: 20%;
+        top: 10px;
+        left: 20px;
+        height: 17%;
     }
 
     .img_doc {
@@ -295,5 +330,14 @@ export default {
 
 .button:hover {
     box-shadow: 0 1px 1px 1px #009aa8, 0 1px 1px #009aa8, 0 -1px 1px #009aa8, 0 -1px 1px #009aa8, inset 0 0 1px 1px #009aa8;
+}
+
+.reviews_container {
+    max-height: 300px;
+    overflow: scroll;
+
+    .name_review {
+        font-size: .8rem;
+    }
 }
 </style>
