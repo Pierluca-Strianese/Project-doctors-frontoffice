@@ -41,7 +41,6 @@ export default {
             <button class="text-center show-doc">
               <router-link :to="{ name: 'user.index' }" class="nav-link active">
                 <span class="">Mostra tutti i Dottori</span>
-
               </router-link>
             </button>
           </div>
@@ -57,7 +56,7 @@ export default {
   </div>
 
   <div class="section_two">
-    <h2 class="mt-4 text-center"> I nostri migliori medici </h2>
+    <h2 class="mt-4 text-center "> I nostri migliori medici </h2>
     <!-- <UsersList /> -->
     <DoctorsList />
 
@@ -127,7 +126,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 95vh;
 }
 
 .container {
