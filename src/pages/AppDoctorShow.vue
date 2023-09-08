@@ -248,22 +248,6 @@ export default {
 
                 <!-- ************************** Contatto ****************************** -->
 
-
-                <!-- <ul class="list-group">
-                        <li v-for="message in doctor.messages" :key="message.id" class="list-group-item">
-                            <p>Email: {{ message.email }}</p>
-                            <p>{{ message.text }}</p>
-                        </li>
-                    </ul> -->
-
-                <!-- <h2 class="text-center mt-4">Reviews:</h2>
-                <ul class="list-group">
-                    <li v-for="review in doctor.reviews" :key="review.id" class="list-group-item">
-                        <p>Name: {{ review.name }}</p>
-                        <p>Valuation: {{ review.valutation }}</p>
-                    </li>
-                </ul> -->
-
             </div>
         </div>
     </form>
