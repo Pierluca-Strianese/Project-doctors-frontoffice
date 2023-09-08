@@ -7,62 +7,64 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
-    <div class="container-fluid px-5">
+  <div class="container">
+    <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
+      <div class="container-fluid">
 
-      <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center">
 
-        <div class="d-flex align-items-center px-2">
-          <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
-            <a class="navbar-brand">
-              <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="30">
-            </a>
-            <span class="d-flex align-items-center">
-              <h4 class="text-logo mb-0">Bdoctors</h4>
-            </span>
-          </router-link>
+          <div class="d-flex align-items-center px-2">
+            <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
+              <a class="navbar-brand">
+                <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="30">
+              </a>
+              <span class="d-flex align-items-center">
+                <h4 class="text-logo mb-0">Bdoctors</h4>
+              </span>
+            </router-link>
+          </div>
+
+
+          <div class="ps-4">
+            <router-link class="home" :to="{ name: 'home' }">
+              <span class="text-white"> Home </span></router-link>
+
+            <router-link class="home" :to="{ name: 'user.index' }">
+              <span class="text-white"> Cerca tra i nostri medici </span></router-link>
+          </div>
+
+
+
         </div>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls=" navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="ps-4">
-          <router-link class="home" :to="{ name: 'home' }">
-            <span class="text-white"> Home </span></router-link>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto align-middle">
 
-          <router-link class="home" :to="{ name: 'user.index' }">
-            <span class="text-white"> Cerca tra i nostri medici </span></router-link>
+            <li class="nav-link flex-column text-center me-3">
+              <a class="my-btn" href="http://localhost:8000/register">
+                Sei un medico? Registrati!
+              </a>
+            </li>
+
+            <li class="nav-link flex-column text-center me-3">
+              <a class="my-btn" href="http://localhost:8000/login">
+                Accedi
+              </a>
+            </li>
+
+
+
+          </ul>
         </div>
 
-
-
       </div>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls=" navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto align-middle">
-
-          <li class="nav-link flex-column text-center me-3">
-            <a class="my-btn" href="http://localhost:8000/register">
-              Sei un medico? Registrati!
-            </a>
-          </li>
-
-          <li class="nav-link flex-column text-center me-3">
-            <a class="my-btn" href="http://localhost:8000/login">
-              Accedi
-            </a>
-          </li>
-
-
-
-        </ul>
-      </div>
-
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <style lang="scss">
@@ -137,3 +139,4 @@ li {
   font-weight: 600;
 }
 </style>
+

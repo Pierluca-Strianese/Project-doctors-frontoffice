@@ -31,7 +31,7 @@ export default {
             <!-- NOME DOC -->
             <div class="mb-2">
 
-                <span class="card__title lastname fw-semibold"> {{ 'Dott. ' + objUser.lastname }} </span>
+                <span class="card__title lastname fw-semibold border-bottom"> {{ 'Dott. ' + objUser.lastname }} </span>
                 <span class="card__title name fw-light"> {{ ' ' + objUser.name }} </span>
             </div>
 

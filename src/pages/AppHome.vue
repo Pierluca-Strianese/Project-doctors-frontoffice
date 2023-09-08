@@ -29,8 +29,30 @@ export default {
       <div class="row align-items-center">
         <div class="col-1"></div>
         <div class="col-5 d-flex flex-column justify-content-evenly first-col">
-          <div>
-            <h1>Benvenuto in B-Doctor</h1>
+          <div class="waviy">
+            <!-- <h1 class="border-bottom border-dark --i:1">Benvenuto in B-Doctor</h1> -->
+            <span style="--i:1">B</span>
+            <span style="--i:2">e</span>
+            <span style="--i:3">n</span>
+            <span style="--i:4">v</span>
+            <span style="--i:5">e</span>
+            <span style="--i:6">n</span>
+            <span style="--i:7">u</span>
+            <span style="--i:8">t</span>
+            <span style="--i:9">o</span>
+            <span style="--i">&#160;</span>
+            <span style="--i:11">i</span>
+            <span style="--i:12">n</span>
+            <span style="--i">&#160;</span>
+            <span style="--i:14">B</span>
+            <span style="--i">-</span>
+            <span style="--i:16">D</span>
+            <span style="--i:17">o</span>
+            <span style="--i:18">c</span>
+            <span style="--i:19">t</span>
+            <span style="--i:20">o</span>
+            <span style="--i:21">r</span>
+            <span style="--i">!</span>
           </div>
 
           <div class="">
@@ -64,7 +86,7 @@ export default {
 
   <div class="main-home border-top">
     <section class="functions py-5 ">
-      <div class="container p-3">
+      <div class="container p-3 mx-auto">
         <div class="row justify-content-center">
           <div
             class="info-card col-11 mx-4 mb-3 col-md-8 col-lg-3 card-tool border rounded-4 p-3 text-center bg-white shadow">
@@ -175,6 +197,45 @@ button:active {
   .info-title {
     font-weight: bolder;
     color: $secondary-variant-color;
+  }
+}
+
+
+
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.waviy {
+  position: relative;
+}
+
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  animation: flip 1s;
+  animation-delay: calc(.2s * var(--i))
+}
+
+@keyframes flip {
+
+  0%,
+  80% {
+    transform: rotateY(360deg)
   }
 }
 </style>

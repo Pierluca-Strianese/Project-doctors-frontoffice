@@ -286,9 +286,9 @@ export default {
 
     .bronze {
         position: absolute;
-        top: 15px;
-        left: 25px;
-        height: 20%;
+        top: 10px;
+        left: 20px;
+        height: 17%;
     }
 
     .img_doc {
