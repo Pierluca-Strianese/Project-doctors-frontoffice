@@ -2,19 +2,33 @@
 
 
 export default {
- 
+
 };
 </script>
 
 <template>
- <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
-    <div class="container">
+  <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
+    <div class="container-fluid">
 
       <div class="d-flex align-items-center">
-        <a class="navbar-brand">
-          <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
-        </a>
-        <h2 class="text-logo mb-0">Bdoctors</h2>
+
+        <div>
+          <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
+            <a class="navbar-brand">
+              <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="40">
+            </a>
+            <h2 class="text-logo mb-0">Bdoctors</h2>
+          </router-link>
+        </div>
+
+
+        <div>
+          <router-link class="mx-5 home" :to="{ name: 'home' }">
+            <span class="text-white">Home</span></router-link>
+        </div>
+
+
+
       </div>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -24,7 +38,7 @@ export default {
 
       <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto align-middle">
-          
+
           <li class="nav-link flex-column text-center me-3">
             <a class="my-btn" href="http://localhost:8000/register">
               Sei un dottore? Registrati!
@@ -49,11 +63,24 @@ export default {
 <style lang="scss">
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+.img-fluid {
+  filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 rgb(101, 101, 101));
+}
+
+.home {
+  text-decoration: none;
+  cursor: pointer;
+
+  .home:hover {
+    text-decoration-line: underline;
+  }
+}
+
 a.my-btn {
   text-decoration: none;
   border-radius: 25px;
   color: white;
-  background-color: #00C3A5;
+  background-color: #0a9e8f;
   padding: .5rem 1rem;
   transition: .25s;
   border: 0px;
@@ -76,15 +103,8 @@ li {
 }
 
 
-
-select {
-  width: 300px;
-}
-
 .bg-nav {
-  background-color: #070617;
-  backdrop-filter: blur(50px);
-
+  background-color: rgb(45, 45, 45);
 }
 
 .navbar {

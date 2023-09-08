@@ -44,15 +44,15 @@ export default {
         },
 
         getSpecializations() {
-			axios.get(this.store.baseUrl + "api/specializations").then((response) => {
-				this.arrSpecializations = response.data.results;
-			});
-		},
+            axios.get(this.store.baseUrl + "api/specializations").then((response) => {
+                this.arrSpecializations = response.data.results;
+            });
+        },
 
         manageChangeSpecialization(specializationId) {
-			this.specializationId = specializationId;
-			this.getUsers();
-		},
+            this.specializationId = specializationId;
+            this.getUsers();
+        },
     },
 
 
@@ -74,39 +74,37 @@ export default {
 </script>
 
 <template>
+    <div class="container-fluid">
+        <AppFilter :arrSpecializations="arrSpecializations" @changeSpecialization="manageChangeSpecialization($event)"
+            class="mt-4" />
 
-    <AppFilter
-		:arrSpecializations="arrSpecializations"
-		@changeSpecialization="manageChangeSpecialization($event)" 
-        class="mt-4"
-    />
-
-    <div class="d-flex justify-content-center m-5 flex-wrap">
-        <div v-for="user in arrUsers" :key="user.id">
-            <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" class="mb-4" />
-        </div>
-    </div>
-
-    <!-- <div class="d-flex justify-content-center m-5">
-        <div class="scrollable-container" style="overflow-x: scroll;">
-            <div class="d-flex">
-                <div v-for="user in arrUsers" :key="user.id">
-                    <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" />
-                </div>
+        <div class="d-flex justify-content-center m-5 flex-wrap">
+            <div v-for="user in arrUsers" :key="user.id">
+                <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" class="mb-4" />
             </div>
         </div>
-    </div> -->
 
-    <!-- <div class="nav_bar mt-5">
-        <nav>
-            <ul class="pagination pagination-sm">
-                <li v-for="page in nPages" :key="page" class="page-item" :class="{ active: page == currentPage }">
-                    <span class="page-link" @click="changePage(page)">{{ page }}</span>
-                </li>
+        <!-- <div class="d-flex justify-content-center m-5">
+            <div class="scrollable-container" style="overflow-x: scroll;">
+                <div class="d-flex">
+                    <div v-for="user in arrUsers" :key="user.id">
+                        <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" />
+                    </div>
+                </div>
+            </div>
+        </div> -->
 
-            </ul>
-        </nav>
-    </div> -->
+        <!-- <div class="nav_bar mt-5">
+            <nav>
+                <ul class="pagination pagination-sm">
+                    <li v-for="page in nPages" :key="page" class="page-item" :class="{ active: page == currentPage }">
+                        <span class="page-link" @click="changePage(page)">{{ page }}</span>
+                    </li>
+    
+                </ul>
+            </nav>
+        </div> -->
+    </div>
 </template>
 
 <style lang="scss" scoped>

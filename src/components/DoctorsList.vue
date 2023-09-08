@@ -2,7 +2,7 @@
 import axios from 'axios';
 import Appcard from './Appcard.vue'
 import { store } from '../store';
- export default {
+export default {
     components: {
         Appcard,
     },
@@ -43,16 +43,14 @@ import { store } from '../store';
 
 <template>
     <div>
-        <div class="d-flex justify-content-center m-5 flex-wrap">
+        <div class="d-flex list justify-content-center m-5 flex-wrap">
             <div v-for="user in arrUsers" :key="user.id">
                 <!-- <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" class="mb-4" /> -->
-                <Appcard  :user="user" :objUser="user" class="mb-4" />
+                <Appcard :user="user" :objUser="user" class="mb-4" />
             </div>
         </div>
     </div>
 </template>
 
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

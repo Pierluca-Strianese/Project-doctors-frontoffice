@@ -78,6 +78,8 @@ export default {
     height: 28rem;
     width: 22rem;
     background: $bg-color;
+    // cursor: pointer;
+
 }
 
 .effect {
