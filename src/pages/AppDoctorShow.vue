@@ -1,4 +1,3 @@
-AppDoctorShow
 
 <script>
 import axios from 'axios';
@@ -12,6 +11,8 @@ export default {
             is404: false,
             user: [],
             doctor: [],
+
+            // invio Message
             email: '',
             text: '',
             doctor_id: "",
@@ -19,6 +20,13 @@ export default {
             isSending: false,
             hasError: false,
             isLoading: false,
+
+            //Invio Voto
+            name: '',
+            valutation: '',
+            review: '',
+            SuccessReview: false,
+        
 
         };
     },
@@ -30,7 +38,7 @@ export default {
                 .then((response) => {
                     this.user = response.data.results;
                     console.log(this.user);
-                });
+            });
 
         },
         getDoctors() {
@@ -39,7 +47,7 @@ export default {
                 .then((response) => {
                     this.doctor = response.data.results;
                     console.log(this.doctor);
-                });
+            });
         },
 
 
@@ -116,6 +124,47 @@ export default {
             this.email = "";
             this.text = "";
         },
+
+        submitReview() {
+            const formData = {
+                name: this.name,
+                valutation: this.valutation,
+                review: this.review,
+            };
+
+            // Esegui la richiesta POST con lo slug del dottore nell'URL
+            axios
+                .post(this.store.baseUrl + `api/reviews/${this.$route.params.slug}`, formData)
+                .then((response) => {
+                this.successMessage = response.data.message;
+                this.errorMessage = null;
+                console.log(response.data);
+
+                // Mostra il messaggio di successo
+                this.SuccessReview = true;
+
+                // Resetta il form
+                this.resetForm();
+            
+                })
+                .catch((error) => {
+                // Se la richiesta ha causato un errore
+                if (error.response && error.response.data) {
+                    this.errorMessage = error.response.data.error;
+                } else {
+                    this.errorMessage = 'Si è verificato un errore durante l\'invio della recensione.';
+                }
+                console.error(error);
+            });
+        },
+        resetForm() {
+        // Azzerare i valori dei campi del form
+        this.name = '';
+        this.valutation = null; // Imposta il valore iniziale appropriato
+        this.review = '';
+        },
+
+    
     },
 
     created() {
@@ -167,7 +216,7 @@ export default {
                             </template>
                         </span>
                     </div>
-                    <h5 class="fw-semibold">Recenzioni: </h5>
+                    <h5 class="fw-semibold">Recensioni: </h5>
                     <div class="reviews_container">
                         <div v-for="review in doctor.reviews" :key="review.id" class="review border-bottom p-2 m-1">
                             <div class="name_review fw-lighter p-1"> <span class="fw-normal">{{ review.name }}</span> |
@@ -181,35 +230,50 @@ export default {
                             <div class="text_review p-3">{{ review.review }}</div>
                         </div>
                     </div>
-                    <div>
-                        <h5 class="mt-5 fw-semibold pb-1"> Dai la tua recensione: </h5>
+
+                    <div
+                    v-if="SuccessReview"
+                    class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4"
+                    >
+                    Review sent successfully!
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close"
+                        @click="SuccessReview = false"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                   
+                    <form @submit.prevent="submitReview">
+                        <!-- Campi del form -->
                         <div class="d-flex align-items-center my-4">
-                            <div class=" pe-4">
-                                <label for="exampleFormControlInput1" class="form-label">Nome</label>
-                                <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1"
-                                    placeholder="Inserisci il tuo nome">
+                            <div class="pe-4">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control form-control-sm" v-model="name" id="name" name="name" placeholder="Inserisci il tuo nome">
                             </div>
                             <div>
-                                <label for="exampleFormControlInput1" class="form-label">Voto</label>
-                                <select class="form-select form-select-sm" aria-label="Small select example">
-                                    <option selected>Inserisci il tuo voto</option>
-                                    <option value="1">1 - Pessimo </option>
-                                    <option value="2">2 - Scarso </option>
-                                    <option value="3">3 - Buono </option>
-                                    <option value="3">4 - Ottimo </option>
-                                    <option value="3">5 - Eccellente </option>
+                                <label for="valutation" class="form-label">Voto</label>
+                                <select class="form-select form-select-sm" v-model="valutation" id="valutation" name="valutation">
+                                    <option selected disabled>Inserisci il tuo voto</option>
+                                    <option value="1">1 - Pessimo</option>
+                                    <option value="2">2 - Scarso</option>
+                                    <option value="3">3 - Buono</option>
+                                    <option value="4">4 - Ottimo</option>
+                                    <option value="5">5 - Eccellente</option>
                                 </select>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Inserisci la tua recensione </label>
-                            <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Recensione (non obligatoria)"></textarea>
+                            <label for="review" class="form-label">Inserisci la tua recensione</label>
+                            <textarea class="form-control form-control-sm" v-model="review" id="review" name="review" rows="3" placeholder="Recensione (non obbligatoria)"></textarea>
                         </div>
                         <div class="d-flex flex-row-reverse">
-                            <button type="button" class="btn btn-outline-dark">Invia</button>
+                            <button type="submit" class="btn btn-outline-dark">Invia</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
 
@@ -220,7 +284,7 @@ export default {
 
                     <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
 
-                      <div class="col-md-9 pt-5">
+                <div class="col-md-9 pt-5">
                     <div
                     v-if="showSuccess"
                     class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4"
