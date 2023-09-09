@@ -217,7 +217,6 @@ export default {
 
                 
 
-
                     <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
 
                       <div class="col-md-9 pt-5">
