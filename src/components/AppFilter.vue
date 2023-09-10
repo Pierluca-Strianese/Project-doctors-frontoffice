@@ -35,7 +35,7 @@ export default {
 <template>
 	<div class="d-flex list mt-5">
 		<form class="">
-			<h4 class="mt-5 mb-4">Seleziona la specializzazione che cerchi</h4>
+			<h4 class="mt-2 mb-4">Seleziona la specializzazione che cerchi</h4>
 			<div class="d-flex align-items-center">
 				<label for="type">Specializzazioni:</label>
 				<select id="specialization" class="form-select ms-2"

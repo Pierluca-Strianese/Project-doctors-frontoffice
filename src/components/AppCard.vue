@@ -25,32 +25,31 @@ export default {
         <div class="card effect p-3 ">
             <div class="card__avatar px-3 pb-3 pt-2">
                 <!-- FOTO DOC -->
-                <img class="img-fluid" :src="getImageUrl(objUser.doctor.image)" alt="">
+                <img class="img-fluid shadow" :src="getImageUrl(objUser.doctor.image)" alt="">
             </div>
 
             <!-- NOME DOC -->
             <div class="mb-2">
 
-                <span class="card__title lastname fw-semibold border-bottom"> {{ 'Dott. ' + objUser.lastname }} </span>
+                <span class="card__title lastname fw-semibold"> {{ 'Dr. ' +
+                    objUser.lastname }} </span>
                 <span class="card__title name fw-light"> {{ ' ' + objUser.name }} </span>
             </div>
 
             <!-- SPECIALIZZAZIONI DOC -->
-            <div class="specialization_list">
-
-                <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
-                    class="btn_specialization show-spec" id="truncateLongTexts">{{ specialization.name
-                    }}</button>
+            <div class="specialization_list mt-3">
+                <div v-for="specialization in objUser.specializations" :key="specialization.id" class="btn_specialization">
+                    {{ specialization.name
+                    }}</div>
             </div>
 
 
             <!-- BARRA SPAZIO -->
-            <div class="card__wrapper border-top border-dark">
-
+            <div class="card__wrapper border-top border-light-subtle">
 
                 <!-- BOTTONE MOSTRA + -->
                 <router-link :to="{ name: 'doctor.show', params: { slug: objUser.slug } }"
-                    class="card__btn card_2 fw-semibold effect mt-4">
+                    class="card__btn card_2 fw-semibold effect">
                     Mostra di più
                 </router-link>
             </div>
@@ -61,14 +60,6 @@ export default {
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
 
-#truncateLongTexts {
-    width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* This is where the magic happens. */
-}
-
 .card {
     position: relative;
     display: flex;
@@ -76,7 +67,7 @@ export default {
     align-items: center;
     justify-content: center;
     height: 28rem;
-    width: 22rem;
+    width: 20rem;
     background: $bg-color;
     // cursor: pointer;
 
@@ -85,8 +76,7 @@ export default {
 .effect {
     border-radius: 30px;
     background: linear-gradient(145deg, #ffffff, #ffffff);
-    box-shadow: 33px 33px 66px #ffffff,
-        -33px -33px 66px #d0d0d0;
+    box-shadow: 10px 10px 50px #d0d0d0;
 
 
     .card__title {

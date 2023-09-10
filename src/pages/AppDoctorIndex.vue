@@ -54,7 +54,7 @@ export default {
 </script>
 
 <template>
-	<h2 class="text-center list fst-italic fw-bold">Qui trovi tutti i nostri medici</h2>
+	<h2 class="text-center list fw-bold">Qui trovi tutti i nostri medici</h2>
 	<div class="container">
 
 		<form class="d-flex w-100" role="search" @submit.prevent="executeSearch">
@@ -62,14 +62,12 @@ export default {
 			<div class="row"></div>
 			<input class="form-control col-6" type="search" placeholder="Inserisci nome del Dottore che cerchi"
 				aria-label="Cerca qui" name="q" v-model="searchString" />
-			<button class="btn btn-outline-success mx-5 card__btn card_2" type="submit">
+			<button class="btn btn-outline-success ms-2 card__btn card_2" type="submit">
 				Cerca
 			</button>
 
 		</form>
-		<div class="d-flex justify-content-center flex-column">
-			<UsersList />
-		</div>
+		<UsersList />
 	</div>
 </template>
 
@@ -88,7 +86,6 @@ export default {
 	height: 2.5rem;
 	border: 2px solid #00bdcd;
 	text-decoration: none;
-	border-radius: 1rem;
 	font-size: .7rem;
 	color: #00bdcd;
 	background: #ffffff;

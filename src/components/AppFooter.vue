@@ -6,7 +6,7 @@ export default {};
   <footer>
     <div class="container_responsive px-5">
       <div class="row">
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-5 pe-5 d-flex align-items-center">
           <div class="single-box">
             <img src="img/logo.png" alt="">
             <p>Benvenuti su BDoctors - Trova il Dottore Giusto per Te! La soluzione semplice e
@@ -23,7 +23,7 @@ export default {};
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-2">
           <div class="single-box">
             <h2>Informazioni su BDoctors</h2>
             <ul>
@@ -36,7 +36,7 @@ export default {};
             </ul>
           </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-2">
           <div class="single-box">
             <h2>Per i pazienti</h2>
             <ul>
@@ -49,7 +49,7 @@ export default {};
             </ul>
           </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-3">
           <div class="single-box">
             <h2>Newsletter</h2>
             <p>Iscriviti alla nostra Newsletter BDoctors per rimanere sempre aggiornato sulle ultime novità nel
@@ -65,6 +65,14 @@ export default {};
           </div>
         </div>
       </div>
+    </div>
+    <div class="copyright d-flex justify-content-center flex-wrap">
+      © Copyright by Boolean | Project by
+      <span class="fw-semibold px-1"> Casu</span> Alessandra,
+      <span class="fw-semibold px-1"> Falco</span> Paolo,
+      <span class="fw-semibold px-1"> Ligori</span> Gianluca,
+      <span class="fw-semibold px-1"> Strianese</span> Pierluca,
+      <span class="fw-semibold px-1"> Venturo</span> Gary Smith Alvarez
     </div>
   </footer>
   <!-- END OF FOOTER -->
@@ -149,6 +157,14 @@ export default {};
   .single-box {
     margin-bottom: 50px;
   }
+}
+
+.copyright {
+  padding: .8rem;
+  background-color: black;
+  color: white;
+  font-size: .8rem;
+  font-weight: 100;
 }
 </style>
 

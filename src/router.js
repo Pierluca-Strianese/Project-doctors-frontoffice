@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from "./pages/AppHome.vue";
-import AppSearch from "./pages/AppSearch.vue";
 import AppDoctorShow from "./pages/AppDoctorShow.vue";
 import AppDoctorIndex from "./pages/AppDoctorIndex.vue";
 
@@ -16,11 +15,6 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: AppHome,
-    },
-    {
-      path: "/search",
-      name: "search",
-      component: AppSearch,
     },
     {
       path: "/doctors",
@@ -45,7 +39,7 @@ const router = createRouter({
       component: AppDoctorShow,
     },
 
-    
+
   ],
 });
 

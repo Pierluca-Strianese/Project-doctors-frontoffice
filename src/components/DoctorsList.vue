@@ -42,12 +42,10 @@ export default {
 </script>
 
 <template>
-    <div>
-       <div class="d-flex justify-content-center m-5 flex-wrap">
-            <div v-for="user in arrUsers" :key="user.id">
-                <!-- Verifica se l'utente ha un dottore associato -->
-                <Appcard v-if="user.doctor && user.doctor.promotions.length >= 1" :user="user" :objUser="user" class="mb-4" />
-            </div>
+    <div class="d-flex justify-content-center my-5 flex-wrap">
+        <div v-for="user in arrUsers" :key="user.id">
+            <!-- Verifica se l'utente ha un dottore associato -->
+            <Appcard v-if="user.doctor && user.doctor.promotions.length >= 1" :user="user" :objUser="user" class="mb-4" />
         </div>
     </div>
 </template>

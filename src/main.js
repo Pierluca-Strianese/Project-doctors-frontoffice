@@ -10,8 +10,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-
-/* import specific icons */
 import { faSquareFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faSquareTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faSquareInstagram } from '@fortawesome/free-brands-svg-icons'
@@ -28,10 +26,14 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelopeCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faUserDoctor } from '@fortawesome/free-solid-svg-icons'
+import { faHospitalUser } from '@fortawesome/free-solid-svg-icons'
+
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 
 /* add icons to the library */
-library.add(faSquareFacebook, faSquareTwitter, faSquareInstagram, faSquareYoutube, faCaretRight, faAngleDown, faMagnifyingGlass, faSquareWhatsapp, faCcVisa, faCcMastercard, faCcPaypal, faCcApplePay, faEnvelopeCircleCheck, faMapLocationDot, faPhone)
+library.add(faSquareFacebook, faSquareTwitter, faSquareInstagram, faSquareYoutube, faCaretRight, faAngleDown, faMagnifyingGlass, faSquareWhatsapp, faCcVisa, faCcMastercard, faCcPaypal, faCcApplePay, faEnvelopeCircleCheck, faMapLocationDot, faPhone, faUserDoctor, faHospitalUser, faPenToSquare)
 
 
 /* add icons to the library */

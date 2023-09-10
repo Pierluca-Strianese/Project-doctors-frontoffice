@@ -26,7 +26,7 @@ export default {
             valutation: '',
             review: '',
             SuccessReview: false,
-        
+
 
         };
     },
@@ -38,7 +38,7 @@ export default {
                 .then((response) => {
                     this.user = response.data.results;
                     console.log(this.user);
-            });
+                });
 
         },
         getDoctors() {
@@ -47,7 +47,7 @@ export default {
                 .then((response) => {
                     this.doctor = response.data.results;
                     console.log(this.doctor);
-            });
+                });
         },
 
 
@@ -136,35 +136,35 @@ export default {
             axios
                 .post(this.store.baseUrl + `api/reviews/${this.$route.params.slug}`, formData)
                 .then((response) => {
-                this.successMessage = response.data.message;
-                this.errorMessage = null;
-                console.log(response.data);
+                    this.successMessage = response.data.message;
+                    this.errorMessage = null;
+                    console.log(response.data);
 
-                // Mostra il messaggio di successo
-                this.SuccessReview = true;
+                    // Mostra il messaggio di successo
+                    this.SuccessReview = true;
 
-                // Resetta il form
-                this.resetForm();
-            
+                    // Resetta il form
+                    this.resetForm();
+
                 })
                 .catch((error) => {
-                // Se la richiesta ha causato un errore
-                if (error.response && error.response.data) {
-                    this.errorMessage = error.response.data.error;
-                } else {
-                    this.errorMessage = 'Si è verificato un errore durante l\'invio della recensione.';
-                }
-                console.error(error);
-            });
+                    // Se la richiesta ha causato un errore
+                    if (error.response && error.response.data) {
+                        this.errorMessage = error.response.data.error;
+                    } else {
+                        this.errorMessage = 'Si è verificato un errore durante l\'invio della recensione.';
+                    }
+                    console.error(error);
+                });
         },
         resetForm() {
-        // Azzerare i valori dei campi del form
-        this.name = '';
-        this.valutation = null; // Imposta il valore iniziale appropriato
-        this.review = '';
+            // Azzerare i valori dei campi del form
+            this.name = '';
+            this.valutation = null; // Imposta il valore iniziale appropriato
+            this.review = '';
         },
 
-    
+
     },
 
     created() {
@@ -184,7 +184,7 @@ export default {
             <div class="row justify-content-center mt-4">
                 <div class="col-md-6">
                     <div class="img_container">
-                        <img src="../assets/img/Bronze.png" class="bronze">
+                        <!-- <img src="../assets/img/Bronze.png" class="bronze"> -->
                         <img :src="this.store.baseUrl + 'storage/' + doctor.image" :alt="doctor.slug" class="img_doc">
                     </div>
                 </div>
@@ -203,7 +203,7 @@ export default {
                         <font-awesome-icon :icon="['fas', 'phone']" class="me-2" />
                         <span class="fw-bold"> Telefono: </span>{{ doctor.telephone }}
                     </div>
-                    <div class="specialization_list">
+                    <div class="specialization_list mb-4">
                         <button v-for="specialization in user.specializations" :key="specialization.name" type="button"
                             class="btn_specialization shadow-sm">{{ specialization.name }}</button>
                     </div>
@@ -231,32 +231,27 @@ export default {
                         </div>
                     </div>
 
-                    <div
-                    v-if="SuccessReview"
-                    class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4"
-                    >
-                    Review sent successfully!
-                    <button
-                        type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-label="Close"
-                        @click="SuccessReview = false"
-                    >
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div v-if="SuccessReview"
+                        class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4">
+                        Review sent successfully!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                            @click="SuccessReview = false">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                   
+
                     <form @submit.prevent="submitReview">
                         <!-- Campi del form -->
                         <div class="d-flex align-items-center my-4">
                             <div class="pe-4">
                                 <label for="name" class="form-label">Nome</label>
-                                <input type="text" class="form-control form-control-sm" v-model="name" id="name" name="name" placeholder="Inserisci il tuo nome">
+                                <input type="text" class="form-control form-control-sm" v-model="name" id="name" name="name"
+                                    placeholder="Inserisci il tuo nome">
                             </div>
                             <div>
                                 <label for="valutation" class="form-label">Voto</label>
-                                <select class="form-select form-select-sm" v-model="valutation" id="valutation" name="valutation">
+                                <select class="form-select form-select-sm" v-model="valutation" id="valutation"
+                                    name="valutation">
                                     <option selected disabled>Inserisci il tuo voto</option>
                                     <option value="1">1 - Pessimo</option>
                                     <option value="2">2 - Scarso</option>
@@ -268,9 +263,10 @@ export default {
                         </div>
                         <div class="mb-3">
                             <label for="review" class="form-label">Inserisci la tua recensione</label>
-                            <textarea class="form-control form-control-sm" v-model="review" id="review" name="review" rows="3" placeholder="Recensione (non obbligatoria)"></textarea>
+                            <textarea class="form-control form-control-sm" v-model="review" id="review" name="review"
+                                rows="3" placeholder="Recensione (non obbligatoria)"></textarea>
                         </div>
-                        <div class="d-flex flex-row-reverse">
+                        <div class="d-flex justify-content-center mb-5">
                             <button type="submit" class="btn btn-outline-dark">Invia</button>
                         </div>
                     </form>
@@ -279,25 +275,18 @@ export default {
 
                 <!-- ************************** Contatto ****************************** -->
 
-                
 
-                    <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
+
+                <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
 
                 <div class="col-md-9 pt-5">
-                    <div
-                    v-if="showSuccess"
-                    class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4"
-                    >
-                    Message sent successfully!
-                    <button
-                        type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-label="Close"
-                        @click="showSuccess = false"
-                    >
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div v-if="showSuccess"
+                        class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4">
+                        Message sent successfully!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                            @click="showSuccess = false">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
 
 
@@ -305,12 +294,12 @@ export default {
                         <div class="w-100 d-flex justify-content-center">
                             <div class="loader" v-if="isSending"></div>
                         </div>
-                       
+
 
                         <div class="border-solid border-2 border-dark-600 my-6 m-auto block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
                             v-if="!isSending">
 
-                            
+
                             <form @submit.prevent="sendLead" v-if="!isSending">
                                 <div class="mb-6">
                                     <label for="email" class="block font-bold text-gray-800 mb-2">Email</label>
@@ -334,9 +323,9 @@ export default {
                                     </button>
                                 </div>
                             </form>
-                          
 
-                            
+
+
                         </div>
                     </section>
                 </div>
@@ -362,6 +351,8 @@ export default {
 .img_container {
 
     position: relative;
+    display: flex;
+    justify-content: center;
 
     .bronze {
         position: absolute;
@@ -371,7 +362,7 @@ export default {
     }
 
     .img_doc {
-        width: 400px;
+        max-width: 450px;
         height: 100%;
         object-fit: cover;
         border-radius: 25px;
@@ -424,16 +415,23 @@ export default {
 
 
 .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 </style>
