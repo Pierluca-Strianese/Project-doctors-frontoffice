@@ -7,6 +7,7 @@ export default {
     data() {
         return {
             store,
+            averageRating: 0,
         }
     },
 
@@ -14,8 +15,22 @@ export default {
         getImageUrl(image) {
             return image
                 ? this.store.baseUrl + 'storage/' + image : this.store.baseUrl + 'storage/default.jpg'
+        },
+        calculateAverageRating(reviews) {
+            if (reviews.length === 0) {
+                return 0; // Nessuna recensione, media zero.
+            }
+            
+            const totalRating = reviews.reduce((sum, review) => sum + review.valutation, 0);
+            return totalRating / reviews.length;
         }
     },
+    computed: {
+        // Usa una computed property per calcolare automaticamente la media quando le recensioni cambiano.
+        averageRatingComputed() {
+            return this.calculateAverageRating(this.objUser.doctor.reviews);
+        }
+    }
 }
 
 </script>
@@ -41,6 +56,11 @@ export default {
                 <button v-for="specialization in objUser.specializations" :key="specialization.id" type="button"
                     class="btn_specialization show-spec" id="truncateLongTexts">{{ specialization.name
                     }}</button>
+            </div>
+
+            <!-- Media dei voti -->
+            <div class="average-rating">
+                <p>Media dei voti: {{ averageRatingComputed }}</p>
             </div>
 
 

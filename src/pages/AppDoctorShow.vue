@@ -49,6 +49,11 @@ export default {
                     console.log(this.doctor);
             });
         },
+        	getImageUrl(image) {
+			return image
+				? this.store.baseUrl + 'storage/' + image
+				: this.store.baseUrl + 'storage/default.jpg';
+		},
 
 
 
@@ -164,6 +169,8 @@ export default {
         this.review = '';
         },
 
+        
+
     
     },
 
@@ -185,7 +192,7 @@ export default {
                 <div class="col-md-6">
                     <div class="img_container">
                         <img src="../assets/img/Bronze.png" class="bronze">
-                        <img :src="this.store.baseUrl + 'storage/' + doctor.image" :alt="doctor.slug" class="img_doc">
+                        <img :src="getImageUrl(doctor.image)" :alt="doctor.slug" class="img_doc">
                     </div>
                 </div>
                 <div class="col-md-6 px-4">
@@ -231,23 +238,14 @@ export default {
                         </div>
                     </div>
 
-                    <div
-                    v-if="SuccessReview"
-                    class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4"
-                    >
-                    Review sent successfully!
-                    <button
-                        type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-label="Close"
-                        @click="SuccessReview = false"
-                    >
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div v-if="SuccessReview" class=" mt-2 alert alert-success alert-dismissible fade show mb-4" role="alert">
+                        Review sent successfully!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="SuccessReview = false">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                   
-                    <form @submit.prevent="submitReview">
+
+                    <form @submit.prevent="submitReview" class="mb-3">
                         <!-- Campi del form -->
                         <div class="d-flex align-items-center my-4">
                             <div class="pe-4">
@@ -284,20 +282,11 @@ export default {
                     <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
 
                 <div class="col-md-9 pt-5">
-                    <div
-                    v-if="showSuccess"
-                    class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4"
-                    >
-                    Message sent successfully!
-                    <button
-                        type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-label="Close"
-                        @click="showSuccess = false"
-                    >
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div v-if="showSuccess" class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+                        Message sent successfully!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="showSuccess = false">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
 
 
