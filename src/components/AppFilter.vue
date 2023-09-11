@@ -33,9 +33,9 @@ export default {
 
 
 <template>
-	<div class="d-flex list mt-5">
+	<div class="d-flex list my-5">
 		<form class="">
-			<h4 class="mt-2 mb-4">Seleziona la specializzazione che cerchi</h4>
+			<h4 class="mt-2 mb-4 text-center">Seleziona la specializzazione che cerchi</h4>
 			<div class="d-flex align-items-center">
 				<label for="type">Specializzazioni:</label>
 				<select id="specialization" class="form-select ms-2"
@@ -52,4 +52,11 @@ export default {
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media (max-width: 1000px) {
+
+	h4 {
+		font-size: 1.3rem;
+	}
+}
+</style>

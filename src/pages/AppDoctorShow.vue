@@ -204,8 +204,8 @@ export default {
                         <span class="fw-bold"> Telefono: </span>{{ doctor.telephone }}
                     </div>
                     <div class="specialization_list mb-4">
-                        <button v-for="specialization in user.specializations" :key="specialization.name" type="button"
-                            class="btn_specialization shadow-sm">{{ specialization.name }}</button>
+                        <div v-for="specialization in user.specializations" :key="specialization.name"
+                            class="btn_specialization shadow-sm">{{ specialization.name }}</div>
                     </div>
 
                     <div class="valutations mb-4">
@@ -267,7 +267,7 @@ export default {
                                 rows="3" placeholder="Recensione (non obbligatoria)"></textarea>
                         </div>
                         <div class="d-flex justify-content-center mb-5">
-                            <button type="submit" class="btn btn-outline-dark">Invia</button>
+                            <button type="submit" class="btn btn-outline-dark px-5">Invia</button>
                         </div>
                     </form>
                 </div>
@@ -276,58 +276,62 @@ export default {
                 <!-- ************************** Contatto ****************************** -->
 
 
+                <div class="d-flex flex-column align-items-center align-content-start pt-5 border-top">
+                    <h3 class="text-3xl my-3.5 ">Contatta il medico</h3>
 
-                <h3 class="text-3xl my-3.5 text-center pt-5 border-top">Contatta il medico</h3>
-
-                <div class="col-md-9 pt-5">
-                    <div v-if="showSuccess"
-                        class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4">
-                        Message sent successfully!
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                            @click="showSuccess = false">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-
-                    <section>
-                        <div class="w-100 d-flex justify-content-center">
-                            <div class="loader" v-if="isSending"></div>
+                    <div class="col-md-9 pt-4">
+                        <div v-if="showSuccess"
+                            class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4">
+                            Message sent successfully!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                                @click="showSuccess = false">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
 
 
-                        <div class="border-solid border-2 border-dark-600 my-6 m-auto block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
-                            v-if="!isSending">
+                        <section>
+                            <div class="w-100">
+                                <div class="loader" v-if="isSending"></div>
+                            </div>
 
 
-                            <form @submit.prevent="sendLead" v-if="!isSending">
-                                <div class="mb-6">
-                                    <label for="email" class="block font-bold text-gray-800 mb-2">Email</label>
-                                    <input type="email" class="form-control mb-4" id="email"
-                                        placeholder="Inserici tuo indirizzo mail" v-model="email" required />
-                                </div>
+                            <div class="border-solid border-2 border-dark-600 my-6 m-auto block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+                                v-if="!isSending">
 
-                                <div class="mb-6">
-                                    <label for="text" class="block font-bold text-gray-800 mb-2">Message</label>
-                                    <textarea class="form-control" id="text" rows="3"
-                                        placeholder="Scrivi qui il tuo messaggio" v-model="text" required></textarea>
-                                </div>
 
-                                <!-- Aggiunto campo nascosto per doctor_id -->
-                                <input type="hidden" v-model="doctor_id" name="doctor_id" />
+                                <form @submit.prevent="sendLead" v-if="!isSending">
+                                    <div class="mb-6">
+                                        <label for="email" class="block font-bold text-gray-800 mb-2 ms-2">Email</label>
+                                        <input type="email" class="form-control mb-4" id="email"
+                                            placeholder="Inserici tuo indirizzo mail" v-model="email" required />
+                                    </div>
 
-                                <div class="d-flex flex-row-reverse">
+                                    <div class="mb-6">
+                                        <label for="text" class="block font-bold text-gray-800 mb-2 ms-2">Message</label>
+                                        <textarea class="form-control" id="text" rows="3"
+                                            placeholder="Scrivi qui il tuo messaggio" v-model="text" required></textarea>
+                                    </div>
+
+                                    <!-- Aggiunto campo nascosto per doctor_id -->
+                                    <input type="hidden" v-model="doctor_id" name="doctor_id" />
+
+                                    <!-- <div class="d-flex flex-row-reverse">
                                     <button type="submit" class="button mt-3 text-white font-monospace" data-te-ripple-init
                                         data-te-ripple-color="light">
                                         Invia
                                     </button>
-                                </div>
-                            </form>
+                                </div> -->
+                                    <div class="d-flex justify-content-center my-3">
+                                        <button type="submit" class="btn btn-outline-dark px-5">Invia</button>
+                                    </div>
+                                </form>
 
 
 
-                        </div>
-                    </section>
+                            </div>
+                        </section>
+                    </div>
                 </div>
 
                 <!-- ************************** Contatto ****************************** -->
@@ -372,10 +376,13 @@ export default {
 
 .specialization_list {
     .btn_specialization {
-        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
         height: fit-content;
         margin: .4rem;
-        padding: .2rem .7rem;
+        padding: .2rem 5rem;
         font-size: 1rem;
     }
 }
@@ -410,9 +417,6 @@ export default {
         font-size: .8rem;
     }
 }
-
-
-
 
 .loader {
     border: 16px solid #f3f3f3;

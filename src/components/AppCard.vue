@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <div class="container d-flex justify-content-center ">
+    <div class="container d-flex justify-content-center prova">
         <div class="card effect p-3 ">
             <div class="card__avatar px-3 pb-3 pt-2">
                 <!-- FOTO DOC -->
@@ -60,6 +60,7 @@ export default {
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
 
+
 .card {
     position: relative;
     display: flex;
@@ -68,14 +69,21 @@ export default {
     justify-content: center;
     height: 28rem;
     width: 20rem;
-    background: $bg-color;
+    // background-color: black;
     // cursor: pointer;
+}
 
+.specialization_list {
+    .btn_specialization {
+        max-width: 7rem;
+    }
 }
 
 .effect {
     border-radius: 30px;
-    background: linear-gradient(145deg, #ffffff, #ffffff);
+    // background-image: url(../assets/img/background_card.avif);
+    // background-size: cover;
+    background-position: center;
     box-shadow: 10px 10px 50px #d0d0d0;
 
 
@@ -145,10 +153,6 @@ export default {
         object-position: center;
     }
 }
-
-
-
-
 
 .show-spec {
     align-items: center;

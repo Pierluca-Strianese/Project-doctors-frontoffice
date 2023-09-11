@@ -26,7 +26,7 @@ export default {
   <div class="d-flex justify-content-around align-items-center flex-wrap jumbo px-5">
     <div class="d-flex flex-column justify-content-center first-col">
       <div class=" waviy">
-        <h1>Benvenuto in B-Doctor</h1>
+        <h1>Benvenuto in <span class="fw-semibold">B-Doctor</span></h1>
         <!-- <span style="--i:1">B</span>
             <span style="--i:2">e</span>
             <span style="--i:3">n</span>
@@ -171,8 +171,8 @@ export default {
 .show-doc {
   outline: none;
   width: fit-content;
-  height: 50px;
-  padding: 1rem 1.5rem;
+  height: fit-content;
+  padding: .7rem 1.5rem;
   background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
   border-radius: 30px;
   border: 1px solid $main-color;
@@ -223,17 +223,6 @@ button:active {
 }
 
 @media (max-width: 1000px) {
-  .jumbotron {
-    display: none;
-  }
-
-  .first-col {
-    div {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-    }
-  }
 
   .jumbo {
     background-image: url(../assets/img/background_2.avif);
@@ -241,8 +230,26 @@ button:active {
 
   }
 
-  .prova {
-    width: 100vw;
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  .jumbotron {
+    display: none;
+  }
+
+  .first-col {
+    height: 90vh;
+
+    div {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .show-doc {
+    padding: .2rem 1rem;
   }
 }
 </style>

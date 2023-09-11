@@ -57,7 +57,7 @@ export default {
 	<h2 class="text-center list fw-bold">Qui trovi tutti i nostri medici</h2>
 	<div class="container">
 
-		<form class="d-flex w-100" role="search" @submit.prevent="executeSearch">
+		<form class="d-flex w-100 mt-4" role="search" @submit.prevent="executeSearch">
 
 			<div class="row"></div>
 			<input class="form-control col-6" type="search" placeholder="Inserisci nome del Dottore che cerchi"
@@ -67,8 +67,8 @@ export default {
 			</button>
 
 		</form>
-		<UsersList />
 	</div>
+	<UsersList />
 </template>
 
 <style lang="scss" scoped>
@@ -86,6 +86,7 @@ export default {
 	height: 2.5rem;
 	border: 2px solid #00bdcd;
 	text-decoration: none;
+
 	font-size: .7rem;
 	color: #00bdcd;
 	background: #ffffff;
@@ -105,6 +106,17 @@ export default {
 	&:hover {
 		background: #ffffff;
 		color: #00bdcd;
+	}
+}
+
+@media (max-width: 1000px) {
+
+	h2 {
+		font-size: 1.3rem;
+	}
+
+	.container {
+		width: 70vw;
 	}
 }
 </style>

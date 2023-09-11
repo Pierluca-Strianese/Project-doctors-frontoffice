@@ -74,13 +74,13 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid container_filter">
         <AppFilter :arrSpecializations="arrSpecializations" @changeSpecialization="manageChangeSpecialization($event)"
             class="mt-4" />
 
 
 
-        <div class="d-flex justify-content-evenly m-5 flex-wrap">
+        <div class="d-flex justify-content-evenly m-3 flex-wrap">
             <div v-for="user in arrUsers" :key="user.id">
                 <!-- Verifica se l'utente ha un dottore associato -->
                 <Appcard v-if="user.doctor && user.doctor.promotions.length >= 1" :user="user" :objUser="user"
@@ -125,6 +125,11 @@ export default {
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
 
+.container_filter {
+    margin-inline: auto;
+    width: 70vw;
+}
+
 .list {
     display: flex;
 }
@@ -132,5 +137,12 @@ export default {
 .nav_bar {
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 1000px) {
+
+    .container_filter {
+        width: 95vw;
+    }
 }
 </style>

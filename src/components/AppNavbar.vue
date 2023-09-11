@@ -25,15 +25,19 @@ export default {
           </div>
 
 
-          <div class="ps-4">
-            <!-- <router-link class="home" :to="{ name: 'home' }">
-              <span class="text-white"> Home </span></router-link> -->
-
-            <!-- <router-link class="home" :to="{ name: 'user.index' }">
-              <span class="text-white"> <font-awesome-icon :icon="['fas', 'user-doctor']" class="icon_doctor" />Cerca tra
-                i nostri medici
-              </span>
-            </router-link> -->
+          <div class="ps-4 link d-flex">
+            <div class="hover_link">
+              <router-link class="mx-4" :to="{ name: 'home' }">
+                <span class="text-white"><font-awesome-icon :icon="['fas', 'house']" class="icon_doctor" /> Home
+                </span></router-link>
+            </div>
+            <div class="hover_link">
+              <router-link class="mx-4" :to="{ name: 'user.index' }">
+                <span class="text-white"> <font-awesome-icon :icon="['fas', 'user-doctor']" class="icon_doctor" />Cerca
+                  tra i nostri medici
+                </span>
+              </router-link>
+            </div>
           </div>
 
 
@@ -48,17 +52,37 @@ export default {
         <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto align-middle">
 
-            <li class="nav-link flex-column text-center me-3">
+            <li class="mt-3 text-end nav_show">
+              <router-link class="mx-4" :to="{ name: 'home' }">
+                <span class="text-white"> Home <font-awesome-icon :icon="['fas', 'house']" class="icon_doctor" />
+                </span></router-link>
+            </li>
+
+            <li class="mt-3 text-end nav_show">
+              <router-link class="mx-4" :to="{ name: 'user.index' }">
+                <span class="text-white"> Cerca tra i nostri medici <font-awesome-icon :icon="['fas', 'user-doctor']"
+                    class="icon_doctor" />
+                </span>
+              </router-link>
+            </li>
+
+            <!-- <li class="nav-link flex-column text-end me-3">
               <a class="my-btn" href="http://localhost:8000/register">
                 Sei un medico? Registrati!
               </a>
-            </li>
+            </li> -->
 
-            <li class="nav-link flex-column text-center me-3">
+            <li class="nav-link flex-column text-end me-3">
               <a class="my-btn" href="http://localhost:8000/login">
-                Accedi
+                <font-awesome-icon :icon="['far', 'user']" class="px-1" /> Accedi
               </a>
             </li>
+
+            <!-- <li>
+              <a class="register" href="http://localhost:8000/register">
+                Sei un medico? Registrati!
+              </a>
+            </li> -->
 
 
 
@@ -73,6 +97,7 @@ export default {
 <style lang="scss">
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import '../style/general.scss';
+
 
 .img-fluid {
   filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 rgb(101, 101, 101));
@@ -100,8 +125,25 @@ a {
   transition: border-bottom-color 1s ease-in-out;
 }
 
+//.register {
+//  color: white;
+//  font-size: .8rem;
+//}
+
+.hover_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(60, 60, 60);
+  }
+}
 
 .bg-nav {
+  padding: 0;
   background-color: rgb(45, 45, 45);
 }
 
@@ -119,9 +161,38 @@ a {
 }
 
 .link {
+  height: 100%;
   text-decoration: none;
   color: black;
   font-weight: 600;
+}
+
+.nav_show {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .hover_link {
+    display: none;
+  }
+
+  .nav-link {
+    margin: 1rem;
+  }
+
+  .nav_show {
+    padding: .5rem;
+    display: block;
+
+    &:hover {
+      background-color: rgb(60, 60, 60);
+    }
+
+    .icon_doctor {
+      padding-left: .5rem;
+    }
+  }
+
 }
 </style>
 
