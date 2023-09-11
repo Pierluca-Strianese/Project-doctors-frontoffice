@@ -78,8 +78,6 @@ export default {
                 : this.store.baseUrl + 'storage/default.jpg';
         },
 
-
-
         sendLead() {
             this.isLoading = true;
             this.isSending = true;
@@ -192,6 +190,14 @@ export default {
             this.review = '';
         },
 
+        formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Aggiunge lo zero iniziale se necessario
+            const day = date.getDate().toString().padStart(2, '0'); // Aggiunge lo zero iniziale se necessario
+            return `${day}/${month}/${year}`;
+        },
+
 
     },
 
@@ -208,7 +214,12 @@ export default {
 
         roundedRatingComputed() {
             return this.roundedAverageRating(this.doctor.reviews);
-        }
+        },
+
+        reversedReviews() {
+            // Inverti l'array delle recensioni
+            return this.doctor.reviews.slice().reverse();
+        },
     }
 }
 
@@ -260,14 +271,14 @@ export default {
                     </div>
                     <h5 class="fw-semibold">Recensioni: </h5>
                     <div class="reviews_container border-bottom">
-                        <div v-for=" review  in  doctor.reviews " :key="review.id" class="review border-bottom p-2 m-1">
+                        <div v-for="review in reversedReviews" :key="review.id" class="review border-bottom p-2 m-1">
                             <div class="name_review fw-lighter p-1"> <span class="fw-normal">{{ review.name }}</span> |
                                 <span class="stars">
                                     <template v-for=" i  in  review.valutation ">
                                         ★
                                     </template>
                                 </span>
-                                <div class="date_review ps-2">Recensito il: {{ review.created_at }}</div>
+                                <div class="date_review ps-2">Recensito il: {{ formatDate(review.created_at) }}</div>
                             </div>
                             <div class="text_review p-3">{{ review.review }}</div>
                         </div>

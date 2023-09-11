@@ -49,7 +49,7 @@ export default {
 			</div>
 		</form>
 
-		<form class="">
+		<!-- <form class="">
 			<h4 class="mt-2 mb-4 text-center"></h4>
 			<div class="d-flex align-items-center">
 				<label for="type">Voto:</label>
@@ -64,7 +64,7 @@ export default {
 					<option>5</option>
 				</select>
 			</div>
-		</form>
+		</form> -->
 	</div>
 </template>
 
