@@ -32,6 +32,29 @@ export default {
     },
 
     methods: {
+
+        calculateAverageRating(reviews) {
+            if (reviews.length === 0) {
+                return 0; // Nessuna recensione, media zero.
+            }
+
+            const totalRating = reviews.reduce((sum, review) => sum + review.valutation, 0);
+            return totalRating / reviews.length;
+        },
+
+        roundedAverageRating(reviews) {
+            if (reviews.length === 0) {
+                return 0; // Nessuna recensione, media zero.
+            }
+
+            const totalRating = reviews.reduce((sum, review) => sum + review.valutation, 0);
+            const averageRating = totalRating / reviews.length;
+
+            const roundedAverage = Math.floor(averageRating);
+
+            return roundedAverage;
+        },
+
         getUsers() {
             axios
                 .get(this.store.baseUrl + 'api/users/' + this.$route.params.slug)
@@ -177,8 +200,16 @@ export default {
         this.getDoctors();
     },
 
+    computed: {
+        // Usa una computed property per calcolare automaticamente la media quando le recensioni cambiano.
+        averageRatingComputed() {
+            return this.calculateAverageRating(this.doctor.reviews);
+        },
 
-
+        roundedRatingComputed() {
+            return this.roundedAverageRating(this.doctor.reviews);
+        }
+    }
 }
 
 </script>
@@ -189,7 +220,6 @@ export default {
             <div class="row justify-content-center mt-4">
                 <div class="col-md-6">
                     <div class="img_container">
-                        <img src="../assets/img/Bronze.png" class="bronze">
                         <img :src="getImageUrl(doctor.image)" :alt="doctor.slug" class="img_doc">
                     </div>
                 </div>
@@ -214,19 +244,26 @@ export default {
                     </div>
 
                     <div class="valutations mb-4">
-                        <h5 class="fw-semibold">Valutazione: </h5>
+                        <h5 class="fw-semibold">Valutazione:
+                            <span class="stars">
+                                <template v-for="i in roundedRatingComputed">
+                                    ★
+                                </template>
+                            </span>
+                            <span class="fw-normal"> ({{ averageRatingComputed }}) </span>
+                        </h5>
                         <span class="stars">
-                            <template v-for="i in doctor.averageRating">
+                            <template v-for=" i  in  doctor.averageRating ">
                                 ★
                             </template>
                         </span>
                     </div>
                     <h5 class="fw-semibold">Recensioni: </h5>
-                    <div class="reviews_container">
-                        <div v-for="review in doctor.reviews" :key="review.id" class="review border-bottom p-2 m-1">
+                    <div class="reviews_container border-bottom">
+                        <div v-for=" review  in  doctor.reviews " :key="review.id" class="review border-bottom p-2 m-1">
                             <div class="name_review fw-lighter p-1"> <span class="fw-normal">{{ review.name }}</span> |
                                 <span class="stars">
-                                    <template v-for="i in review.valutation">
+                                    <template v-for=" i  in  review.valutation ">
                                         ★
                                     </template>
                                 </span>
@@ -236,25 +273,17 @@ export default {
                         </div>
                     </div>
 
-                    <div v-if="SuccessReview" class=" mt-2 alert alert-success alert-dismissible fade show mb-4"
-                        role="alert">
-                        Review sent successfully!
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                            @click="SuccessReview = false">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
                     <form @submit.prevent="submitReview" class="mb-3">
+                        <h5 class="fw-semibold mt-4">Inserisci la tua recensione</h5>
                         <!-- Campi del form -->
                         <div class="d-flex align-items-center my-4">
                             <div class="pe-4">
-                                <label for="name" class="form-label">Nome</label>
+                                <label for="name" class="form-label ps-2">Nome</label>
                                 <input type="text" class="form-control form-control-sm" v-model="name" id="name" name="name"
                                     placeholder="Inserisci il tuo nome">
                             </div>
                             <div>
-                                <label for="valutation" class="form-label">Voto</label>
+                                <label for="valutation" class="form-label ps-2">Voto</label>
                                 <select class="form-select form-select-sm" v-model="valutation" id="valutation"
                                     name="valutation">
                                     <option selected disabled>Inserisci il tuo voto</option>
@@ -267,14 +296,20 @@ export default {
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="review" class="form-label">Inserisci la tua recensione</label>
+                            <label for="review" class="form-label ps-2">Scrivi la tua recensione</label>
                             <textarea class="form-control form-control-sm" v-model="review" id="review" name="review"
                                 rows="3" placeholder="Recensione (non obbligatoria)"></textarea>
                         </div>
-                        <div class="d-flex justify-content-center mb-5">
+                        <div class="d-flex justify-content-center mb-4">
                             <button type="submit" class="btn btn-outline-dark px-5">Invia</button>
                         </div>
                     </form>
+                    <div v-if="SuccessReview" class="alert alert-success fade text-center show mb-4" role="alert">
+                        Recensione inviata correttamente!
+                        <div class="close" data-dismiss="alert" aria-label="Close" @click="SuccessReview = false">
+                            <span aria-hidden="true">&times;</span>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -285,15 +320,6 @@ export default {
                     <h3 class="text-3xl my-3.5 ">Contatta il medico</h3>
 
                     <div class="col-md-9 pt-5">
-                        <div v-if="showSuccess" class="alert alert-success alert-dismissible fade show mb-4" role="alert">
-                            Message sent successfully!
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                                @click="showSuccess = false">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-
                         <section>
                             <div class="w-100">
                                 <div class="loader" v-if="isSending"></div>
@@ -330,11 +356,14 @@ export default {
                                         <button type="submit" class="btn btn-outline-dark px-5">Invia</button>
                                     </div>
                                 </form>
-
-
-
                             </div>
                         </section>
+                        <div v-if="showSuccess" class="alert alert-success fade text-center show" role="alert">
+                            Messaggio inviato correttamente!
+                            <div class="close" data-dismiss="alert" aria-label="Close" @click="showSuccess = false">
+                                <span aria-hidden="true">&times;</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -361,13 +390,6 @@ export default {
     position: relative;
     display: flex;
     justify-content: center;
-
-    .bronze {
-        position: absolute;
-        top: 10px;
-        left: 20px;
-        height: 17%;
-    }
 
     .img_doc {
         max-width: 450px;
@@ -433,6 +455,20 @@ export default {
     animation: spin 2s linear infinite;
 }
 
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid green;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -441,4 +477,17 @@ export default {
     100% {
         transform: rotate(360deg);
     }
-}</style>
+}
+
+@media (max-width: 1000px) {
+    .img_container {
+        .img_doc {
+            max-width: 280px;
+        }
+    }
+
+    .show {
+        font-size: .8rem;
+    }
+}
+</style>

@@ -62,8 +62,8 @@ export default {
 			<div class="row"></div>
 			<input class="form-control col-6" type="search" placeholder="Inserisci nome del Dottore che cerchi"
 				aria-label="Cerca qui" name="q" v-model="searchString" />
-			<button class="btn btn-outline-success ms-2 card__btn card_2" type="submit">
-				Cerca
+			<button class="btn ms-2 card_2" type="submit">
+				<font-awesome-icon :icon="['fas', 'magnifying-glass']" class="pe-1" /> Cerca
 			</button>
 
 		</form>
@@ -78,34 +78,23 @@ export default {
 }
 
 
-.card__btn {
+.card_2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 8rem;
 	height: 2.5rem;
-	border: 2px solid #00bdcd;
+	border: 2px solid #072c45;
 	text-decoration: none;
-
 	font-size: .7rem;
-	color: #00bdcd;
-	background: #ffffff;
 	text-transform: uppercase;
 	transition: all .5s ease;
-
-	&:hover {
-		background: #00bdcd;
-		color: #ffffff;
-	}
-}
-
-.card_2 {
-	background: #00bdcd;
+	background: #0c5587;
 	color: #ffffff;
 
 	&:hover {
 		background: #ffffff;
-		color: #00bdcd;
+		color: #0c5587;
 	}
 }
 

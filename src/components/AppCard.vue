@@ -20,7 +20,7 @@ export default {
             if (reviews.length === 0) {
                 return 0; // Nessuna recensione, media zero.
             }
-            
+
             const totalRating = reviews.reduce((sum, review) => sum + review.valutation, 0);
             return totalRating / reviews.length;
         }
@@ -60,7 +60,7 @@ export default {
 
             <!-- Media dei voti -->
             <div class="average-rating">
-                <p>Media dei voti: {{ averageRatingComputed }}</p>
+                <p>Media dei voti: <span class="fw-semibold">{{ averageRatingComputed }}</span></p>
             </div>
 
 
@@ -97,6 +97,10 @@ export default {
     .btn_specialization {
         max-width: 7rem;
     }
+}
+
+.average-rating {
+    font-size: .8rem;
 }
 
 .effect {
