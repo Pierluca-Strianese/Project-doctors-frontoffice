@@ -72,17 +72,17 @@ export default {
               </a>
             </li> -->
 
-            <li class="nav-link flex-column text-end me-3">
+            <li class="nav-link flex-column text-end">
               <a class="my-btn" href="http://localhost:8000/login">
                 <font-awesome-icon :icon="['far', 'user']" class="px-1" /> Accedi
               </a>
             </li>
 
-            <!-- <li>
+            <li class="d-flex align-items-center">
               <a class="register" href="http://localhost:8000/register">
                 Sei un medico? Registrati!
               </a>
-            </li> -->
+            </li>
 
 
 
@@ -125,10 +125,10 @@ a {
   transition: border-bottom-color 1s ease-in-out;
 }
 
-//.register {
-//  color: white;
-//  font-size: .8rem;
-//}
+.register {
+  color: white;
+  font-size: .6rem;
+}
 
 .hover_link {
   display: flex;
