@@ -72,17 +72,15 @@ export default {
               </a>
             </li> -->
 
-          <li class="nav-link flex-column text-end me-3">
+          <li class="nav-link flex-column text-end">
+              <a class="register" href="http://localhost:8000/register" target="_blank">
+                Sei un medico? Registrati!
+              </a>
+              <span class="fw-bolder" style=" font-size: .6rem; color: white; padding: 0 .3rem;"> oppure </span>
     <a class="my-btn" href="http://localhost:8000/login" target="_blank">
         <font-awesome-icon :icon="['far', 'user']" class="px-1" /> Accedi
     </a>
 </li>
-            <!-- <li>
-              <a class="register" href="http://localhost:8000/register">
-                Sei un medico? Registrati!
-              </a>
-            </li> -->
-
 
 
           </ul>
@@ -104,6 +102,7 @@ export default {
 
 a.my-btn {
   text-decoration: none;
+  border: 1px solid $main-color;
   border-radius: 25px;
   color: white;
   background-color: $main-color;
@@ -112,7 +111,7 @@ a.my-btn {
 
   &:hover {
     background-color: $bg-color;
-    border: 1.5px solid $main-color;
+    border: 1px solid $main-color;
     color: $main-color;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   }
@@ -124,10 +123,14 @@ a {
   transition: border-bottom-color 1s ease-in-out;
 }
 
-//.register {
-//  color: white;
-//  font-size: .8rem;
-//}
+.register {
+  color: rgb(190, 190, 190);
+  font-size: .8rem;
+
+  &:hover {
+    color: white;
+  }
+}
 
 .hover_link {
   display: flex;

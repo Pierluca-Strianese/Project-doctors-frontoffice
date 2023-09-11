@@ -48,6 +48,23 @@ export default {
 				</select>
 			</div>
 		</form>
+
+		<!-- <form class="">
+			<h4 class="mt-2 mb-4 text-center"></h4>
+			<div class="d-flex align-items-center">
+				<label for="type">Voto:</label>
+				<select id="specialization" class="form-select ms-2"
+					@change="$emit('changeSpecialization', specializationId)" v-model="specializationId">
+					<option value="">Tutti</option>
+					<option>0 - nessuna recensione </option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+		</form> -->
 	</div>
 </template>
 
