@@ -80,7 +80,7 @@ export default {
 
 
 
-        <div class="d-flex justify-content-evenly m-3 flex-wrap">
+        <div class="d-flex justify-content-center m-3 flex-wrap">
             <div v-for="user in arrUsers" :key="user.id">
                 <!-- Verifica se l'utente ha un dottore associato -->
                 <Appcard v-if="user.doctor && user.doctor.promotions.length >= 1" :user="user" :objUser="user"
@@ -88,18 +88,37 @@ export default {
                 <Appcard v-if="user.doctor && (!user.doctor.promotions || user.doctor.promotions.length === 0)" :user="user"
                     :objUser="user" class="mb-4" />
             </div>
-        </div>
 
-        <!-- <h2 class="text-center fst-italic fw-bold">Altri Dottori</h2>
-
-        <div class="d-flex justify-content-evenly m-3 flex-wrap">
+            <h2 class="text-center fst-italic fw-bold w-100 mt-4 mb-5">Altri Dottori</h2>
             <div v-for="user in arrUsers" :key="user.id">
-                Verifica se l'utente ha un dottore associato e se non ci sono promozioni
+                <!-- Verifica se l'utente ha un dottore associato e se non ci sono promozioni -->
                 <Appcard v-if="user.doctor && (!user.doctor.promotions || user.doctor.promotions.length === 0)" :user="user"
                     :objUser="user" class="mb-4" />
             </div>
-        </div> -->
+        </div>
     </div>
+
+
+    <!-- <div class="d-flex justify-content-center m-5">
+        <div class="scrollable-container" style="overflow-x: scroll;">
+            <div class="d-flex">
+                <div v-for="user in arrUsers" :key="user.id">
+                    <Appcard v-if="user.doctor.promotion_counter >= 1" :user="user" :objUser="user" />
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="nav_bar mt-5">
+        <nav>
+            <ul class="pagination pagination-sm">
+                <li v-for="page in nPages" :key="page" class="page-item" :class="{ active: page == currentPage }">
+                    <span class="page-link" @click="changePage(page)">{{ page }}</span>
+                </li>
+
+            </ul>
+        </nav>
+    </div> -->
 </template>
 
 <style lang="scss" scoped>
