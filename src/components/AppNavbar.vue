@@ -72,12 +72,11 @@ export default {
               </a>
             </li> -->
 
-            <li class="nav-link flex-column text-end me-3">
-              <a class="my-btn" href="http://localhost:8000/login">
-                <font-awesome-icon :icon="['far', 'user']" class="px-1" /> Accedi
-              </a>
-            </li>
-
+          <li class="nav-link flex-column text-end me-3">
+    <a class="my-btn" href="http://localhost:8000/login" target="_blank">
+        <font-awesome-icon :icon="['far', 'user']" class="px-1" /> Accedi
+    </a>
+</li>
             <!-- <li>
               <a class="register" href="http://localhost:8000/register">
                 Sei un medico? Registrati!

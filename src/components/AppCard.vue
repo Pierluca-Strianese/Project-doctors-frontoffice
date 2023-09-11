@@ -17,13 +17,16 @@ export default {
                 ? this.store.baseUrl + 'storage/' + image : this.store.baseUrl + 'storage/default.jpg'
         },
         calculateAverageRating(reviews) {
-            if (reviews.length === 0) {
-                return 0; // Nessuna recensione, media zero.
-            }
-
-            const totalRating = reviews.reduce((sum, review) => sum + review.valutation, 0);
-            return totalRating / reviews.length;
+        if (reviews.length === 0) {
+            return 0; // Nessuna recensione, media zero.
         }
+
+        const totalRating = reviews.reduce((sum, review) => sum + review.valutation, 0);
+        const averageRating = totalRating / reviews.length;
+        
+        // Limita la media a una cifra decimale dopo la virgola.
+        return parseFloat(averageRating.toFixed(1));
+}
     },
     computed: {
         // Usa una computed property per calcolare automaticamente la media quando le recensioni cambiano.
