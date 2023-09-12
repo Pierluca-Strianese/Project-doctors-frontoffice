@@ -9,13 +9,13 @@ export default {
 <template>
   <div class="container">
     <nav class="navbar navbar-expand-md navbar-bg navbar-dark fixed-top shadow-lg bg-nav">
-      <div class="container-fluid">
+      <div class="container-fluid ps-3">
 
         <div class="d-flex align-items-center">
 
           <div class="d-flex align-items-center px-2">
             <router-link :to="{ name: 'home' }" class="nav-link active d-flex">
-              <a class="navbar-brand">
+              <a class="navbar-brand d-flex align-items-center">
                 <img src="../assets/Doctor-logo.png" class="img-fluid" alt="" width="30">
               </a>
               <span class="d-flex align-items-center">
@@ -25,7 +25,7 @@ export default {
           </div>
 
 
-          <div class="ps-4 link d-flex">
+          <div class="link d-flex">
             <div class="hover_link">
               <router-link class="mx-4" :to="{ name: 'home' }">
                 <span class="text-white"><font-awesome-icon :icon="['fas', 'house']" class="icon_doctor" /> Home
@@ -72,15 +72,20 @@ export default {
               </a>
             </li> -->
 
-          <li class="nav-link flex-column text-end">
-              <a class="register" href="http://localhost:8000/register" target="_blank">
-                Sei un medico? Registrati!
+            <li class="nav-link flex-column text-end">
+              <span class="no_views">
+                <a class="register" href="http://localhost:8000/register" target="_blank">
+                  Sei un medico? Registrati!
+                </a>
+                <a class="register_mobile" href="http://localhost:8000/register" target="_blank">
+                  Registrati!
+                </a>
+                <span class="fw-bolder" style=" font-size: .6rem; color: white; padding: 0 .3rem;"> oppure </span>
+              </span>
+              <a class="my-btn" href="http://localhost:8000/login" target="_blank">
+                <font-awesome-icon :icon="['far', 'user']" class="px-1" /> Accedi
               </a>
-              <span class="fw-bolder" style=" font-size: .6rem; color: white; padding: 0 .3rem;"> oppure </span>
-    <a class="my-btn" href="http://localhost:8000/login" target="_blank">
-        <font-awesome-icon :icon="['far', 'user']" class="px-1" /> Accedi
-    </a>
-</li>
+            </li>
 
 
           </ul>
@@ -132,6 +137,16 @@ a {
   }
 }
 
+.register_mobile {
+  color: rgb(190, 190, 190);
+  font-size: .8rem;
+  display: none;
+
+  &:hover {
+    color: white;
+  }
+}
+
 .hover_link {
   display: flex;
   justify-content: center;
@@ -167,13 +182,45 @@ a {
   text-decoration: none;
   color: black;
   font-weight: 600;
+  padding-left: 2rem;
 }
 
 .nav_show {
   display: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1010px) {
+
+  .text-logo {
+    display: none;
+  }
+
+  .link {
+    margin-left: 0rem;
+    padding-left: 0rem;
+  }
+
+  .hover_link {
+    font-size: .8rem;
+
+    .icon_doctor {
+      font-size: 1.2rem;
+    }
+  }
+
+  .nav-link {
+    .no_views {}
+  }
+
+
+}
+
+@media (max-width: 767px) {
+
+  .text-logo {
+    display: inline;
+  }
+
   .hover_link {
     display: none;
   }
@@ -193,6 +240,14 @@ a {
     .icon_doctor {
       padding-left: .5rem;
     }
+  }
+
+  .register {
+    display: none;
+  }
+
+  .register_mobile {
+    display: inline;
   }
 
 }

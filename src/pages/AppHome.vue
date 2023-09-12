@@ -116,7 +116,7 @@ export default {
 
 
   <div class="section_two">
-    <h2 class="pt-4 text-center "> I nostri migliori medici </h2>
+    <h2 class="pt-4 text-center "> Medici in evidenza </h2>
     <div class="doctor_list">
       <!-- <UsersList /> -->
       <DoctorsList />
@@ -222,10 +222,15 @@ button:active {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1010px) {
+
+  .doctor_list {
+    margin-inline: auto;
+    width: 90vw;
+  }
 
   .jumbo {
-    background-image: url(../assets/img/background_2.avif);
+    background-image: url(../assets/img/background_2.jpeg);
     background-size: contain;
 
   }
