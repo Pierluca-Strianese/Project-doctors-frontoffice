@@ -270,7 +270,8 @@ export default {
                         </span>
                     </div>
                     <h5 class="fw-semibold">Recensioni: </h5>
-                    <div class="reviews_container border-bottom">
+                    <h6 style="font-size: .8rem;"> Numero di recensioni: {{ doctor.reviews.length }} </h6>
+                    <div class="reviews_container border-bottom border-top">
                         <div v-for="review in reversedReviews" :key="review.id" class="review border-bottom p-2 m-1">
                             <div class="name_review fw-lighter p-1"> <span class="fw-normal">{{ review.name }}</span> |
                                 <span class="stars">
